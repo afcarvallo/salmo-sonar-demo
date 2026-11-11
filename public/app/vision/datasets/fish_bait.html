@@ -1,0 +1,260 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>fish bait2 (Roboflow)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="6AQX0nu6ukD78wwOdn7ZF29Tq7233ipqE5EOqsNt3bMRfcAs-3PYfBbR8mCRIS1x3m6NjKyb3c-IaQVIzk46qQ" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb --><p class="crumbs"><a href="../../vision/datasets.html">Datasets</a> /</p>
+<h1>fish bait2 (Roboflow)</h1>
+<div class="grid2">
+  <div class="col">
+    <p class="lede">2.496 imágenes con 93.817 cajas. Cada caja encierra un grupo de partículas, no una sola; sirve para ubicar acumulación, no para contar pellets sin calibrar.</p>
+    <dl class="facts">
+      <div><dt>Dominio</dt><dd>Estanque de vidrio con peces ornamentales, cámara cenital; alimento residual en el fondo marcado por grupos (1920×1080)</dd></div>
+      <div><dt>Formato</dt><dd>YOLO cajas</dd></div>
+      <div><dt>Clases</dt><dd>pellet</dd></div>
+      <div><dt>Aquí</dt><dd>completo · 2496 imágenes · 93633 objetos</dd></div>
+      <div><dt>Licencia</dt><dd>CC BY 4.0</dd></div>
+      <div><dt>Fuente</dt><dd><a href="https://universe.roboflow.com/bait/fish-bait2" target="_blank" rel="noopener">https://universe.roboflow.com/bait/fish-bait2</a></dd></div>
+      <div><dt>Cita</dt><dd class="small">fish bait2 dataset, Roboflow Universe (workspace bait)</dd></div>
+    </dl>
+  </div>
+  <div class="col">
+      <div class="panel">
+        <h3>Archivos de la fuente</h3>
+        <ul class="plain small">
+            <li><span target="_blank">README.dataset.txt</span> <span class="muted">128 Bytes</span></li>
+            <li><span target="_blank">README.roboflow.txt</span> <span class="muted">895 Bytes</span></li>
+            <li><span target="_blank">data.yaml</span> <span class="muted">242 Bytes</span></li>
+        </ul>
+      </div>
+      <div class="panel"><h3>Corridas sobre este dataset</h3><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --><div class="tablewrap"><table>
+  <thead><tr><th>Corrida</th><th>Dataset</th><th>Modelo</th><th class="n">Imágenes</th><th class="n">Precisión</th><th class="n">Recall</th><th class="n">F1</th><th class="n">IoU medio</th><th class="n">Error puntos</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="../../vision/runs/pellets_v2-fish_bait-test-centro.html">pellets_v2-fish_bait-test-centro</a><br><span class="small muted">2026-11-10 17:19</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">50,3 %</td>
+      <td class="n">32,4 %</td>
+      <td class="n">39,4 %</td>
+      <td class="n">0,80</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../../vision/runs/pellets_v1-fish_bait-test-centro.html">pellets_v1-fish_bait-test-centro</a><br><span class="small muted">2026-11-10 16:22</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">10,8 %</td>
+      <td class="n">79,0 %</td>
+      <td class="n">19,0 %</td>
+      <td class="n">0,70</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../../vision/runs/pellets_v1-fish_bait-test.html">pellets_v1-fish_bait-test</a><br><span class="small muted">2026-11-10 15:35</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">1,1 %</td>
+      <td class="n">7,9 %</td>
+      <td class="n">1,9 %</td>
+      <td class="n">0,62</td>
+      <td class="n">–</td>
+    </tr>
+  </tbody>
+</table></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --></div>
+  </div>
+</div>
+
+<div class="filters">
+  <a class="chip on" href="../../vision/datasets/fish_bait.html">Todas</a>
+  <span class="muted small">2496 imágenes</span>
+</div>
+
+<div class="gallery">
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/fish_bait/images/0.html">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155121-991_jpg.rf.5e6b058c9ea527e825491534848dfb2b.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="337.6" y="594.2" width="139.8" height="135.6" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="147.5" y="303.1" width="88.6" height="135.5" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="472.0" y="999.2" width="40.4" height="38.1" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="1532.2" y="859.9" width="40.7" height="53.2" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1796.8" y="859.1" width="47.1" height="55.2" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="1272.8" y="957.3" width="132.6" height="65.2" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1474.0" y="860.2" width="161.6" height="169.2" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="318.2" y="731.6" width="88.1" height="269.1" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="430.0" y="777.2" width="105.9" height="90.1" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="459.5" y="817.5" width="99.0" height="71.5" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="489.8" y="887.5" width="156.1" height="115.8" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="1523.0" y="610.7" width="115.9" height="91.6" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="1712.8" y="612.9" width="110.7" height="139.2" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="1538.4" y="276.1" width="114.9" height="90.5" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="224.5" y="745.7" width="92.3" height="266.6" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="408.8" y="366.4" width="92.5" height="73.2" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="1358.2" y="968.9" width="46.4" height="26.9" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="435.0" y="315.0" width="125.0" height="81.7" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="157.1" y="597.1" width="118.6" height="167.1" data-kind="gt" data-i="18" style="stroke:#e2553f"/><rect class="gt" x="110.0" y="768.6" width="90.0" height="165.7" data-kind="gt" data-i="19" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>20 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/fish_bait/images/1.html">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-340_jpg.rf.7eaa27450327fe94998e3bdb93495b18.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1501.8" y="614.1" width="135.3" height="165.2" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="407.8" y="331.2" width="129.3" height="101.4" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="148.6" y="306.2" width="88.8" height="130.8" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="241.8" y="795.9" width="115.1" height="189.5" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1282.3" y="964.9" width="128.7" height="61.9" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="361.5" y="647.6" width="120.3" height="144.8" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1796.4" y="855.9" width="49.5" height="59.2" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="1569.0" y="326.9" width="35.7" height="31.0" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="464.5" y="812.9" width="98.2" height="80.0" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="361.2" y="460.8" width="76.2" height="62.4" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="1535.4" y="856.7" width="31.1" height="31.6" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="475.3" y="1000.8" width="37.3" height="33.1" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="455.4" y="812.1" width="129.0" height="149.4" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="1529.5" y="852.1" width="99.8" height="110.7" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="195.7" y="448.6" width="72.9" height="64.3" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="158.6" y="615.7" width="112.9" height="158.6" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="344.3" y="588.6" width="80.0" height="68.6" data-kind="gt" data-i="16" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>17 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/fish_bait/images/2.html">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-413_jpg.rf.ab332a7ef2da688d0021aa00ccae54de.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1494.2" y="618.7" width="143.3" height="159.3" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="149.8" y="305.9" width="84.5" height="130.1" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="412.4" y="347.8" width="113.8" height="88.3" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="239.6" y="810.2" width="104.0" height="202.8" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1530.9" y="851.2" width="100.1" height="107.8" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="1717.1" y="620.2" width="107.9" height="142.7" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1272.4" y="956.7" width="128.5" height="67.1" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="442.8" y="773.1" width="41.1" height="21.7" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="354.5" y="649.4" width="130.4" height="149.5" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="1797.9" y="855.5" width="47.5" height="58.6" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="393.0" y="614.9" width="33.0" height="36.9" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="1546.9" y="274.7" width="101.1" height="95.5" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="474.1" y="999.7" width="36.9" height="34.9" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="1535.4" y="855.7" width="31.5" height="31.4" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="464.1" y="814.5" width="90.5" height="96.0" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="508.7" y="908.2" width="97.2" height="105.0" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="357.1" y="462.3" width="77.8" height="59.7" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="150.0" y="604.3" width="128.6" height="182.9" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="201.4" y="450.0" width="71.4" height="54.3" data-kind="gt" data-i="18" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>19 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-968_jpg.rf.932056c1f4d5144c44474d1baee73980.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="310.9" y="785.3" width="72.1" height="195.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="405.8" y="340.5" width="113.6" height="93.3" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="1521.0" y="851.8" width="114.8" height="158.3" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="1277.3" y="954.9" width="123.5" height="61.1" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="437.6" y="679.2" width="34.8" height="28.4" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="459.5" y="812.9" width="129.3" height="178.1" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1352.8" y="962.8" width="50.6" height="35.4" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="394.5" y="615.3" width="30.6" height="38.7" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="1532.4" y="847.8" width="78.4" height="60.0" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="477.3" y="315.0" width="68.9" height="71.0" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="403.1" y="676.7" width="114.7" height="144.1" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="338.8" y="456.8" width="122.9" height="97.7" data-kind="gt" data-i="11" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>12 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155123-586_jpg.rf.fe1d30f5faee446a1a46311a1158cb4b.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="402.0" y="333.7" width="119.4" height="96.6" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="1296.5" y="950.8" width="116.5" height="74.5" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="243.5" y="803.8" width="116.9" height="186.0" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="1538.9" y="832.8" width="101.4" height="123.4" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="153.6" y="303.6" width="88.2" height="129.3" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="494.1" y="866.0" width="96.9" height="76.3" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="352.5" y="425.4" width="61.9" height="113.1" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="1570.9" y="328.2" width="34.2" height="29.0" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="1746.8" y="840.9" width="96.5" height="116.5" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="355.0" y="710.0" width="133.3" height="81.7" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="436.7" y="803.3" width="101.7" height="61.7" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="473.3" y="981.7" width="40.0" height="45.0" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="128.3" y="731.7" width="130.0" height="126.7" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="483.3" y="306.7" width="53.3" height="68.3" data-kind="gt" data-i="13" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>14 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155123-810_jpg.rf.c4d5d6f2fbfdb60ee613d73d6d5ab8f2.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="326.4" y="655.3" width="207.3" height="337.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="440.0" y="791.7" width="113.7" height="138.7" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="245.8" y="790.7" width="110.8" height="201.7" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="482.6" y="843.0" width="141.0" height="192.7" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1288.1" y="944.4" width="125.7" height="76.2" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="293.1" y="405.5" width="175.4" height="149.9" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1567.3" y="325.8" width="51.0" height="30.4" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="436.6" y="674.4" width="35.8" height="25.5" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="147.7" y="298.5" width="96.1" height="134.3" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="1483.1" y="655.5" width="191.4" height="343.6" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="404.5" y="333.0" width="127.1" height="97.6" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="1710.9" y="643.7" width="166.9" height="308.2" data-kind="gt" data-i="11" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>12 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155124-232_jpg.rf.36b5b65aa0fe777f019fc8f5ad50d0e6.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1299.4" y="943.3" width="120.5" height="76.9" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="1518.0" y="651.4" width="81.8" height="156.3" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="153.3" y="312.3" width="108.8" height="124.7" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="403.0" y="302.2" width="157.7" height="122.3" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1540.4" y="838.3" width="91.3" height="70.2" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="429.3" y="800.7" width="175.0" height="155.7" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="354.6" y="653.4" width="129.1" height="149.6" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="1379.6" y="950.0" width="29.9" height="25.8" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="1569.8" y="320.6" width="35.2" height="29.2" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="1569.8" y="268.9" width="66.3" height="39.7" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="244.8" y="811.3" width="111.0" height="162.1" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="350.3" y="405.5" width="71.0" height="107.6" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="400.0" y="618.3" width="28.3" height="28.3" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="1562.9" y="544.3" width="105.7" height="135.7" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="1687.1" y="630.0" width="131.4" height="112.9" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="304.3" y="845.7" width="110.0" height="135.7" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="188.6" y="585.7" width="94.3" height="107.1" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="192.9" y="372.9" width="92.9" height="148.6" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="144.3" y="654.3" width="47.1" height="114.3" data-kind="gt" data-i="18" style="stroke:#e2553f"/><rect class="gt" x="158.6" y="904.3" width="140.0" height="70.0" data-kind="gt" data-i="19" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>20 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155124-290_jpg.rf.d3cd658e4d3020b46ff670bf89f8dfbc.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1298.4" y="944.0" width="122.3" height="77.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="404.3" y="319.6" width="140.3" height="110.3" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="1542.1" y="836.2" width="95.7" height="64.3" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="1384.1" y="950.0" width="28.3" height="24.2" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="423.1" y="773.6" width="162.2" height="178.7" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="1568.4" y="321.2" width="43.1" height="34.5" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="311.4" y="805.3" width="60.0" height="168.3" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="384.3" y="722.2" width="98.5" height="90.3" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="331.8" y="653.7" width="188.6" height="321.3" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="482.2" y="830.3" width="121.7" height="110.8" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="124.3" y="277.1" width="168.6" height="178.6" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="197.1" y="424.3" width="98.6" height="88.6" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="134.3" y="561.4" width="165.7" height="154.3" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="251.4" y="791.4" width="78.6" height="201.4" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="180.0" y="901.4" width="135.7" height="87.1" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="1507.1" y="618.6" width="167.1" height="192.9" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="1687.1" y="615.7" width="132.9" height="128.6" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="1710.0" y="827.1" width="130.0" height="58.6" data-kind="gt" data-i="17" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>18 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155124-523_jpg.rf.4cbe821daf4c8c4ac4b48d81ceac4dbe.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="237.7" y="826.4" width="118.6" height="162.2" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="396.4" y="610.4" width="29.8" height="29.7" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="407.3" y="316.7" width="144.4" height="106.8" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="144.4" y="306.7" width="114.5" height="125.3" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="469.9" y="829.0" width="135.5" height="166.3" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="1296.9" y="944.3" width="123.0" height="70.8" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1545.3" y="844.3" width="89.4" height="75.7" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="438.9" y="671.7" width="35.3" height="24.4" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="1497.8" y="668.8" width="160.0" height="332.1" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="1563.1" y="323.2" width="42.5" height="34.8" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="1393.5" y="948.0" width="29.2" height="25.8" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="328.1" y="660.4" width="165.1" height="301.2" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="312.5" y="348.0" width="192.0" height="196.0" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="473.8" y="814.6" width="33.1" height="27.4" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="351.7" y="621.0" width="82.6" height="75.2" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="386.8" y="715.4" width="105.8" height="101.9" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="466.4" y="802.7" width="74.0" height="50.3" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="1561.8" y="325.2" width="17.0" height="12.8" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="1565.1" y="699.6" width="19.8" height="14.5" data-kind="gt" data-i="18" style="stroke:#e2553f"/><rect class="gt" x="187.1" y="581.4" width="101.4" height="118.6" data-kind="gt" data-i="19" style="stroke:#e2553f"/><rect class="gt" x="131.4" y="644.3" width="75.7" height="141.4" data-kind="gt" data-i="20" style="stroke:#e2553f"/><rect class="gt" x="154.3" y="907.1" width="158.6" height="78.6" data-kind="gt" data-i="21" style="stroke:#e2553f"/><rect class="gt" x="1564.3" y="622.9" width="238.6" height="112.9" data-kind="gt" data-i="22" style="stroke:#e2553f"/><rect class="gt" x="1714.3" y="831.4" width="134.3" height="72.9" data-kind="gt" data-i="23" style="stroke:#e2553f"/><rect class="gt" x="1560.0" y="264.3" width="78.6" height="50.0" data-kind="gt" data-i="24" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>25 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155124-556_jpg.rf.b68de61e9379a5b38600e19652ce59c9.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1394.6" y="950.2" width="24.8" height="22.6" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="398.6" y="319.7" width="141.7" height="107.8" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="1298.0" y="943.2" width="121.4" height="72.7" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="359.6" y="622.4" width="75.1" height="73.1" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1539.9" y="825.9" width="89.0" height="66.3" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="413.2" y="364.7" width="58.9" height="63.7" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1561.5" y="317.6" width="52.2" height="39.6" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="401.5" y="775.3" width="159.8" height="184.5" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="384.3" y="714.5" width="110.1" height="125.9" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="478.8" y="835.3" width="110.5" height="103.2" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="330.1" y="663.8" width="182.9" height="314.7" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="438.2" y="670.8" width="33.0" height="23.9" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="309.2" y="806.0" width="60.3" height="169.7" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="480.2" y="811.4" width="33.9" height="30.6" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="396.4" y="608.6" width="31.8" height="34.3" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="352.2" y="379.7" width="169.5" height="166.0" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="137.1" y="275.7" width="148.6" height="175.7" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="195.7" y="444.3" width="107.1" height="88.6" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="182.9" y="577.1" width="112.9" height="121.4" data-kind="gt" data-i="18" style="stroke:#e2553f"/><rect class="gt" x="131.4" y="637.1" width="87.1" height="154.3" data-kind="gt" data-i="19" style="stroke:#e2553f"/><rect class="gt" x="238.6" y="832.9" width="74.3" height="161.4" data-kind="gt" data-i="20" style="stroke:#e2553f"/><rect class="gt" x="158.6" y="910.0" width="145.7" height="74.3" data-kind="gt" data-i="21" style="stroke:#e2553f"/><rect class="gt" x="1544.3" y="531.4" width="142.9" height="205.7" data-kind="gt" data-i="22" style="stroke:#e2553f"/><rect class="gt" x="1668.6" y="621.4" width="152.9" height="124.3" data-kind="gt" data-i="23" style="stroke:#e2553f"/><rect class="gt" x="1722.9" y="752.9" width="130.0" height="142.9" data-kind="gt" data-i="24" style="stroke:#e2553f"/><rect class="gt" x="1557.1" y="264.3" width="88.6" height="45.7" data-kind="gt" data-i="25" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>26 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155125-168_jpg.rf.0541ccfcb47815d98f203f73dba105fe.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1305.1" y="924.5" width="146.0" height="99.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="1525.6" y="824.8" width="119.4" height="71.5" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="469.1" y="825.3" width="130.2" height="196.8" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="396.3" y="605.4" width="29.6" height="31.4" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="480.3" y="808.8" width="35.5" height="29.7" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="412.9" y="731.3" width="50.6" height="23.8" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="349.8" y="602.5" width="83.7" height="90.3" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="469.1" y="312.9" width="75.3" height="70.6" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="309.2" y="809.3" width="62.2" height="164.7" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="1514.2" y="626.7" width="169.0" height="187.1" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="1575.3" y="265.0" width="53.0" height="36.8" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="360.9" y="633.9" width="48.7" height="56.1" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="1554.3" y="316.0" width="60.7" height="47.1" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="437.9" y="669.6" width="40.3" height="24.1" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="387.7" y="783.5" width="211.4" height="231.6" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="412.9" y="340.0" width="48.6" height="42.9" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="408.6" y="404.3" width="51.4" height="28.6" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="351.4" y="412.9" width="78.6" height="95.7" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="182.9" y="561.4" width="121.4" height="194.3" data-kind="gt" data-i="18" style="stroke:#e2553f"/><rect class="gt" x="112.9" y="647.1" width="160.0" height="162.9" data-kind="gt" data-i="19" style="stroke:#e2553f"/><rect class="gt" x="142.9" y="262.9" width="90.0" height="165.7" data-kind="gt" data-i="20" style="stroke:#e2553f"/><rect class="gt" x="218.6" y="355.7" width="61.4" height="137.1" data-kind="gt" data-i="21" style="stroke:#e2553f"/><rect class="gt" x="348.6" y="737.1" width="191.4" height="122.9" data-kind="gt" data-i="22" style="stroke:#e2553f"/><rect class="gt" x="1738.6" y="314.3" width="51.4" height="45.7" data-kind="gt" data-i="23" style="stroke:#e2553f"/><rect class="gt" x="1701.4" y="620.0" width="127.1" height="148.6" data-kind="gt" data-i="24" style="stroke:#e2553f"/><rect class="gt" x="1698.6" y="802.9" width="147.1" height="104.3" data-kind="gt" data-i="25" style="stroke:#e2553f"/><rect class="gt" x="130.0" y="715.7" width="87.1" height="138.6" data-kind="gt" data-i="26" style="stroke:#e2553f"/><rect class="gt" x="204.3" y="868.6" width="118.6" height="114.3" data-kind="gt" data-i="27" style="stroke:#e2553f"/><rect class="gt" x="1531.4" y="297.1" width="98.6" height="131.4" data-kind="gt" data-i="28" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>29 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1920 / 1080">
+    <img src="../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155125-628_jpg.rf.c3a9aab9b1d12e984706535f813c28a2.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="403.7" y="313.9" width="122.6" height="109.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/><rect class="gt" x="149.0" y="298.0" width="170.5" height="345.7" data-kind="gt" data-i="1" style="stroke:#e2553f"/><rect class="gt" x="1529.7" y="276.5" width="107.4" height="140.7" data-kind="gt" data-i="2" style="stroke:#e2553f"/><rect class="gt" x="472.5" y="812.7" width="135.9" height="197.1" data-kind="gt" data-i="3" style="stroke:#e2553f"/><rect class="gt" x="1509.1" y="615.4" width="174.8" height="291.8" data-kind="gt" data-i="4" style="stroke:#e2553f"/><rect class="gt" x="475.3" y="809.5" width="37.4" height="29.2" data-kind="gt" data-i="5" style="stroke:#e2553f"/><rect class="gt" x="1539.1" y="805.0" width="122.3" height="71.0" data-kind="gt" data-i="6" style="stroke:#e2553f"/><rect class="gt" x="148.7" y="297.8" width="85.8" height="124.8" data-kind="gt" data-i="7" style="stroke:#e2553f"/><rect class="gt" x="356.5" y="341.2" width="147.2" height="193.7" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="1689.3" y="617.5" width="169.0" height="283.8" data-kind="gt" data-i="9" style="stroke:#e2553f"/><rect class="gt" x="361.7" y="649.5" width="38.7" height="41.7" data-kind="gt" data-i="10" style="stroke:#e2553f"/><rect class="gt" x="356.0" y="696.2" width="179.5" height="281.0" data-kind="gt" data-i="11" style="stroke:#e2553f"/><rect class="gt" x="393.0" y="594.9" width="39.1" height="48.7" data-kind="gt" data-i="12" style="stroke:#e2553f"/><rect class="gt" x="356.7" y="590.2" width="98.4" height="115.1" data-kind="gt" data-i="13" style="stroke:#e2553f"/><rect class="gt" x="379.1" y="725.8" width="111.8" height="91.6" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="1714.0" y="820.2" width="121.4" height="55.6" data-kind="gt" data-i="15" style="stroke:#e2553f"/><rect class="gt" x="1374.4" y="929.5" width="170.5" height="111.6" data-kind="gt" data-i="16" style="stroke:#e2553f"/><rect class="gt" x="1316.8" y="970.7" width="19.5" height="19.8" data-kind="gt" data-i="17" style="stroke:#e2553f"/><rect class="gt" x="428.3" y="474.2" width="99.2" height="79.2" data-kind="gt" data-i="18" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">VID_20241125_171700_HDR10…</span>
+    <span>19 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+</div>
+  <nav class="pager">
+    <span class="chip on">1</span><span class="chip">2</span><span class="chip">3</span><span class="chip">4</span><span class="chip">5</span><span class="chip">6</span><span class="chip">7</span><span class="chip">8</span><span class="chip">9</span><span class="chip">10</span><span class="chip">11</span><span class="chip">12</span><span class="chip">13</span><span class="chip">14</span><span class="chip">15</span><span class="chip">16</span><span class="chip">17</span><span class="chip">18</span><span class="chip">19</span><span class="chip">20</span><span class="chip">21</span><span class="chip">22</span><span class="chip">23</span><span class="chip">24</span><span class="chip">25</span><span class="chip">26</span><span class="chip">27</span><span class="chip">28</span><span class="chip">29</span><span class="chip">30</span><span class="chip">31</span><span class="chip">32</span><span class="chip">33</span><span class="chip">34</span><span class="chip">35</span><span class="chip">36</span><span class="chip">37</span><span class="chip">38</span><span class="chip">39</span><span class="chip">40</span><span class="chip">41</span><span class="chip">42</span><span class="chip">43</span><span class="chip">44</span><span class="chip">45</span><span class="chip">46</span><span class="chip">47</span><span class="chip">48</span><span class="chip">49</span><span class="chip">50</span><span class="chip">51</span><span class="chip">52</span><span class="chip">53</span><span class="chip">54</span><span class="chip">55</span><span class="chip">56</span><span class="chip">57</span><span class="chip">58</span><span class="chip">59</span><span class="chip">60</span><span class="chip">61</span><span class="chip">62</span><span class="chip">63</span><span class="chip">64</span><span class="chip">65</span><span class="chip">66</span><span class="chip">67</span><span class="chip">68</span><span class="chip">69</span><span class="chip">70</span><span class="chip">71</span><span class="chip">72</span><span class="chip">73</span><span class="chip">74</span><span class="chip">75</span><span class="chip">76</span><span class="chip">77</span><span class="chip">78</span><span class="chip">79</span><span class="chip">80</span><span class="chip">81</span><span class="chip">82</span><span class="chip">83</span><span class="chip">84</span><span class="chip">85</span><span class="chip">86</span><span class="chip">87</span><span class="chip">88</span><span class="chip">89</span><span class="chip">90</span><span class="chip">91</span><span class="chip">92</span><span class="chip">93</span><span class="chip">94</span><span class="chip">95</span><span class="chip">96</span><span class="chip">97</span><span class="chip">98</span><span class="chip">99</span><span class="chip">100</span><span class="chip">101</span><span class="chip">102</span><span class="chip">103</span><span class="chip">104</span><span class="chip">105</span><span class="chip">106</span><span class="chip">107</span><span class="chip">108</span><span class="chip">109</span><span class="chip">110</span><span class="chip">111</span><span class="chip">112</span><span class="chip">113</span><span class="chip">114</span><span class="chip">115</span><span class="chip">116</span><span class="chip">117</span><span class="chip">118</span><span class="chip">119</span><span class="chip">120</span><span class="chip">121</span><span class="chip">122</span><span class="chip">123</span><span class="chip">124</span><span class="chip">125</span><span class="chip">126</span><span class="chip">127</span><span class="chip">128</span><span class="chip">129</span><span class="chip">130</span><span class="chip">131</span><span class="chip">132</span><span class="chip">133</span><span class="chip">134</span><span class="chip">135</span><span class="chip">136</span><span class="chip">137</span><span class="chip">138</span><span class="chip">139</span><span class="chip">140</span><span class="chip">141</span><span class="chip">142</span><span class="chip">143</span><span class="chip">144</span><span class="chip">145</span><span class="chip">146</span><span class="chip">147</span><span class="chip">148</span><span class="chip">149</span><span class="chip">150</span><span class="chip">151</span><span class="chip">152</span><span class="chip">153</span><span class="chip">154</span><span class="chip">155</span><span class="chip">156</span><span class="chip">157</span><span class="chip">158</span><span class="chip">159</span><span class="chip">160</span><span class="chip">161</span><span class="chip">162</span><span class="chip">163</span><span class="chip">164</span><span class="chip">165</span><span class="chip">166</span><span class="chip">167</span><span class="chip">168</span><span class="chip">169</span><span class="chip">170</span><span class="chip">171</span><span class="chip">172</span><span class="chip">173</span><span class="chip">174</span><span class="chip">175</span><span class="chip">176</span><span class="chip">177</span><span class="chip">178</span><span class="chip">179</span><span class="chip">180</span><span class="chip">181</span><span class="chip">182</span><span class="chip">183</span><span class="chip">184</span><span class="chip">185</span><span class="chip">186</span><span class="chip">187</span><span class="chip">188</span><span class="chip">189</span><span class="chip">190</span><span class="chip">191</span><span class="chip">192</span><span class="chip">193</span><span class="chip">194</span><span class="chip">195</span><span class="chip">196</span><span class="chip">197</span><span class="chip">198</span><span class="chip">199</span><span class="chip">200</span><span class="chip">201</span><span class="chip">202</span><span class="chip">203</span><span class="chip">204</span><span class="chip">205</span><span class="chip">206</span><span class="chip">207</span><span class="chip">208</span>
+  </nav>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

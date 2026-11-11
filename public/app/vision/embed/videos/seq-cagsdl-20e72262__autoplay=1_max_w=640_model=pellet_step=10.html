@@ -1,0 +1,48 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/embed.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../../">
+    <title>SalmoSonar Visión</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="../../../assets/salmosonar_vision/application-49987426.css" />
+    <script src="../../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+    <script src="../../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  </head>
+  <body class="ssv-page"><div class="ssv embed"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/embed/video.html.erb --><div class="video-embed" data-video-player data-compact="1"
+     data-url="/vision/videos/seq-cagsdl-20e72262/frame" data-fps="5.0" data-frames="465"
+     data-width="1920" data-height="1080" data-max-w="640" data-autoplay="1">
+  <figure class="viewer video" data-viewer style="aspect-ratio: 1920 / 1080">
+    <img data-frame alt="Cuadro del video" width="1920" height="1080" decoding="async">
+    <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true" data-overlay></svg>
+    <div class="hud" data-hud>cargando…</div>
+  </figure>
+  <div class="transport compact">
+    <button type="button" class="btn primary" data-play>▶</button>
+    <button type="button" class="btn" data-prev aria-label="Cuadro anterior">◀</button>
+    <button type="button" class="btn" data-next aria-label="Cuadro siguiente">▶</button>
+    <input type="range" data-time min="0" max="464" step="1" value="0" aria-label="Posición">
+    <span class="mono small" data-clock>0,0 s</span>
+    <select data-step class="small" aria-label="Paso">
+      <option value="1" >cada cuadro</option><option value="5" >cada 5</option><option value="10" selected>cada 10</option><option value="25" >cada 25</option>
+    </select>
+  </div>
+  <div class="cifras small">
+    <span><b data-n>–</b> detecciones</span>
+    <span><b data-ms>–</b> ms modelo</span>
+    <span><b data-fps-out>–</b> cuadros/s</span>
+    <span>media <b data-conf-mean>–</b></span>
+    <span class="muted">Pellets · YOLO11s entrenado aquí</span>
+    <label class="toggle"><input type="checkbox" data-gt checked> etiquetas</label><span>aciertos <b data-gt-hit>–</b> de <b data-gt-n>–</b></span>
+  </div>
+  <div hidden>
+    <select data-model><option value="pellet" data-def-conf="0.25" selected>Pellets · YOLO11s entrenado aquí</option></select>
+    <span data-classes-field><input type="text" data-classes value="pellet"></span>
+    <input type="range" data-conf min="0.05" max="0.9" step="0.05" value="0.25"><output data-conf-out></output>
+    <b data-conf-max></b><b data-total></b><div data-hist></div><table><tbody data-dets></tbody></table><span data-dets-note></span><div data-legend></div>
+  </div>
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/embed/video.html.erb --></div></body>
+</html>
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/embed.html.erb -->

@@ -1,0 +1,966 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../">
+    <title>Videos</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="mX6-7uWbYs_1uNqmirZBE13dSDJr9yY5xzvwl1_iZc2yG-N_tCouIQNVU6g5-f7ZKi5-mloP5wNZ-77Nkr6t7w" />
+    
+    <link rel="icon" href="../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../assets/viz/colores-57a86e53.js", "viz/estanque": "../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../assets/viz/formato-4622225b.js", "viz/graficos": "../assets/viz/graficos-a40d67ad.js", "viz/indice": "../assets/viz/indice-8fd5f136.js", "viz/registro": "../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link" href="../vision/datasets.html">Datasets</a>
+      <a class="nav-link is-active" aria-current="page" href="../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/videos/index.html.erb --><section class="intro">
+  <h1>Videos reales con detección en vivo</h1>
+  <p class="lede">Grabaciones abiertas de salmón bajo el agua (jaulas de Noruega) y los videos que aporte la empresa. El servicio de visión lee cada cuadro, corre el modelo elegido y la página dibuja las cajas con su probabilidad.</p>
+</section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>BoostCompTrack · jaulas de salmón (Noruega)</h2>
+        <span class="small muted">4 videos</span>
+      </div>
+      <p class="small muted">Salmón del Atlántico en jaulas de mar (Noruega), cámaras cAIge fijas y GoPro. BoostCompTrack, Zenodo 16880877, CC BY 4.0.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Archivo</th><th class="n">Duración</th><th class="n">Resolución</th><th class="n">fps</th><th>Códec</th><th class="n">Tamaño</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono small"><a href="../vision/videos/boostcomptrack-5711c95b.html">20230312_145025_cage15_t0x_yz.avi.avi</a></td>
+            <td class="n">44 s</td>
+            <td class="n">2448×2048</td>
+            <td class="n">25</td>
+            <td class="mono small">MJPG</td>
+            <td class="n">150 MB</td>
+            <td><a class="btn" href="../vision/videos/boostcomptrack-5711c95b.html">Ver con detecciones →</a></td>
+          </tr>
+          <tr>
+            <td class="mono small"><a href="../vision/videos/boostcomptrack-e23d37c3.html">20240508_121121_1715170281739114875_Korsneset_Merd07_22228352_B2Ave...</a></td>
+            <td class="n">40 s</td>
+            <td class="n">1224×1024</td>
+            <td class="n">25</td>
+            <td class="mono small">FMP4</td>
+            <td class="n">79 MB</td>
+            <td><a class="btn" href="../vision/videos/boostcomptrack-e23d37c3.html">Ver con detecciones →</a></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>GH010031_reduced_length.mp4</span></td>
+            <td class="n">100 s</td>
+            <td class="n">3840×2160</td>
+            <td class="n">30</td>
+            <td class="mono small">FMP4</td>
+            <td class="n">413 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>GH030031.MP4</span></td>
+            <td class="n">532 s</td>
+            <td class="n">3840×2160</td>
+            <td class="n">30</td>
+            <td class="mono small">h264</td>
+            <td class="n">4.004 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+        </tbody>
+      </table></div>
+    </section>
+    <section class="panel">
+      <div class="section-head">
+        <h2>Jaula comercial · cámara fija de fondo (Noruega)</h2>
+        <span class="small muted">17 videos</span>
+      </div>
+      <p class="small muted">Jaula comercial con 188.000 salmones (Noruega, mayo 2018): cámara fija subacuática de la jaula (Facility_Merd) y GoPro desde ROV/U-CAT/buzo. Kruusmaa et al., Zenodo 4931418, CC0.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Archivo</th><th class="n">Duración</th><th class="n">Resolución</th><th class="n">fps</th><th>Códec</th><th class="n">Tamaño</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono small"><span>A04_28_12-57_ROV_GoPro_-converted-2.mp4</span></td>
+            <td class="n">562 s</td>
+            <td class="n">1704×960</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">117 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>B03_29_12-10_diver_GoPro-converted-2.mp4</span></td>
+            <td class="n">656 s</td>
+            <td class="n">1704×960</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">240 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>C06_30_14-14_U-CAT_GoPro-converted.mp4</span></td>
+            <td class="n">1.663 s</td>
+            <td class="n">1280×960</td>
+            <td class="n">30</td>
+            <td class="mono small">h264</td>
+            <td class="n">622 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>C07_30_15-37_U-CAT_GoPro_-converted.mp4</span></td>
+            <td class="n">654 s</td>
+            <td class="n">1280×960</td>
+            <td class="n">30</td>
+            <td class="mono small">h264</td>
+            <td class="n">222 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>D03_31_10-10_U-CAT_-converted.mp4</span></td>
+            <td class="n">1.582 s</td>
+            <td class="n">1280×960</td>
+            <td class="n">30</td>
+            <td class="mono small">h264</td>
+            <td class="n">726 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>D04_31_11-17_U-CAT_GoPro-converted.mp4</span></td>
+            <td class="n">690 s</td>
+            <td class="n">1280×960</td>
+            <td class="n">30</td>
+            <td class="mono small">h264</td>
+            <td class="n">236 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>D07_31_14-59_U-CAT_GoPro-converted.mp4</span></td>
+            <td class="n">1.620 s</td>
+            <td class="n">1280×960</td>
+            <td class="n">30</td>
+            <td class="mono small">h264</td>
+            <td class="n">691 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_5_-_subsurface_28_05_2018-13_18_07.asf</span></td>
+            <td class="n">195 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">23 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_28_05_2018-15_43_10.asf</span></td>
+            <td class="n">298 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">93 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_28_05_2018-16_15_33.asf</span></td>
+            <td class="n">591 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">254 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_29_05_2018-09_37_14.asf</span></td>
+            <td class="n">359 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">169 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_29_05_2018-12_16_25_dive1-2.asf</span></td>
+            <td class="n">530 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">164 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_29_05_2018-12_31_13_dive2-2.asf</span></td>
+            <td class="n">359 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">107 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_29_05_2018-13_10_50_dive3-2.asf</span></td>
+            <td class="n">714 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">410 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_30_05_2018-09_17_33-2.asf</span></td>
+            <td class="n">479 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">230 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_31_05_2018-08_28_57.asf</span></td>
+            <td class="n">1.469 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">1.197 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td class="mono small"><span>Facility_Merd_6_-_subsurface_31_05_2018-09_35_58-2.asf</span></td>
+            <td class="n">429 s</td>
+            <td class="n">704×576</td>
+            <td class="n">25</td>
+            <td class="mono small">h264</td>
+            <td class="n">108 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head"><h2>Secuencias de cuadros de los datasets (con etiquetas verdaderas)</h2><span class="small muted">73 secuencias</span></div>
+      <p class="small muted">Varios datasets son cuadros extraídos de un video (Roboflow, BézierFusion). Reconstruidos en orden se reproducen como video y, como traen etiquetas, el reproductor muestra <strong>detección contra verdad</strong>: ideal para ver cómo funciona el detector de pellets mientras no haya video real de un estanque de salmón.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Dataset</th><th>Secuencia</th><th class="n">Cuadros</th><th class="n">Resolución</th><th>Clases</th><th class="n">Tamaño</th><th></th></tr></thead>
+        <tbody>
+          <tr>
+            <td>bait (Roboflow, 5.000 imágenes)</td>
+            <td class="mono small"><span>WIN_20250421_16_56_39_Pro_mp4_20250421 · 1818 cuadros con etiquetas</span></td>
+            <td class="n">1818</td>
+            <td class="n">640×640</td>
+            <td class="small">pellet</td>
+            <td class="n">40 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>bait (Roboflow, 5.000 imágenes)</td>
+            <td class="mono small"><span>VID_20241125_171700_HDR10PLUS-mp4_20241127 · 602 cuadros con etiquetas</span></td>
+            <td class="n">602</td>
+            <td class="n">640×640</td>
+            <td class="small">pellet</td>
+            <td class="n">22 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Stereo Fish BézierFusion</td>
+            <td class="mono small"><span>cuadro · 400 cuadros con etiquetas</span></td>
+            <td class="n">400</td>
+            <td class="n">2048×1536</td>
+            <td class="small">fish</td>
+            <td class="n">428 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>BoostCompTrack, salmón en jaulas</td>
+            <td class="mono small"><span>GH010031_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">4242×4242</td>
+            <td class="small">salmon, body, head, dorsal_fin, adi_fin, tail_fin, anal_fin, pelv_fin, pec_fin, line_ujaw, line_ljaw</td>
+            <td class="n">41 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Alimento no consumido YOLOv5s-CAGSDL</td>
+            <td class="mono small"><a href="../vision/videos/seq-cagsdl-20e72262.html">cuadro · 465 cuadros con etiquetas</a></td>
+            <td class="n">465</td>
+            <td class="n">1920×1080</td>
+            <td class="small">pellet</td>
+            <td class="n">204 MB</td>
+            <td><a class="btn" href="../vision/videos/seq-cagsdl-20e72262.html">Ver con detecciones →</a></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a12_salmon_045_frame · 97 cuadros con etiquetas</span></td>
+            <td class="n">97</td>
+            <td class="n">509×226</td>
+            <td class="small"></td>
+            <td class="n">10 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_262_frame · 63 cuadros con etiquetas</span></td>
+            <td class="n">63</td>
+            <td class="n">254×167</td>
+            <td class="small"></td>
+            <td class="n">9 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_541_frame · 58 cuadros con etiquetas</span></td>
+            <td class="n">58</td>
+            <td class="n">462×234</td>
+            <td class="small"></td>
+            <td class="n">8 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a1_salmon_312_frame · 57 cuadros con etiquetas</span></td>
+            <td class="n">57</td>
+            <td class="n">336×166</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a11_salmon_040_frame · 56 cuadros con etiquetas</span></td>
+            <td class="n">56</td>
+            <td class="n">547×204</td>
+            <td class="small"></td>
+            <td class="n">7 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_699_frame · 51 cuadros con etiquetas</span></td>
+            <td class="n">51</td>
+            <td class="n">676×266</td>
+            <td class="small"></td>
+            <td class="n">8 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a3_salmon_474_frame · 50 cuadros con etiquetas</span></td>
+            <td class="n">50</td>
+            <td class="n">526×189</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_293_frame · 50 cuadros con etiquetas</span></td>
+            <td class="n">50</td>
+            <td class="n">482×169</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a15_salmon_711_frame · 49 cuadros con etiquetas</span></td>
+            <td class="n">49</td>
+            <td class="n">1388×608</td>
+            <td class="small"></td>
+            <td class="n">12 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_480_frame · 48 cuadros con etiquetas</span></td>
+            <td class="n">48</td>
+            <td class="n">670×204</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_811_frame · 48 cuadros con etiquetas</span></td>
+            <td class="n">48</td>
+            <td class="n">781×197</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a12_salmon_157_frame · 47 cuadros con etiquetas</span></td>
+            <td class="n">47</td>
+            <td class="n">313×234</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a12_salmon_665_frame · 47 cuadros con etiquetas</span></td>
+            <td class="n">47</td>
+            <td class="n">567×268</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a4_salmon_586_frame · 46 cuadros con etiquetas</span></td>
+            <td class="n">46</td>
+            <td class="n">694×219</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_292_frame · 44 cuadros con etiquetas</span></td>
+            <td class="n">44</td>
+            <td class="n">548×218</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_635_frame · 44 cuadros con etiquetas</span></td>
+            <td class="n">44</td>
+            <td class="n">687×268</td>
+            <td class="small"></td>
+            <td class="n">13 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a11_salmon_224_frame · 43 cuadros con etiquetas</span></td>
+            <td class="n">43</td>
+            <td class="n">670×255</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a15_salmon_015_frame · 43 cuadros con etiquetas</span></td>
+            <td class="n">43</td>
+            <td class="n">343×323</td>
+            <td class="small"></td>
+            <td class="n">7 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_376_frame · 41 cuadros con etiquetas</span></td>
+            <td class="n">41</td>
+            <td class="n">657×436</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a2_salmon_252_frame · 41 cuadros con etiquetas</span></td>
+            <td class="n">41</td>
+            <td class="n">384×151</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_1499_frame · 40 cuadros con etiquetas</span></td>
+            <td class="n">40</td>
+            <td class="n">343×207</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_916_frame · 40 cuadros con etiquetas</span></td>
+            <td class="n">40</td>
+            <td class="n">732×201</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a1_salmon_196_frame · 39 cuadros con etiquetas</span></td>
+            <td class="n">39</td>
+            <td class="n">212×190</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_450_frame · 39 cuadros con etiquetas</span></td>
+            <td class="n">39</td>
+            <td class="n">429×218</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a3_salmon_467_frame · 39 cuadros con etiquetas</span></td>
+            <td class="n">39</td>
+            <td class="n">310×235</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a3_salmon_696_frame · 38 cuadros con etiquetas</span></td>
+            <td class="n">38</td>
+            <td class="n">601×178</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a15_salmon_1011_frame · 37 cuadros con etiquetas</span></td>
+            <td class="n">37</td>
+            <td class="n">469×381</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a2_salmon_192_frame · 37 cuadros con etiquetas</span></td>
+            <td class="n">37</td>
+            <td class="n">560×180</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a14_salmon_023_frame · 36 cuadros con etiquetas</span></td>
+            <td class="n">36</td>
+            <td class="n">545×198</td>
+            <td class="small"></td>
+            <td class="n">9 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_1086_frame · 36 cuadros con etiquetas</span></td>
+            <td class="n">36</td>
+            <td class="n">578×262</td>
+            <td class="small"></td>
+            <td class="n">7 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_1129_frame · 35 cuadros con etiquetas</span></td>
+            <td class="n">35</td>
+            <td class="n">436×179</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a4_salmon_488_frame · 35 cuadros con etiquetas</span></td>
+            <td class="n">35</td>
+            <td class="n">467×176</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_1003_frame · 35 cuadros con etiquetas</span></td>
+            <td class="n">35</td>
+            <td class="n">425×182</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_739_frame · 34 cuadros con etiquetas</span></td>
+            <td class="n">34</td>
+            <td class="n">611×251</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_827_frame · 34 cuadros con etiquetas</span></td>
+            <td class="n">34</td>
+            <td class="n">449×251</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a14_salmon_1377_frame · 34 cuadros con etiquetas</span></td>
+            <td class="n">34</td>
+            <td class="n">195×202</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_418_frame · 34 cuadros con etiquetas</span></td>
+            <td class="n">34</td>
+            <td class="n">1052×314</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_1048_frame · 34 cuadros con etiquetas</span></td>
+            <td class="n">34</td>
+            <td class="n">409×239</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_015_frame · 33 cuadros con etiquetas</span></td>
+            <td class="n">33</td>
+            <td class="n">526×186</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a14_salmon_1553_frame · 33 cuadros con etiquetas</span></td>
+            <td class="n">33</td>
+            <td class="n">513×278</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a16_salmon_1126_frame · 33 cuadros con etiquetas</span></td>
+            <td class="n">33</td>
+            <td class="n">612×197</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_815_frame · 33 cuadros con etiquetas</span></td>
+            <td class="n">33</td>
+            <td class="n">801×253</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_154_frame · 32 cuadros con etiquetas</span></td>
+            <td class="n">32</td>
+            <td class="n">383×163</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a15_salmon_816_frame · 32 cuadros con etiquetas</span></td>
+            <td class="n">32</td>
+            <td class="n">739×281</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a10_salmon_010_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">626×215</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_1137_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">416×282</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a15_salmon_013_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">650×306</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a3_salmon_311_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">864×258</td>
+            <td class="small"></td>
+            <td class="n">7 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a3_salmon_545_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">921×244</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a4_salmon_591_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">661×192</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_247_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">819×254</td>
+            <td class="small"></td>
+            <td class="n">8 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_420_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">753×321</td>
+            <td class="small"></td>
+            <td class="n">6 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_432_frame · 31 cuadros con etiquetas</span></td>
+            <td class="n">31</td>
+            <td class="n">581×214</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_1128_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">565×240</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a13_salmon_275_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">375×172</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a15_salmon_024_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">553×204</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a4_salmon_583_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">547×220</td>
+            <td class="small"></td>
+            <td class="n">4 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a6_salmon_032_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">469×256</td>
+            <td class="small"></td>
+            <td class="n">3 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_399_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">664×233</td>
+            <td class="small"></td>
+            <td class="n">5 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>cAIge salmón, re-identificación (recortes por individuo)</td>
+            <td class="mono small"><span>a9_salmon_910_frame · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">278×123</td>
+            <td class="small"></td>
+            <td class="n">2 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>fish bait2 (Roboflow)</td>
+            <td class="mono small"><span>a · 1714 cuadros con etiquetas</span></td>
+            <td class="n">1714</td>
+            <td class="n">1080×1920</td>
+            <td class="small">pellet</td>
+            <td class="n">294 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>fish bait2 (Roboflow)</td>
+            <td class="mono small"><span>VID_20241125_171700_HDR10PLUS-mp4_20241127 · 782 cuadros con etiquetas</span></td>
+            <td class="n">782</td>
+            <td class="n">1920×1080</td>
+            <td class="small">pellet</td>
+            <td class="n">118 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Fish_Pellet (Roboflow)</td>
+            <td class="mono small"><span>Preset_10 · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">640×640</td>
+            <td class="small">pellet</td>
+            <td class="n">2 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Fish_Pellet (Roboflow)</td>
+            <td class="mono small"><span>Preset_11 · 30 cuadros con etiquetas</span></td>
+            <td class="n">30</td>
+            <td class="n">640×640</td>
+            <td class="small">pellet</td>
+            <td class="n">2 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>FOD, oclusión de peces</td>
+            <td class="mono small"><span>Syn · 10000 cuadros con etiquetas</span></td>
+            <td class="n">10000</td>
+            <td class="n">1920×1080</td>
+            <td class="small">fish</td>
+            <td class="n">3.063 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Salmon (Roboflow, devsoft)</td>
+            <td class="mono small"><span>VID-20241128-WA0005 · 53 cuadros con etiquetas</span></td>
+            <td class="n">53</td>
+            <td class="n">640×640</td>
+            <td class="small">salmon</td>
+            <td class="n">1 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Salmon (Roboflow, río Eidselva)</td>
+            <td class="mono small"><span>cuadro · 670 cuadros con etiquetas</span></td>
+            <td class="n">670</td>
+            <td class="n">416×416</td>
+            <td class="small">salmon</td>
+            <td class="n">10 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+          <tr>
+            <td>Salmon_VF (Roboflow)</td>
+            <td class="mono small"><span>peces5_mp4 · 109 cuadros con etiquetas</span></td>
+            <td class="n">109</td>
+            <td class="n">416×416</td>
+            <td class="small">Salmon</td>
+            <td class="n">2 MB</td>
+            <td><span class="btn">Ver con detecciones →</span></td>
+          </tr>
+        </tbody>
+      </table></div>
+    </section>
+
+  <section class="panel">
+    <h3>Modelos disponibles para el reproductor</h3>
+    <ul class="small">
+        <li><strong>YOLO-World (sin entrenar, clases como texto)</strong> · Ultralytics <span class="pill ok">listo</span></li>
+        <li><strong>Peces · YOLO11s-OBB entrenado aquí</strong> · BoostCompTrack + BézierFusion + salmon_obb <span class="pill ok">listo</span></li>
+        <li><strong>Peces · YOLO11s-pose entrenado aquí (hocico, cola, dorso, vientre)</strong> · BézierFusion dataset2 (pares estéreo) <span class="pill ok">listo</span></li>
+        <li><strong>Peces · YOLO11s-pose v2 (BézierFusion + salmón BoostCompTrack)</strong> · BézierFusion dataset2 + puntos derivados de las partes de BoostCompTrack (scripts/pose_desde_partes.py) <span class="pill ok">listo</span></li>
+        <li><strong>Pellets · YOLO11s entrenado aquí</strong> · fish-food + Fish_Pellet (Roboflow) <span class="pill ok">listo</span></li>
+        <li><strong>Pellets · YOLO11s con CAGSDL (RAS real) + Roboflow</strong> · fish-food + Fish_Pellet + CAGSDL (scripts/cola_pellet_v2.sh) <span class="pill ok">listo</span></li>
+        <li><strong>BoostCompTrack · YOLOv8m cajas (NTNU)</strong> · Zenodo 16880877, CC BY 4.0 <span class="pill ok">listo</span><span class="pill warn">pesos de terceros</span></li>
+        <li><strong>BoostCompTrack · YOLOv8m-pose cajas + puntos (NTNU)</strong> · Zenodo 16880877, CC BY 4.0 <span class="pill ok">listo</span><span class="pill warn">pesos de terceros</span></li>
+        <li><strong>NTNU YOLOv8m afinado con nuestros datasets (cajas)</strong> · pesos NTNU + BoostCompTrack/BézierFusion/salmon_obb (scripts/cola_finetune.sh) <span class="pill">todavía no entrenado</span></li>
+        <li><strong>NTNU YOLOv8m-pose afinado con BézierFusion (4 puntos)</strong> · pesos NTNU + BézierFusion dataset2 (scripts/cola_finetune.sh) <span class="pill">todavía no entrenado</span></li>
+    </ul>
+    <p class="small muted">Ningún video abierto muestra alimento en el fondo de un estanque de salmón: las secuencias de pellets son de acuarios con peces ornamentales. Para el caso real hacen falta las grabaciones de la empresa (carpeta <code>data/videos/</code>).</p>
+  </section>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/videos/index.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

@@ -1,0 +1,102 @@
+<!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="./">
+    <title>SalmoSonar · Estanques</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1Hek1j7_s4SHJ5Nqdd7yd9MsyBzG9sI_VcJXFlg2dsaGzamODxwrYx0aZ8sd00lMnfBVx3XdgRsub9sQGRByBg" />
+    
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "./assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "./assets/viz/colores-57a86e53.js", "viz/estanque": "./assets/viz/estanque-ead4b3e2.js", "viz/formato": "./assets/viz/formato-4622225b.js", "viz/graficos": "./assets/viz/graficos-a40d67ad.js", "viz/indice": "./assets/viz/indice-8fd5f136.js", "viz/registro": "./assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "./assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="./assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="./assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="./assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="./assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="./assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="./assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="./assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="./assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="./index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="./estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="./estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="./vision.html" class="">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datos simulados</span>
+    </header>
+    <main><!-- BEGIN app/views/estanques/index.html.erb --><section class="intro">
+  <h1>Estanques</h1>
+  <p>Último escaneo de sonar 3D y calidad de agua de cada estanque. Entra a uno para ver la nube 3D, el fondo y el cruce con el agua.</p>
+</section>
+
+<div class="tarjetas">
+  <a class="tarjeta" href="./estanques/E14.html">
+    <div class="tarjeta-cab">
+      <div>
+        <h2>Estanque grande Ø14 m</h2>
+        <p class="sub">Smolt · Ø14 × 5 m · 770 m³</p>
+      </div>
+      <span class="sub">Escaneo 06-11 12:00</span>
+    </div>
+    <div class="tarjeta-cuerpo">
+      <div class="mini-fondo" data-mini-fondo="/estanques/E14/nube?escaneo_id=1680" data-kg-max="2.547" role="img"
+           aria-label="Vista superior del alimento acumulado en el fondo"></div>
+      <dl class="kpis-mini">
+        <div><dt>Peces estimados</dt><dd>197.061</dd></div>
+        <div><dt>Peso medio</dt><dd>237,7 <small>g</small></dd></div>
+        <div><dt>Biomasa</dt><dd>46,8 <small>t</small></dd></div>
+        <div><dt>Densidad</dt><dd>60,9 <small>kg/m³</small></dd></div>
+        <div><dt>Alimento en el fondo</dt><dd>11,2 <small>kg</small></dd></div>
+      </dl>
+    </div>
+    <div class="estados">
+      <span class="estado estado-aviso"><b aria-hidden="true">!</b> Densidad</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> Oxígeno disuelto 8,2</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> pH 7,1</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> Temperatura 12,6</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> NH₃ no ionizado 0,0047</span>
+    </div>
+  </a>
+  <a class="tarjeta" href="./estanques/E6.html">
+    <div class="tarjeta-cab">
+      <div>
+        <h2>Estanque chico Ø6 m</h2>
+        <p class="sub">Alevín · Ø6 × 3 m · 85 m³</p>
+      </div>
+      <span class="sub">Escaneo 06-11 12:00</span>
+    </div>
+    <div class="tarjeta-cuerpo">
+      <div class="mini-fondo" data-mini-fondo="/estanques/E6/nube?escaneo_id=1920" data-kg-max="1.141" role="img"
+           aria-label="Vista superior del alimento acumulado en el fondo"></div>
+      <dl class="kpis-mini">
+        <div><dt>Peces estimados</dt><dd>50.656</dd></div>
+        <div><dt>Peso medio</dt><dd>46,0 <small>g</small></dd></div>
+        <div><dt>Biomasa</dt><dd>2,3 <small>t</small></dd></div>
+        <div><dt>Densidad</dt><dd>27,5 <small>kg/m³</small></dd></div>
+        <div><dt>Alimento en el fondo</dt><dd>0,8 <small>kg</small></dd></div>
+      </dl>
+    </div>
+    <div class="estados">
+      <span class="estado estado-ok"><b aria-hidden="true">✓</b> Densidad</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> Oxígeno disuelto 8,9</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> pH 7,2</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> Temperatura 11,8</span>
+        <span class="estado estado-ok"><b aria-hidden="true">✓</b> NH₃ no ionizado 0,0047</span>
+    </div>
+  </a>
+</div>
+<!-- END app/views/estanques/index.html.erb --></main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->

@@ -1,0 +1,179 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>base_yoloworld-salmon_river-test</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="tQ8hmUEpmZQuqhsbCaTqZSVra-FJeTSMMLht5-S0Fc7yjd1SnyO1mG3PhU2ycFkclIswEzoY4ca5NbDqP0gJgQ" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/show.html.erb --><p class="crumbs"><a href="../../vision/runs.html">Resultados</a> /</p>
+<h1 class="mono h-file">base_yoloworld-salmon_river-test</h1>
+<div class="stats stats-6">
+  <div class="stat"><span class="k">Precisión</span><span class="v">53,3 %</span><span class="s">8 aciertos, 7 falsos</span></div>
+  <div class="stat"><span class="k">Recall</span><span class="v">11,8 %</span><span class="s">60 no detectados</span></div>
+  <div class="stat"><span class="k">F1</span><span class="v">19,3 %</span><span class="s">IoU ≥ 0.5</span></div>
+  <div class="stat"><span class="k">IoU medio</span><span class="v">0,90</span><span class="s">de los aciertos</span></div>
+  <div class="stat"><span class="k">Error de puntos</span><span class="v">–</span><span class="s">de la diagonal de la caja</span></div>
+  <div class="stat"><span class="k">Tiempo</span><span class="v">106 ms</span><span class="s">por imagen</span></div>
+</div>
+<p class="small muted">Modelo <span class="mono">yolov8s-worldv2.pt [salmon,fish]</span> · confianza mínima 0.25 · imagen 1024 px · dataset completo · split test</p>
+
+<div class="panel">
+  <div class="section-head">
+    <h3>Dónde acierta y dónde se equivoca</h3>
+    <form method="get" class="controls">
+      <label class="field">Orden
+        <select name="orden" disabled><option value="errores" selected>más errores primero</option><option value="fn" >más no detectados</option><option value="fp" >más falsos positivos</option><option value="aciertos" >mejores primero</option><option value="archivo" >por archivo</option></select>
+      </label>
+      <label class="toggle"><input type="checkbox" name="solo" value="errores"  disabled> solo imágenes con errores</label>
+    </form>
+  </div>
+  <p class="small muted">
+    5 de 67 imágenes sin ningún error.
+    En cada imagen: <span class="pill ok">✓</span> acierto (IoU ≥ 0.5), <span class="pill warn">FP</span> detección sin etiqueta, <span class="pill warn">FN</span> etiqueta sin detección.
+    Clic en una imagen para ver cajas, probabilidades y el mapa de atención.
+  </p>
+</div>
+
+<div class="gallery">
+    <a class="thumb" href="../../vision/datasets/salmon_river/images/0.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10002_jpg.rf.7a121ee9338f110492e999e13bd7282e.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="22.8,218.6 36.2,217.9 47.2,218.6 57.7,216.0 69.2,214.7 81.1,209.6 83.5,213.5 90.2,217.3 93.1,218.6 95.5,213.5 105.0,221.1 107.9,219.8 108.8,216.0 102.6,207.1 107.4,205.8 118.4,200.7 126.0,195.6 129.9,197.5 141.3,202.6 152.3,205.2 152.8,200.1 149.9,192.4 149.9,182.9 155.7,179.0 163.8,173.9 173.8,173.9 179.1,185.4 185.3,196.9 192.0,193.7 190.1,177.1 192.0,152.3 193.9,133.2 200.1,116.0 192.5,122.3 180.1,133.2 165.2,148.5 157.6,146.5 151.4,146.5 149.0,145.3 144.7,142.7 140.4,143.4 136.6,146.5 121.7,145.9 112.7,146.5 101.7,146.5 95.5,142.1 91.6,136.3 85.9,133.2 74.4,147.8 68.2,153.6 58.2,156.1 46.2,162.5 36.2,167.6 27.6,173.9 13.2,187.3 8.0,197.5 9.4,207.1 14.2,212.2 22.8,218.6" data-kind="gt" data-i="0"/><rect class="pred" x="80.2" y="201.8" width="27.6" height="18.2" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10002_jpg.rf.7a121ee9...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</a>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10047_jpg.rf.749f13aed5520ebc9f0012aaf041ec08.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="136.3,319.0 141.0,322.1 147.6,325.3 152.7,328.4 162.1,330.5 164.5,332.6 168.8,335.2 175.8,335.7 177.4,331.5 189.9,333.6 204.4,331.5 217.7,330.5 218.5,333.1 223.2,339.9 229.5,342.0 231.4,339.4 233.0,336.2 238.1,340.4 240.8,342.0 242.8,338.8 237.3,327.9 239.6,327.3 245.1,325.8 253.7,323.7 261.2,320.6 264.3,325.8 269.4,328.9 276.4,333.6 282.7,335.2 284.7,333.1 284.7,324.7 283.5,311.2 296.4,306.5 300.7,308.0 306.2,308.6 312.1,313.8 323.8,320.6 332.8,322.7 341.4,327.3 340.7,322.1 335.2,307.0 334.0,298.6 330.5,285.6 332.0,278.3 333.2,261.0 334.0,243.8 324.6,249.0 317.6,257.9 310.5,265.2 305.4,274.6 298.8,279.8 292.5,280.9 287.0,280.9 286.2,277.8 282.3,277.2 278.8,281.4 269.0,280.4 253.7,277.2 243.6,275.7 231.8,276.2 229.5,274.6 224.8,266.3 221.2,260.5 217.7,259.5 212.6,264.2 206.4,269.9 202.0,276.2 188.7,277.8 178.6,281.9 165.6,286.1 148.0,296.0 135.9,303.9 133.1,308.6 132.7,313.8 136.3,319.0" data-kind="gt" data-i="0"/><rect class="pred" x="215.5" y="326.3" width="25.1" height="14.9" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10047_jpg.rf.749f13ae...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10066_jpg.rf.ae4139f125e70ef2d9eed4bac8d3329f.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="111.0" width="233.0" height="147.0" data-kind="gt" data-i="0"/><rect class="pred" x="126.0" y="219.3" width="28.0" height="35.9" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10066_jpg.rf.ae4139f1...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10294_jpg.rf.7e81a2c123dfa65c5b10d1c30006ccf6.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="90.0" width="139.0" height="83.0" data-kind="gt" data-i="0"/><rect class="gt" x="38.0" y="245.0" width="81.0" height="46.0" data-kind="gt" data-i="1"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10294_jpg.rf.7e81a2c1...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">2 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10397_jpg.rf.9e0e14af0fe026bba8e509fe6285b17e.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="162.0" y="192.0" width="253.0" height="171.0" data-kind="gt" data-i="0"/><rect class="pred" x="13.7" y="384.3" width="33.6" height="31.7" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10397_jpg.rf.9e0e14af...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <a class="thumb" href="../../vision/datasets/salmon_river/images/1.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10014_jpg.rf.9adccfcb415ca099e7ac1e106d464060.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="256.5,376.6 266.1,379.8 272.8,383.0 277.1,388.1 284.7,397.6 293.8,405.3 302.4,406.5 308.6,401.4 309.6,396.3 322.5,398.3 330.6,398.3 350.7,400.2 360.2,400.2 374.6,398.3 377.0,400.8 382.2,405.3 387.5,412.3 394.2,414.8 407.1,415.5 403.7,398.9 415.7,398.2 415.7,322.4 406.6,318.0 403.2,303.3 399.4,294.4 388.9,296.9 382.2,301.4 367.9,309.0 359.3,311.6 349.7,312.9 331.6,312.9 304.3,314.8 288.5,317.3 271.8,321.2 257.5,325.6 239.3,332.0 228.8,338.4 224.5,343.5 224.0,350.5 225.9,356.2 231.7,362.6 241.2,370.2 256.5,376.6" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10014_jpg.rf.9adccfcb...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</a>    <a class="thumb" href="../../vision/datasets/salmon_river/images/2.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10043_jpg.rf.4f6a68e999253f0cf5b7a5b1bed348bb.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="171.0" y="39.8" width="179.0" height="157.5" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10043_jpg.rf.4f6a68e9...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</a>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10059_jpg.rf.d4e0d46045ea8fd99af211ee42255550.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="42.3" y="276.7" width="195.5" height="86.5" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10059_jpg.rf.d4e0d460...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10073_jpg.rf.cbbc92c76c6684e5e7610036a38088bb.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.3" y="0.0" width="415.5" height="258.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10073_jpg.rf.cbbc92c7...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10086_jpg.rf.61929b6fdab172fabdcc02e7d11f5ac7.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="168.0" width="225.0" height="206.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10086_jpg.rf.61929b6f...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10088_jpg.rf.c822ac1b88fdf3e6c4cdfbb895122206.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="156.8" width="190.0" height="218.5" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10088_jpg.rf.c822ac1b...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_river/test/images/10098_jpg.rf.821dd67f23fe4b9edc112d3f6632acf4.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.3" y="271.5" width="415.5" height="144.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">10098_jpg.rf.821dd67f...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

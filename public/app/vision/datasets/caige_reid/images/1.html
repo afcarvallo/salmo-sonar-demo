@@ -1,0 +1,138 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../../../">
+    <title>cross_sheet_1.png</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="mRnYQ4HGz2nbBBQedYeB1kVWAvqjPlztud_urospb-8sPMWZxRjj9aE8XfOa694SO1h4l4jKruWclb0nDalHAw" />
+    
+    <link rel="icon" href="../../../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../../../assets/viz/formato-4622225b.js", "viz/graficos": "../../../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+<p class="crumbs"><a href="../../../../vision/datasets.html">Datasets</a> / <a href="../../../../vision/datasets/caige_reid.html">cAIge salmón, re-identificación (recortes por individuo)</a> /</p>
+<div class="title-row">
+  <h1 class="mono h-file">part2part__Q1/cross_sheet_1.png</h1>
+  <div class="pn">
+    <a class="btn" href="../../../../vision/datasets/caige_reid/images/0.html">← anterior</a>
+    <a class="btn" href="../../../../vision/datasets/caige_reid/images/2.html">siguiente →</a>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="col">
+    <div class="controls" data-controls>
+      <label class="toggle"><input type="checkbox" id="t-gt" data-layer="gt" checked> Etiquetas del dataset</label>
+      <label class="toggle"><input type="checkbox" id="t-pred" data-layer="pred" checked disabled> Predicciones</label>
+      <label class="toggle"><input type="checkbox" id="t-kp" data-layer="kp" checked> Puntos clave</label>
+      <label class="toggle"><input type="checkbox" id="t-att" data-layer="attention" disabled> Atención (EigenCAM)</label>
+    </div>
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb --><figure class="viewer" data-viewer style="aspect-ratio: 2085 / 2243">
+  <img src="../../../../img/caige_reid/part2part__Q1/cross_sheet_1.jpg" alt="part2part__Q1/cross_sheet_1.png" width="2085" height="2243" decoding="async">
+  <svg class="overlay" viewBox="0 0 2085 2243" preserveAspectRatio="none" aria-hidden="true"></svg>
+  
+</figure>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb -->
+    <div class="legend">
+      <span><i class="sw sw-gt"></i>etiqueta del dataset</span>
+      <span><i class="sw sw-pred"></i>predicción del modelo</span>
+      <span><i class="sw sw-issue"></i>etiqueta a revisar</span>
+      
+      
+    </div>
+    
+
+    <div class="panel" data-live-predict data-url="/vision/datasets/caige_reid/images/1/predict">
+      <div class="section-head"><h3>Predicción en vivo</h3>
+        <button type="button" class="btn primary" data-predict >Correr el modelo sobre esta imagen</button></div>
+        <div class="predict-opts">
+          <label class="field">Modelo
+            <select data-predict-model>
+              <option value="world" data-def-conf="0.2" selected>YOLO-World (sin entrenar, clases como texto)</option><option value="fish" data-def-conf="0.35" >Peces · YOLO11s-OBB entrenado aquí</option><option value="fish_pose" data-def-conf="0.3" >Peces · YOLO11s-pose entrenado aquí (hocico, cola, dorso, vientre)</option><option value="fish_pose_v2" data-def-conf="0.3" >Peces · YOLO11s-pose v2 (BézierFusion + salmón BoostCompTrack)</option><option value="pellet" data-def-conf="0.25" >Pellets · YOLO11s entrenado aquí</option><option value="pellet_v2" data-def-conf="0.25" >Pellets · YOLO11s con CAGSDL (RAS real) + Roboflow</option><option value="bct_bbox" data-def-conf="0.25" >BoostCompTrack · YOLOv8m cajas (NTNU)</option><option value="bct_pose" data-def-conf="0.25" >BoostCompTrack · YOLOv8m-pose cajas + puntos (NTNU)</option>
+            </select>
+          </label>
+          <label class="field" data-predict-classes-field >Clases (texto)
+            <input type="text" data-predict-classes value="salmon,fish" size="16" spellcheck="false">
+          </label>
+          <label class="field">Confianza mínima
+            <input type="range" data-predict-conf min="0.05" max="0.9" step="0.05" value="0.2">
+            <output data-predict-conf-out class="mono">0,20</output>
+          </label>
+          <label class="toggle"><input type="checkbox" data-predict-attention checked> Mapa de atención</label>
+        </div>
+      <p class="small muted" data-predict-msg>Envía la imagen al servicio de visión (http://127.0.0.1:8601) y dibuja cajas y probabilidades en el visor.</p>
+    </div>
+  </div>
+
+  <div class="col">
+      <div class="empty small"><p>Sin predicciones guardadas para este dataset. Desde <code>ml/</code> en la máquina con GPU:</p>
+        <pre>python -m salmosonar_cv.models.evaluate caige_reid \
+  --open-vocab fish --attention</pre></div>
+
+    <div class="panel">
+      <h3>Etiquetas (0)</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>#</th><th>Clase</th><th class="n">Caja px</th><th class="n">Largo px</th><th class="n">Alto px</th><th>Revisión</th></tr></thead>
+        <tbody>
+        </tbody>
+      </table></div>
+      <p class="small muted">Largo según el esquema <strong>caja</strong>. Con la calibración estéreo se convierte a centímetros (<code>ml/salmosonar_cv/measure/stereo.py</code>).</p>
+    </div>
+
+
+    <p class="small muted">Embebible en la interfaz 3D: <code>http://127.0.0.1:3800/vision/embed/datasets/caige_reid/images/1</code></p>
+  </div>
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

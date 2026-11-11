@@ -1,0 +1,179 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>peces_obb-chinook-todo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ph9PX4GGVGIz3W4GHindrwYK9-Zd-yGQXaZPi_FvrrIP7YzD83UOJDxCgw0Vi5lpocnCP-PLLklkbuHVJ3MZ1w" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/show.html.erb --><p class="crumbs"><a href="../../vision/runs.html">Resultados</a> /</p>
+<h1 class="mono h-file">peces_obb-chinook-todo</h1>
+<div class="stats stats-6">
+  <div class="stat"><span class="k">Precisión</span><span class="v">43,6 %</span><span class="s">17 aciertos, 22 falsos</span></div>
+  <div class="stat"><span class="k">Recall</span><span class="v">39,5 %</span><span class="s">26 no detectados</span></div>
+  <div class="stat"><span class="k">F1</span><span class="v">41,5 %</span><span class="s">IoU ≥ 0.5</span></div>
+  <div class="stat"><span class="k">IoU medio</span><span class="v">0,76</span><span class="s">de los aciertos</span></div>
+  <div class="stat"><span class="k">Error de puntos</span><span class="v">–</span><span class="s">de la diagonal de la caja</span></div>
+  <div class="stat"><span class="k">Tiempo</span><span class="v">145 ms</span><span class="s">por imagen</span></div>
+</div>
+<p class="small muted">Modelo <span class="mono">best.pt</span> · confianza mínima 0.25 · imagen 1024 px · dataset completo</p>
+
+<div class="panel">
+  <div class="section-head">
+    <h3>Dónde acierta y dónde se equivoca</h3>
+    <form method="get" class="controls">
+      <label class="field">Orden
+        <select name="orden" disabled><option value="errores" selected>más errores primero</option><option value="fn" >más no detectados</option><option value="fp" >más falsos positivos</option><option value="aciertos" >mejores primero</option><option value="archivo" >por archivo</option></select>
+      </label>
+      <label class="toggle"><input type="checkbox" name="solo" value="errores"  disabled> solo imágenes con errores</label>
+    </form>
+  </div>
+  <p class="small muted">
+    10 de 40 imágenes sin ningún error.
+    En cada imagen: <span class="pill ok">✓</span> acierto (IoU ≥ 0.5), <span class="pill warn">FP</span> detección sin etiqueta, <span class="pill warn">FN</span> etiqueta sin detección.
+    Clic en una imagen para ver cajas, probabilidades y el mapa de atención.
+  </p>
+</div>
+
+<div class="gallery">
+    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/Chinook-Salmon-Ucluelet-Fishing-Charters_jpg.rf.26360d22947d737d488d4aaeaeed3a29.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="80.0" y="87.5" width="244.0" height="139.0" data-kind="gt" data-i="0"/><polygon class="pred" points="335.7,227.1 321.9,36.9 77.1,54.6 90.9,244.9" data-kind="pred" data-i="0"/><polygon class="pred" points="-7.1,153.8 72.4,153.5 71.9,-7.0 -7.6,-6.7" data-kind="pred" data-i="1"/><polygon class="pred" points="429.5,346.4 415.1,194.8 272.6,208.3 286.9,359.9" data-kind="pred" data-i="2"/><polygon class="pred" points="353.9,134.9 355.0,45.9 206.5,44.0 205.4,133.1" data-kind="pred" data-i="3"/><polygon class="pred" points="248.4,35.7 245.8,-9.5 120.1,-2.3 122.7,42.9" data-kind="pred" data-i="4"/><polygon class="pred" points="102.0,290.1 93.8,167.0 -12.5,174.1 -4.3,297.2" data-kind="pred" data-i="5"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">Chinook-Salmon-Ucluel...</span>
+        <span>1 ✓ · <span class="err">5 FP</span> · <span class="">0 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/Spring-Chinook_980-1-750x498_jpg.rf.d5217b2da437c506ffdfc4520f54c764.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="56.7" y="241.0" width="243.5" height="156.0" data-kind="gt" data-i="0"/><rect class="gt" x="226.5" y="178.3" width="180.0" height="106.5" data-kind="gt" data-i="1"/><rect class="gt" x="114.5" y="149.8" width="90.0" height="85.5" data-kind="gt" data-i="2"/><polygon class="pred" points="372.6,422.2 416.9,425.6 425.2,316.7 380.9,313.4" data-kind="pred" data-i="0"/><polygon class="pred" points="-2.4,102.7 81.6,97.7 75.4,-6.8 -8.7,-1.8" data-kind="pred" data-i="1"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">Spring-Chinook_980-1-...</span>
+        <span>0 ✓ · <span class="err">2 FP</span> · <span class="err">3 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/chinook-salmon-underwater-1_jpg.rf.c1dff18d3b156a9c354ec33b7238903d.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="245.2" width="375.0" height="167.5" data-kind="gt" data-i="0"/><rect class="gt" x="67.8" y="146.2" width="313.5" height="115.5" data-kind="gt" data-i="1"/><polygon class="pred" points="344.2,192.3 348.8,150.1 204.7,134.4 200.1,176.5" data-kind="pred" data-i="0"/><polygon class="pred" points="403.2,434.7 412.6,252.5 27.5,232.6 18.1,414.8" data-kind="pred" data-i="1"/><polygon class="pred" points="138.4,176.8 137.5,106.9 25.7,108.4 26.6,178.3" data-kind="pred" data-i="2"/><polygon class="pred" points="116.3,216.6 117.3,153.5 -1.5,151.7 -2.5,214.8" data-kind="pred" data-i="3"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">chinook-salmon-underw...</span>
+        <span>1 ✓ · <span class="err">3 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <a class="thumb" href="../../vision/datasets/chinook/images/1.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/test/images/60ae3cf6498983828edaec1e_chinook_20_salmon_20_facts_9e549a7d53_jpg.rf.82e4702280056137f987f2038c9f8d3e.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="51.5" y="71.8" width="343.0" height="271.5" data-kind="gt" data-i="0"/><polygon class="pred" points="358.1,324.7 393.0,120.2 56.3,62.8 21.4,267.3" data-kind="pred" data-i="0"/><polygon class="pred" points="369.8,323.7 422.3,324.1 422.9,232.1 370.3,231.8" data-kind="pred" data-i="1"/><polygon class="pred" points="327.9,282.8 430.5,276.2 420.4,118.1 317.8,124.7" data-kind="pred" data-i="2"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">60ae3cf6498983828edae...</span>
+        <span>1 ✓ · <span class="err">2 FP</span> · <span class="">0 FN</span></span></span>
+</a>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/test/images/chinook-salmon-pacific-northwest-national-laboratory_jpg.rf.802f08d91d3374926f236dfd227ee32f.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="14.3" y="109.0" width="383.5" height="181.0" data-kind="gt" data-i="0"/><polygon class="pred" points="367.2,293.3 370.4,104.2 20.1,98.2 16.8,287.3" data-kind="pred" data-i="0"/><polygon class="pred" points="202.0,51.8 204.0,-3.6 -1.1,-11.0 -3.1,44.5" data-kind="pred" data-i="1"/><polygon class="pred" points="-7.3,185.0 58.6,185.5 60.0,3.2 -5.9,2.7" data-kind="pred" data-i="2"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">chinook-salmon-pacifi...</span>
+        <span>1 ✓ · <span class="err">2 FP</span> · <span class="">0 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/21930349_web1_200702-PRU-Stikine-Taku-Chinook-Closures-Quinn_1_jpg.rf.44de3686c6077e8f0d050f0af2863eb2.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="86.8" y="88.5" width="328.5" height="241.0" data-kind="gt" data-i="0"/><polygon class="pred" points="347.1,290.6 370.8,84.0 14.6,43.1 -9.1,249.7" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">21930349_web1_200702-...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/29_03a5343_2_jpg.rf.1bb27a786274e83ac855fcebac2286c1.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="173.5" y="164.0" width="225.0" height="202.0" data-kind="gt" data-i="0"/><polygon class="pred" points="366.1,329.3 370.5,227.0 186.9,219.0 182.4,321.3" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">29_03a5343_2_jpg.rf.1...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/Chinook_-King-_salmon_jpg.rf.5ecb3724a6f1bbb25cd68dcb2e4d65a0.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="37.0" y="83.2" width="371.0" height="265.5" data-kind="gt" data-i="0"/><polygon class="pred" points="276.8,326.7 304.0,130.5 63.6,97.2 36.4,293.3" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">Chinook_-King-_salmon...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/Female-Chinook-salmon_jpg.rf.e65cfc24c7fb444d9d4cec0c24ad2be2.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="103.0" y="140.2" width="226.0" height="111.5" data-kind="gt" data-i="0"/><polygon class="pred" points="322.1,223.8 312.3,148.7 112.1,174.8 121.9,249.9" data-kind="pred" data-i="0"/><polygon class="pred" points="330.8,446.8 389.2,296.6 225.3,232.9 166.8,383.0" data-kind="pred" data-i="1"/><polygon class="pred" points="397.8,62.8 398.2,-8.2 169.9,-9.3 169.5,61.6" data-kind="pred" data-i="2"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">Female-Chinook-salmon...</span>
+        <span>1 ✓ · <span class="err">2 FP</span> · <span class="">0 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/train/images/cg_chinook1_jpg.rf.6b736f669eeef9a1a0cb7e4924d4870f.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="14.3" y="19.8" width="333.5" height="360.5" data-kind="gt" data-i="0"/><polygon class="pred" points="350.4,406.8 421.5,407.5 423.7,189.4 352.6,188.7" data-kind="pred" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">cg_chinook1_jpg.rf.6b...</span>
+        <span>0 ✓ · <span class="err">1 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <a class="thumb" href="../../vision/datasets/chinook/images/2.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/test/images/750x500-chinook-salmon_jpg.rf.3379b43b65bc660c8d38a4a843dfd5cf.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="93.3" y="104.8" width="318.5" height="225.5" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">750x500-chinook-salmo...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</a>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/chinook/test/images/Chinook-2-scaled-e1599076284282-800x450_jpg.rf.6e6e4a316903a853ab2b811910bdde92.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="52.8" y="111.8" width="288.5" height="189.5" data-kind="gt" data-i="0"/><polygon class="pred" points="347.2,321.0 357.5,125.9 45.0,109.4 34.6,304.5" data-kind="pred" data-i="0"/><polygon class="pred" points="421.6,201.9 421.4,102.3 241.7,102.5 241.8,202.1" data-kind="pred" data-i="1"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">Chinook-2-scaled-e159...</span>
+        <span>1 ✓ · <span class="err">1 FP</span> · <span class="">0 FN</span></span></span>
+</span></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

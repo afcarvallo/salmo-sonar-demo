@@ -1,0 +1,208 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>FishSizing estéreo UIB</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="fXePRFbsIDhs-VY3cnUvvGezGzzOvQJXtTRU4ywtBmIetHLCsdPhIY4grKeyYbMRPUPG3beJB82Jwa4ykbMCcg" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb --><p class="crumbs"><a href="../../vision/datasets.html">Datasets</a> /</p>
+<h1>FishSizing estéreo UIB</h1>
+<div class="grid2">
+  <div class="col">
+    <p class="lede">Validar el largo por estéreo contra el largo medido. La muestra trae largos reales, calibraciones estéreo y fotos de cada pez; el video está en rosbags.</p>
+    <dl class="facts">
+      <div><dt>Dominio</dt><dd>Bajo el agua, estanque; rosbags estéreo (25–48 GB por parte) con largo total medido a mano</dd></div>
+      <div><dt>Formato</dt><dd>Fotos + tablas de verdad</dd></div>
+      <div><dt>Clases</dt><dd>–</dd></div>
+      <div><dt>Aquí</dt><dd>completo · 10 imágenes · 0 objetos</dd></div>
+      <div><dt>Licencia</dt><dd>CC BY 4.0</dd></div>
+      <div><dt>Fuente</dt><dd><a href="https://zenodo.org/records/19408363" target="_blank" rel="noopener">https://zenodo.org/records/19408363</a></dd></div>
+      <div><dt>Cita</dt><dd class="small">FishSizing: Stereo Vision Dataset for Non-Invasive Underwater Fish Length Estimation. Zenodo, records 19408363, 19476620, 19535330, 19549892, 19552820, 19557524</dd></div>
+    </dl>
+  </div>
+  <div class="col">
+      <div class="panel">
+        <h3>Archivos de la fuente</h3>
+        <ul class="plain small">
+            <li><span target="_blank">dataset_to_zenodo/Dataset_description.md</span> <span class="muted">4.45 KB</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_1/2024_11_12/left.yaml</span> <span class="muted">612 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_1/2024_11_12/right.yaml</span> <span class="muted">621 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_1/2024_11_28/left.yaml</span> <span class="muted">612 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_1/2024_11_28/right.yaml</span> <span class="muted">621 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_1/2025_05_08/left.yaml</span> <span class="muted">600 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_1/2025_05_08/right.yaml</span> <span class="muted">608 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_2/2025_08_21/left.yaml</span> <span class="muted">797 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/calibrations/dataset_2/2025_08_21/right.yaml</span> <span class="muted">806 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/gt_annotations_and_samples/Dataset_Summary_Dataset_A.csv</span> <span class="muted">11.4 KB</span></li>
+            <li><span target="_blank">dataset_to_zenodo/gt_annotations_and_samples/Dataset_Summary_Dataset_B.csv</span> <span class="muted">9.14 KB</span></li>
+            <li><span target="_blank">dataset_to_zenodo/gt_annotations_and_samples/fish_gt_measures.csv</span> <span class="muted">493 Bytes</span></li>
+            <li><span target="_blank">dataset_to_zenodo/gt_annotations_and_samples/model_tracking_annotations.json</span> <span class="muted">9.64 KB</span></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<div class="filters">
+  <a class="chip on" href="../../vision/datasets/uib_stereo.html">Todas</a>
+  <span class="muted small">10 imágenes</span>
+</div>
+
+<div class="gallery">
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/uib_stereo/images/0.html">
+  <span class="thumb-img" style="aspect-ratio: 921 / 2048">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_0.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 921 2048" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Fish_0.jpeg</span>
+    <span>0 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/uib_stereo/images/1.html">
+  <span class="thumb-img" style="aspect-ratio: 720 / 1599">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_1.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 720 1599" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Fish_1.jpeg</span>
+    <span>0 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/uib_stereo/images/2.html">
+  <span class="thumb-img" style="aspect-ratio: 720 / 1599">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_2.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 720 1599" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Fish_2.jpeg</span>
+    <span>0 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 620 / 1742">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_3.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 620 1742" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Fish_3.jpeg</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 484 / 1729">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_4.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 484 1729" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Fish_4.jpeg</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 518 / 1744">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_5.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 518 1744" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Fish_5.jpeg</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 535 / 308">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_B_fish_specimens/black_tag.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 535 308" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">black_tag.png</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 660 / 304">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_B_fish_specimens/red_tag.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 660 304" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">red_tag.png</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 833 / 271">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_B_fish_specimens/together.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 833 271" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">together.png</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 284 / 97">
+    <img src="../../img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_B_fish_specimens/unmarked.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 284 97" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">unmarked.png</span>
+    <span>0 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

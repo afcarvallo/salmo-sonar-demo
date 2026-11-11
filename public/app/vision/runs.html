@@ -1,0 +1,347 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../">
+    <title>Resultados</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="2WYG5DIpC6aYX2JEkD18D7qPerPAt6jihAzv35bgBm5FSqR_p-cPmNtaZrjuoLeTbjlw2NQw323ER6i3q4U4dg" />
+    
+    <link rel="icon" href="../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../assets/viz/colores-57a86e53.js", "viz/estanque": "../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../assets/viz/formato-4622225b.js", "viz/graficos": "../assets/viz/graficos-a40d67ad.js", "viz/indice": "../assets/viz/indice-8fd5f136.js", "viz/registro": "../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link" href="../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../vision/videos.html">Videos</a>
+      <a class="nav-link is-active" aria-current="page" href="../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/index.html.erb --><h1>Resultados de los modelos</h1>
+<p class="lede">Cada corrida aplica un modelo a las imágenes de un dataset y compara contra sus etiquetas: un acierto es una predicción con IoU ≥ 0,5 contra una etiqueta. El error de puntos es la distancia media entre puntos predichos y etiquetados, en % de la diagonal de la caja.</p>
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --><div class="tablewrap"><table>
+  <thead><tr><th>Corrida</th><th>Dataset</th><th>Modelo</th><th class="n">Imágenes</th><th class="n">Precisión</th><th class="n">Recall</th><th class="n">F1</th><th class="n">IoU medio</th><th class="n">Error puntos</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-cagsdl-test-centro.html">pellets_v1-cagsdl-test-centro</a><br><span class="small muted">2026-11-10 17:59</span></td>
+      <td>cagsdl</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">13</td>
+      <td class="n">17,9 %</td>
+      <td class="n">7,9 %</td>
+      <td class="n">10,9 %</td>
+      <td class="n">0,79</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v2-cagsdl-test-centro.html">pellets_v2-cagsdl-test-centro</a><br><span class="small muted">2026-11-10 17:59</span></td>
+      <td>cagsdl</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">13</td>
+      <td class="n">96,9 %</td>
+      <td class="n">91,1 %</td>
+      <td class="n">93,9 %</td>
+      <td class="n">0,91</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v2-fish_food-test-centro.html">pellets_v2-fish_food-test-centro</a><br><span class="small muted">2026-11-10 17:21</span></td>
+      <td>fish_food</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">72</td>
+      <td class="n">83,3 %</td>
+      <td class="n">25,6 %</td>
+      <td class="n">39,2 %</td>
+      <td class="n">0,86</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v2-fish_bait-test-centro.html">pellets_v2-fish_bait-test-centro</a><br><span class="small muted">2026-11-10 17:19</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">50,3 %</td>
+      <td class="n">32,4 %</td>
+      <td class="n">39,4 %</td>
+      <td class="n">0,80</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pose_v2-bezierfusion-dataset2.html">pose_v2-bezierfusion-dataset2</a><br><span class="small muted">2026-11-10 17:02</span></td>
+      <td>bezierfusion</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">159</td>
+      <td class="n">92,5 %</td>
+      <td class="n">94,4 %</td>
+      <td class="n">93,4 %</td>
+      <td class="n">0,86</td>
+      <td class="n">6,2 %</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pose_v2-boostcomptrack-solo_salmon.html">pose_v2-boostcomptrack-solo_salmon</a><br><span class="small muted">2026-11-10 17:01</span></td>
+      <td>boostcomptrack</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">61</td>
+      <td class="n">82,2 %</td>
+      <td class="n">74,0 %</td>
+      <td class="n">77,9 %</td>
+      <td class="n">0,80</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pose-bezierfusion-dataset1-solo_cajas.html">pose-bezierfusion-dataset1-solo_cajas</a><br><span class="small muted">2026-11-10 16:30</span></td>
+      <td>bezierfusion</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">269</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">–</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pose-bezierfusion-dataset2.html">pose-bezierfusion-dataset2</a><br><span class="small muted">2026-11-10 16:29</span></td>
+      <td>bezierfusion</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">159</td>
+      <td class="n">95,6 %</td>
+      <td class="n">93,6 %</td>
+      <td class="n">94,6 %</td>
+      <td class="n">0,84</td>
+      <td class="n">6,3 %</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-fish_food-test-centro.html">pellets_v1-fish_food-test-centro</a><br><span class="small muted">2026-11-10 16:24</span></td>
+      <td>fish_food</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">72</td>
+      <td class="n">81,8 %</td>
+      <td class="n">62,7 %</td>
+      <td class="n">71,0 %</td>
+      <td class="n">0,84</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-fish_bait-test-centro.html">pellets_v1-fish_bait-test-centro</a><br><span class="small muted">2026-11-10 16:22</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">10,8 %</td>
+      <td class="n">79,0 %</td>
+      <td class="n">19,0 %</td>
+      <td class="n">0,70</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-cagsdl-centro.html">pellets_v1-cagsdl-centro</a><br><span class="small muted">2026-11-10 16:22</span></td>
+      <td>cagsdl</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">199</td>
+      <td class="n">20,1 %</td>
+      <td class="n">10,5 %</td>
+      <td class="n">13,8 %</td>
+      <td class="n">0,80</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-bait_5000-300.html">pellets_v1-bait_5000-300</a><br><span class="small muted">2026-11-10 16:05</span></td>
+      <td>bait_5000</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">300</td>
+      <td class="n">2,2 %</td>
+      <td class="n">4,2 %</td>
+      <td class="n">2,9 %</td>
+      <td class="n">0,60</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/peces_obb-bezierfusion-todo.html">peces_obb-bezierfusion-todo</a><br><span class="small muted">2026-11-10 16:04</span></td>
+      <td>bezierfusion</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">428</td>
+      <td class="n">76,7 %</td>
+      <td class="n">80,7 %</td>
+      <td class="n">78,6 %</td>
+      <td class="n">0,93</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/peces_obb-boostcomptrack-solo_salmon.html">peces_obb-boostcomptrack-solo_salmon</a><br><span class="small muted">2026-11-10 15:45</span></td>
+      <td>boostcomptrack</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">61</td>
+      <td class="n">86,3 %</td>
+      <td class="n">94,0 %</td>
+      <td class="n">89,9 %</td>
+      <td class="n">0,85</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/peces_obb-chinook-todo.html">peces_obb-chinook-todo</a><br><span class="small muted">2026-11-10 15:42</span></td>
+      <td>chinook</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">40</td>
+      <td class="n">43,6 %</td>
+      <td class="n">39,5 %</td>
+      <td class="n">41,5 %</td>
+      <td class="n">0,76</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/peces_obb-salmon_mandag-test.html">peces_obb-salmon_mandag-test</a><br><span class="small muted">2026-11-10 15:41</span></td>
+      <td>salmon_mandag</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">14</td>
+      <td class="n">21,4 %</td>
+      <td class="n">27,3 %</td>
+      <td class="n">24,0 %</td>
+      <td class="n">0,83</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/peces_obb-salmon_vf-test.html">peces_obb-salmon_vf-test</a><br><span class="small muted">2026-11-10 15:40</span></td>
+      <td>salmon_vf</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">8</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">–</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/peces_obb-salmon_river-test.html">peces_obb-salmon_river-test</a><br><span class="small muted">2026-11-10 15:39</span></td>
+      <td>salmon_river</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">67</td>
+      <td class="n">37,6 %</td>
+      <td class="n">60,3 %</td>
+      <td class="n">46,3 %</td>
+      <td class="n">0,74</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-fish_food-test.html">pellets_v1-fish_food-test</a><br><span class="small muted">2026-11-10 15:36</span></td>
+      <td>fish_food</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">72</td>
+      <td class="n">51,9 %</td>
+      <td class="n">39,8 %</td>
+      <td class="n">45,1 %</td>
+      <td class="n">0,65</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-fish_bait-test.html">pellets_v1-fish_bait-test</a><br><span class="small muted">2026-11-10 15:35</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">1,1 %</td>
+      <td class="n">7,9 %</td>
+      <td class="n">1,9 %</td>
+      <td class="n">0,62</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/pellets_v1-cagsdl-todo.html">pellets_v1-cagsdl-todo</a><br><span class="small muted">2026-11-10 15:35</span></td>
+      <td>cagsdl</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">465</td>
+      <td class="n">1,0 %</td>
+      <td class="n">1,5 %</td>
+      <td class="n">1,2 %</td>
+      <td class="n">0,61</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/base_yoloworld-salmon_river-test.html">base_yoloworld-salmon_river-test</a><br><span class="small muted">2026-11-10 15:09</span></td>
+      <td>salmon_river</td>
+      <td class="mono small">yolov8s-worldv2.pt [salmon,fish]</td>
+      <td class="n">67</td>
+      <td class="n">53,3 %</td>
+      <td class="n">11,8 %</td>
+      <td class="n">19,3 %</td>
+      <td class="n">0,90</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/base_yoloworld_fish_food_muestra.html">base_yoloworld_fish_food_muestra</a><br><span class="small muted">2026-11-10 13:49</span></td>
+      <td>fish_food (muestra)</td>
+      <td class="mono small">yolov8s-worldv2.pt [fish food pellet,pellet]</td>
+      <td class="n">36</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">–</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/base_yoloworld_bezierfusion_muestra.html">base_yoloworld_bezierfusion_muestra</a><br><span class="small muted">2026-11-10 13:48</span></td>
+      <td>bezierfusion (muestra)</td>
+      <td class="mono small">yolov8s-worldv2.pt [fish]</td>
+      <td class="n">24</td>
+      <td class="n">50,9 %</td>
+      <td class="n">48,3 %</td>
+      <td class="n">49,6 %</td>
+      <td class="n">0,89</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../vision/runs/base_yoloworld_boostcomptrack_muestra.html">base_yoloworld_boostcomptrack_muestra</a><br><span class="small muted">2026-11-10 13:48</span></td>
+      <td>boostcomptrack (muestra)</td>
+      <td class="mono small">yolov8s-worldv2.pt [salmon]</td>
+      <td class="n">6</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">0,0 %</td>
+      <td class="n">–</td>
+      <td class="n">–</td>
+    </tr>
+  </tbody>
+</table></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/index.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

@@ -1,0 +1,249 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>Salmon (Roboflow, río Eidselva)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="QD5tPDuBDRHCRORIOAJqzQUqsKv9dPb0wQDwBXXSRxygbATbG_Z0tsAgo8KMNsyd_LeWrY9ya8jlojahHVMo1Q" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb --><p class="crumbs"><a href="../../vision/datasets.html">Datasets</a> /</p>
+<h1>Salmon (Roboflow, río Eidselva)</h1>
+<div class="grid2">
+  <div class="col">
+    <p class="lede">Más cajas de salmón bajo el agua en condiciones distintas (río, luz natural). Útil como aumento del detector de peces; no es estanque ni jaula.</p>
+    <dl class="facts">
+      <div><dt>Dominio</dt><dd>Salmón del Atlántico filmado en el río Eidselva (Noruega); cajas de pez completo</dd></div>
+      <div><dt>Formato</dt><dd>YOLO cajas</dd></div>
+      <div><dt>Clases</dt><dd>salmon</dd></div>
+      <div><dt>Aquí</dt><dd>completo · 670 imágenes · 718 objetos</dd></div>
+      <div><dt>Licencia</dt><dd>CC BY 4.0</dd></div>
+      <div><dt>Fuente</dt><dd><a href="https://universe.roboflow.com/jarl-even-englund-mbbb9/salmon-5mhyi" target="_blank" rel="noopener">https://universe.roboflow.com/jarl-even-englund-mbbb9/salmon-5mhyi</a></dd></div>
+      <div><dt>Cita</dt><dd class="small">Salmon dataset, Roboflow Universe (Jarl Even Englund)</dd></div>
+    </dl>
+  </div>
+  <div class="col">
+      <div class="panel">
+        <h3>Archivos de la fuente</h3>
+        <ul class="plain small">
+            <li><span target="_blank">README.dataset.txt</span> <span class="muted">573 Bytes</span></li>
+            <li><span target="_blank">README.roboflow.txt</span> <span class="muted">978 Bytes</span></li>
+            <li><span target="_blank">data.yaml</span> <span class="muted">279 Bytes</span></li>
+        </ul>
+      </div>
+      <div class="panel"><h3>Corridas sobre este dataset</h3><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --><div class="tablewrap"><table>
+  <thead><tr><th>Corrida</th><th>Dataset</th><th>Modelo</th><th class="n">Imágenes</th><th class="n">Precisión</th><th class="n">Recall</th><th class="n">F1</th><th class="n">IoU medio</th><th class="n">Error puntos</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="../../vision/runs/peces_obb-salmon_river-test.html">peces_obb-salmon_river-test</a><br><span class="small muted">2026-11-10 15:39</span></td>
+      <td>salmon_river</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">67</td>
+      <td class="n">37,6 %</td>
+      <td class="n">60,3 %</td>
+      <td class="n">46,3 %</td>
+      <td class="n">0,74</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="../../vision/runs/base_yoloworld-salmon_river-test.html">base_yoloworld-salmon_river-test</a><br><span class="small muted">2026-11-10 15:09</span></td>
+      <td>salmon_river</td>
+      <td class="mono small">yolov8s-worldv2.pt [salmon,fish]</td>
+      <td class="n">67</td>
+      <td class="n">53,3 %</td>
+      <td class="n">11,8 %</td>
+      <td class="n">19,3 %</td>
+      <td class="n">0,90</td>
+      <td class="n">–</td>
+    </tr>
+  </tbody>
+</table></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --></div>
+  </div>
+</div>
+
+<div class="filters">
+  <a class="chip on" href="../../vision/datasets/salmon_river.html">Todas</a>
+  <span class="muted small">670 imágenes</span>
+</div>
+
+<div class="gallery">
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/salmon_river/images/0.html">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10002_jpg.rf.7a121ee9338f110492e999e13bd7282e.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="22.8,218.6 36.2,217.9 47.2,218.6 57.7,216.0 69.2,214.7 81.1,209.6 83.5,213.5 90.2,217.3 93.1,218.6 95.5,213.5 105.0,221.1 107.9,219.8 108.8,216.0 102.6,207.1 107.4,205.8 118.4,200.7 126.0,195.6 129.9,197.5 141.3,202.6 152.3,205.2 152.8,200.1 149.9,192.4 149.9,182.9 155.7,179.0 163.8,173.9 173.8,173.9 179.1,185.4 185.3,196.9 192.0,193.7 190.1,177.1 192.0,152.3 193.9,133.2 200.1,116.0 192.5,122.3 180.1,133.2 165.2,148.5 157.6,146.5 151.4,146.5 149.0,145.3 144.7,142.7 140.4,143.4 136.6,146.5 121.7,145.9 112.7,146.5 101.7,146.5 95.5,142.1 91.6,136.3 85.9,133.2 74.4,147.8 68.2,153.6 58.2,156.1 46.2,162.5 36.2,167.6 27.6,173.9 13.2,187.3 8.0,197.5 9.4,207.1 14.2,212.2 22.8,218.6" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10002_jpg.rf.7a121ee9338f…</span>
+    <span>1 objeto</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/salmon_river/images/1.html">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10014_jpg.rf.9adccfcb415ca099e7ac1e106d464060.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="256.5,376.6 266.1,379.8 272.8,383.0 277.1,388.1 284.7,397.6 293.8,405.3 302.4,406.5 308.6,401.4 309.6,396.3 322.5,398.3 330.6,398.3 350.7,400.2 360.2,400.2 374.6,398.3 377.0,400.8 382.2,405.3 387.5,412.3 394.2,414.8 407.1,415.5 403.7,398.9 415.7,398.2 415.7,322.4 406.6,318.0 403.2,303.3 399.4,294.4 388.9,296.9 382.2,301.4 367.9,309.0 359.3,311.6 349.7,312.9 331.6,312.9 304.3,314.8 288.5,317.3 271.8,321.2 257.5,325.6 239.3,332.0 228.8,338.4 224.5,343.5 224.0,350.5 225.9,356.2 231.7,362.6 241.2,370.2 256.5,376.6" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10014_jpg.rf.9adccfcb415c…</span>
+    <span>1 objeto</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/salmon_river/images/2.html">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10043_jpg.rf.4f6a68e999253f0cf5b7a5b1bed348bb.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="171.0" y="39.8" width="179.0" height="157.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10043_jpg.rf.4f6a68e99925…</span>
+    <span>1 objeto</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10047_jpg.rf.749f13aed5520ebc9f0012aaf041ec08.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="136.3,319.0 141.0,322.1 147.6,325.3 152.7,328.4 162.1,330.5 164.5,332.6 168.8,335.2 175.8,335.7 177.4,331.5 189.9,333.6 204.4,331.5 217.7,330.5 218.5,333.1 223.2,339.9 229.5,342.0 231.4,339.4 233.0,336.2 238.1,340.4 240.8,342.0 242.8,338.8 237.3,327.9 239.6,327.3 245.1,325.8 253.7,323.7 261.2,320.6 264.3,325.8 269.4,328.9 276.4,333.6 282.7,335.2 284.7,333.1 284.7,324.7 283.5,311.2 296.4,306.5 300.7,308.0 306.2,308.6 312.1,313.8 323.8,320.6 332.8,322.7 341.4,327.3 340.7,322.1 335.2,307.0 334.0,298.6 330.5,285.6 332.0,278.3 333.2,261.0 334.0,243.8 324.6,249.0 317.6,257.9 310.5,265.2 305.4,274.6 298.8,279.8 292.5,280.9 287.0,280.9 286.2,277.8 282.3,277.2 278.8,281.4 269.0,280.4 253.7,277.2 243.6,275.7 231.8,276.2 229.5,274.6 224.8,266.3 221.2,260.5 217.7,259.5 212.6,264.2 206.4,269.9 202.0,276.2 188.7,277.8 178.6,281.9 165.6,286.1 148.0,296.0 135.9,303.9 133.1,308.6 132.7,313.8 136.3,319.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10047_jpg.rf.749f13aed552…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10059_jpg.rf.d4e0d46045ea8fd99af211ee42255550.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="42.3" y="276.7" width="195.5" height="86.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10059_jpg.rf.d4e0d46045ea…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10066_jpg.rf.ae4139f125e70ef2d9eed4bac8d3329f.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="111.0" width="233.0" height="147.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10066_jpg.rf.ae4139f125e7…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10073_jpg.rf.cbbc92c76c6684e5e7610036a38088bb.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.3" y="0.0" width="415.5" height="258.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10073_jpg.rf.cbbc92c76c66…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10086_jpg.rf.61929b6fdab172fabdcc02e7d11f5ac7.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="168.0" width="225.0" height="206.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10086_jpg.rf.61929b6fdab1…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10088_jpg.rf.c822ac1b88fdf3e6c4cdfbb895122206.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.0" y="156.8" width="190.0" height="218.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10088_jpg.rf.c822ac1b88fd…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10098_jpg.rf.821dd67f23fe4b9edc112d3f6632acf4.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="0.3" y="271.5" width="415.5" height="144.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10098_jpg.rf.821dd67f23fe…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10111_jpg.rf.3376853deb39ecc0e150c8e6ed404851.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="219.5" y="325.8" width="196.0" height="89.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10111_jpg.rf.3376853deb39…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/salmon_river/test/images/10114_jpg.rf.ce692da89d60543553b5055741da1d9e.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="28.3" y="316.5" width="371.5" height="99.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">10114_jpg.rf.ce692da89d60…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+</div>
+  <nav class="pager">
+    <span class="chip on">1</span><span class="chip">2</span><span class="chip">3</span><span class="chip">4</span><span class="chip">5</span><span class="chip">6</span><span class="chip">7</span><span class="chip">8</span><span class="chip">9</span><span class="chip">10</span><span class="chip">11</span><span class="chip">12</span><span class="chip">13</span><span class="chip">14</span><span class="chip">15</span><span class="chip">16</span><span class="chip">17</span><span class="chip">18</span><span class="chip">19</span><span class="chip">20</span><span class="chip">21</span><span class="chip">22</span><span class="chip">23</span><span class="chip">24</span><span class="chip">25</span><span class="chip">26</span><span class="chip">27</span><span class="chip">28</span><span class="chip">29</span><span class="chip">30</span><span class="chip">31</span><span class="chip">32</span><span class="chip">33</span><span class="chip">34</span><span class="chip">35</span><span class="chip">36</span><span class="chip">37</span><span class="chip">38</span><span class="chip">39</span><span class="chip">40</span><span class="chip">41</span><span class="chip">42</span><span class="chip">43</span><span class="chip">44</span><span class="chip">45</span><span class="chip">46</span><span class="chip">47</span><span class="chip">48</span><span class="chip">49</span><span class="chip">50</span><span class="chip">51</span><span class="chip">52</span><span class="chip">53</span><span class="chip">54</span><span class="chip">55</span><span class="chip">56</span>
+  </nav>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

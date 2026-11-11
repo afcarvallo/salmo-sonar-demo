@@ -1,0 +1,238 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>Salmon Detection, Chinook (Roboflow)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="H52KBXBd9u5VM3Z2JuCyt9AaPZP2GAzkhYyD1YpVlzRJtJZOwJW5O4_Xu0yVOXQbCz_l3TUFyx1YONM_l_ap2w" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb --><p class="crumbs"><a href="../../vision/datasets.html">Datasets</a> /</p>
+<h1>Salmon Detection, Chinook (Roboflow)</h1>
+<div class="grid2">
+  <div class="col">
+    <p class="lede">Otra especie de salmón; sirve para probar si el detector generaliza.</p>
+    <dl class="facts">
+      <div><dt>Dominio</dt><dd>Salmón Chinook, cajas de pez completo (40 imágenes)</dd></div>
+      <div><dt>Formato</dt><dd>YOLO cajas</dd></div>
+      <div><dt>Clases</dt><dd>Chinook</dd></div>
+      <div><dt>Aquí</dt><dd>completo · 40 imágenes · 43 objetos</dd></div>
+      <div><dt>Licencia</dt><dd>CC BY 4.0</dd></div>
+      <div><dt>Fuente</dt><dd><a href="https://universe.roboflow.com/capstone-project-eob6w/salmon-detection" target="_blank" rel="noopener">https://universe.roboflow.com/capstone-project-eob6w/salmon-detection</a></dd></div>
+      <div><dt>Cita</dt><dd class="small">Salmon Detection dataset, Roboflow Universe (capstone-project)</dd></div>
+    </dl>
+  </div>
+  <div class="col">
+      <div class="panel">
+        <h3>Archivos de la fuente</h3>
+        <ul class="plain small">
+            <li><span target="_blank">README.dataset.txt</span> <span class="muted">158 Bytes</span></li>
+            <li><span target="_blank">README.roboflow.txt</span> <span class="muted">993 Bytes</span></li>
+            <li><span target="_blank">data.yaml</span> <span class="muted">286 Bytes</span></li>
+        </ul>
+      </div>
+      <div class="panel"><h3>Corridas sobre este dataset</h3><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --><div class="tablewrap"><table>
+  <thead><tr><th>Corrida</th><th>Dataset</th><th>Modelo</th><th class="n">Imágenes</th><th class="n">Precisión</th><th class="n">Recall</th><th class="n">F1</th><th class="n">IoU medio</th><th class="n">Error puntos</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="../../vision/runs/peces_obb-chinook-todo.html">peces_obb-chinook-todo</a><br><span class="small muted">2026-11-10 15:42</span></td>
+      <td>chinook</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">40</td>
+      <td class="n">43,6 %</td>
+      <td class="n">39,5 %</td>
+      <td class="n">41,5 %</td>
+      <td class="n">0,76</td>
+      <td class="n">–</td>
+    </tr>
+  </tbody>
+</table></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --></div>
+  </div>
+</div>
+
+<div class="filters">
+  <a class="chip on" href="../../vision/datasets/chinook.html">Todas</a>
+  <span class="muted small">40 imágenes</span>
+</div>
+
+<div class="gallery">
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/chinook/images/0.html">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/3429scr-1500x720_jpg.rf.dce0ba0df4578a4d1a0e6920eb59e18e.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="40.3" y="69.5" width="313.5" height="337.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">3429scr-1500x720_jpg.rf.d…</span>
+    <span>1 objeto</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/chinook/images/1.html">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/60ae3cf6498983828edaec1e_chinook_20_salmon_20_facts_9e549a7d53_jpg.rf.82e4702280056137f987f2038c9f8d3e.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="51.5" y="71.8" width="343.0" height="271.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">60ae3cf6498983828edaec1e_…</span>
+    <span>1 objeto</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/chinook/images/2.html">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/750x500-chinook-salmon_jpg.rf.3379b43b65bc660c8d38a4a843dfd5cf.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="93.3" y="104.8" width="318.5" height="225.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">750x500-chinook-salmon_jp…</span>
+    <span>1 objeto</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/Chinook-2-scaled-e1599076284282-800x450_jpg.rf.6e6e4a316903a853ab2b811910bdde92.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="52.8" y="111.8" width="288.5" height="189.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Chinook-2-scaled-e1599076…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/Chinook-IngridTaylar-Flickr-e1518563227672-800x380_jpg.rf.4c6beda859cd7895625de75db1d6e086.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="39.0" y="0.0" width="377.0" height="359.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Chinook-IngridTaylar-Flic…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/Holding-salmon_jpg.rf.cc1e27320635f78a26b8435e9b2860dd.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="67.3" y="143.8" width="347.5" height="221.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">Holding-salmon_jpg.rf.cc1…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/R_jpg.rf.24846b7d6760c697baba0e28fe7f5848.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="45.5" y="160.5" width="321.0" height="191.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">R_jpg.rf.24846b7d6760c697…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/test/images/chinook-salmon-pacific-northwest-national-laboratory_jpg.rf.802f08d91d3374926f236dfd227ee32f.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="14.3" y="109.0" width="383.5" height="181.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">chinook-salmon-pacific-no…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/train/images/1-largestchino_jpg.rf.7cf8c0932386f0c8a40c21cd83d4c737.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="65.3" y="99.0" width="331.5" height="158.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">1-largestchino_jpg.rf.7cf…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/train/images/20190628094514_jpg.rf.f7a7054da308c99412425e413456646d.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="22.0" y="147.7" width="330.0" height="166.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">20190628094514_jpg.rf.f7a…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/train/images/21930349_web1_200702-PRU-Stikine-Taku-Chinook-Closures-Quinn_1_jpg.rf.44de3686c6077e8f0d050f0af2863eb2.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="86.8" y="88.5" width="328.5" height="241.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">21930349_web1_200702-PRU-…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 416 / 416">
+    <img src="../../img/chinook/train/images/24556313_web1_chinook-adult_Ship-Creek_Ryan-Hagerty-FWS_jpg.rf.62b020a3dfda9e6bff20a4d3c2dc96f1.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="18.5" y="101.0" width="276.0" height="228.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">24556313_web1_chinook-adu…</span>
+    <span>1 objeto</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+</div>
+  <nav class="pager">
+    <span class="chip on">1</span><span class="chip">2</span><span class="chip">3</span><span class="chip">4</span>
+  </nav>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

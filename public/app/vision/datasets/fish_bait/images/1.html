@@ -1,0 +1,301 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../../../">
+    <title>VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-340_jpg.rf.7eaa27450327fe94998e3bdb93495b18.jpg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="3BjeKzGsBaMYl8k4uikwsOki7APo69poUFW9pQYBC5cz0gKw6zLPkVVC2xDHnaIqT5jlEwq59k7QQIApu26BqA" />
+    
+    <link rel="icon" href="../../../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../../../assets/viz/formato-4622225b.js", "viz/graficos": "../../../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+<p class="crumbs"><a href="../../../../vision/datasets.html">Datasets</a> / <a href="../../../../vision/datasets/fish_bait.html">fish bait2 (Roboflow)</a> /</p>
+<div class="title-row">
+  <h1 class="mono h-file">test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-340_jpg.rf.7eaa27450327fe94998e3bdb93495b18.jpg</h1>
+  <div class="pn">
+    <a class="btn" href="../../../../vision/datasets/fish_bait/images/0.html">← anterior</a>
+    <a class="btn" href="../../../../vision/datasets/fish_bait/images/2.html">siguiente →</a>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="col">
+    <div class="controls" data-controls>
+      <label class="toggle"><input type="checkbox" id="t-gt" data-layer="gt" checked> Etiquetas del dataset</label>
+      <label class="toggle"><input type="checkbox" id="t-pred" data-layer="pred" checked > Predicciones (best.pt)</label>
+      <label class="toggle"><input type="checkbox" id="t-kp" data-layer="kp" checked> Puntos clave</label>
+      <label class="toggle"><input type="checkbox" id="t-att" data-layer="attention" disabled> Atención (EigenCAM)</label>
+    </div>
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb --><figure class="viewer" data-viewer style="aspect-ratio: 1920 / 1080">
+  <img src="../../../../img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-340_jpg.rf.7eaa27450327fe94998e3bdb93495b18.jpg" alt="test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155122-340_jpg.rf.7eaa27450327fe94998e3bdb93495b18.jpg" width="1920" height="1080" decoding="async">
+  <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1501.8" y="614.1" width="135.3" height="165.2" data-kind="gt" data-i="0" style="stroke:#e2553f"/><text class="lbl gt" x="1514.6" y="594.9" font-size="34.9">pellet</text><rect class="gt" x="407.8" y="331.2" width="129.3" height="101.4" data-kind="gt" data-i="1" style="stroke:#e2553f"/><text class="lbl gt" x="420.6" y="312.0" font-size="34.9">pellet</text><rect class="gt" x="148.6" y="306.2" width="88.8" height="130.8" data-kind="gt" data-i="2" style="stroke:#e2553f"/><text class="lbl gt" x="161.4" y="287.0" font-size="34.9">pellet</text><rect class="gt" x="241.8" y="795.9" width="115.1" height="189.5" data-kind="gt" data-i="3" style="stroke:#e2553f"/><text class="lbl gt" x="254.6" y="776.7" font-size="34.9">pellet</text><rect class="gt" x="1282.3" y="964.9" width="128.7" height="61.9" data-kind="gt" data-i="4" style="stroke:#e2553f"/><text class="lbl gt" x="1295.1" y="945.7" font-size="34.9">pellet</text><rect class="gt" x="361.5" y="647.6" width="120.3" height="144.8" data-kind="gt" data-i="5" style="stroke:#e2553f"/><text class="lbl gt" x="374.3" y="628.4" font-size="34.9">pellet</text><rect class="gt" x="1796.4" y="855.9" width="49.5" height="59.2" data-kind="gt" data-i="6" style="stroke:#e2553f"/><text class="lbl gt" x="1809.2" y="836.7" font-size="34.9">pellet</text><rect class="gt" x="1569.0" y="326.9" width="35.7" height="31.0" data-kind="gt" data-i="7" style="stroke:#e2553f"/><text class="lbl gt" x="1581.8" y="307.7" font-size="34.9">pellet</text><rect class="gt" x="464.5" y="812.9" width="98.2" height="80.0" data-kind="gt" data-i="8" style="stroke:#e2553f"/><text class="lbl gt" x="477.3" y="793.7" font-size="34.9">pellet</text><rect class="gt" x="361.2" y="460.8" width="76.2" height="62.4" data-kind="gt" data-i="9" style="stroke:#e2553f"/><text class="lbl gt" x="374.0" y="441.6" font-size="34.9">pellet</text><rect class="gt" x="1535.4" y="856.7" width="31.1" height="31.6" data-kind="gt" data-i="10" style="stroke:#e2553f"/><text class="lbl gt" x="1548.2" y="837.5" font-size="34.9">pellet</text><rect class="gt" x="475.3" y="1000.8" width="37.3" height="33.1" data-kind="gt" data-i="11" style="stroke:#e2553f"/><text class="lbl gt" x="488.1" y="981.6" font-size="34.9">pellet</text><rect class="gt" x="455.4" y="812.1" width="129.0" height="149.4" data-kind="gt" data-i="12" style="stroke:#e2553f"/><text class="lbl gt" x="468.2" y="792.9" font-size="34.9">pellet</text><rect class="gt" x="1529.5" y="852.1" width="99.8" height="110.7" data-kind="gt" data-i="13" style="stroke:#e2553f"/><text class="lbl gt" x="1542.3" y="832.9" font-size="34.9">pellet</text><rect class="gt" x="195.7" y="448.6" width="72.9" height="64.3" data-kind="gt" data-i="14" style="stroke:#e2553f"/><text class="lbl gt" x="208.5" y="429.4" font-size="34.9">pellet</text><rect class="gt" x="158.6" y="615.7" width="112.9" height="158.6" data-kind="gt" data-i="15" style="stroke:#e2553f"/><text class="lbl gt" x="171.4" y="596.5" font-size="34.9">pellet</text><rect class="gt" x="344.3" y="588.6" width="80.0" height="68.6" data-kind="gt" data-i="16" style="stroke:#e2553f"/><text class="lbl gt" x="357.1" y="569.4" font-size="34.9">pellet</text><rect class="pred" x="390.5" y="613.6" width="41.0" height="43.5" data-kind="pred" data-i="0"/><text class="lbl pred" x="403.3" y="594.4" font-size="34.9">49%</text><rect class="pred" x="350.8" y="677.9" width="41.2" height="32.2" data-kind="pred" data-i="1"/><text class="lbl pred" x="363.6" y="658.7" font-size="34.9">47%</text><rect class="pred" x="1521.1" y="852.0" width="43.9" height="37.3" data-kind="pred" data-i="2"/><text class="lbl pred" x="1533.9" y="832.8" font-size="34.9">45%</text><rect class="pred" x="627.4" y="132.2" width="13.9" height="18.8" data-kind="pred" data-i="3"/><text class="lbl pred" x="640.2" y="113.0" font-size="34.9">41%</text><rect class="pred" x="471.7" y="818.9" width="40.1" height="41.9" data-kind="pred" data-i="4"/><text class="lbl pred" x="484.5" y="799.7" font-size="34.9">39%</text><rect class="pred" x="1265.3" y="440.7" width="30.7" height="28.4" data-kind="pred" data-i="5"/><text class="lbl pred" x="1278.1" y="421.5" font-size="34.9">39%</text><rect class="pred" x="1294.5" y="992.1" width="33.3" height="32.9" data-kind="pred" data-i="6"/><text class="lbl pred" x="1307.3" y="972.9" font-size="34.9">35%</text><rect class="pred" x="1762.9" y="847.6" width="87.8" height="90.8" data-kind="pred" data-i="7"/><text class="lbl pred" x="1775.7" y="828.4" font-size="34.9">34%</text><rect class="pred" x="221.1" y="676.8" width="46.0" height="32.7" data-kind="pred" data-i="8"/><text class="lbl pred" x="233.9" y="657.6" font-size="34.9">31%</text><rect class="pred" x="515.3" y="890.8" width="45.0" height="26.1" data-kind="pred" data-i="9"/><text class="lbl pred" x="528.1" y="871.6" font-size="34.9">31%</text><rect class="pred" x="424.9" y="741.0" width="30.3" height="30.3" data-kind="pred" data-i="10"/><text class="lbl pred" x="437.7" y="721.8" font-size="34.9">30%</text><rect class="pred" x="432.1" y="676.5" width="47.2" height="48.1" data-kind="pred" data-i="11"/><text class="lbl pred" x="444.9" y="657.3" font-size="34.9">29%</text><rect class="pred" x="359.1" y="649.5" width="31.5" height="23.0" data-kind="pred" data-i="12"/><text class="lbl pred" x="371.9" y="630.3" font-size="34.9">28%</text><rect class="pred" x="685.1" y="747.1" width="39.4" height="45.9" data-kind="pred" data-i="13"/><text class="lbl pred" x="697.9" y="727.9" font-size="34.9">28%</text><rect class="pred" x="1532.4" y="890.6" width="35.2" height="25.7" data-kind="pred" data-i="14"/><text class="lbl pred" x="1545.2" y="871.4" font-size="34.9">28%</text><rect class="pred" x="1253.4" y="1000.5" width="27.8" height="25.9" data-kind="pred" data-i="15"/><text class="lbl pred" x="1266.2" y="981.3" font-size="34.9">26%</text><rect class="pred" x="1369.2" y="977.9" width="37.4" height="22.4" data-kind="pred" data-i="16"/><text class="lbl pred" x="1382.0" y="958.7" font-size="34.9">26%</text><rect class="pred" x="1577.5" y="914.7" width="27.7" height="21.4" data-kind="pred" data-i="17"/><text class="lbl pred" x="1590.3" y="895.5" font-size="34.9">25%</text><rect class="pred" x="179.1" y="720.6" width="54.7" height="41.8" data-kind="pred" data-i="18"/><text class="lbl pred" x="191.9" y="701.4" font-size="34.9">25%</text></svg>
+  
+</figure>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb -->
+    <div class="legend">
+      <span><i class="sw sw-gt"></i>etiqueta del dataset</span>
+      <span><i class="sw sw-pred"></i>predicción del modelo</span>
+      <span><i class="sw sw-issue"></i>etiqueta a revisar</span>
+      
+      
+    </div>
+    
+
+    <div class="panel" data-live-predict data-url="/vision/datasets/fish_bait/images/1/predict">
+      <div class="section-head"><h3>Predicción en vivo</h3>
+        <button type="button" class="btn primary" data-predict >Correr el modelo sobre esta imagen</button></div>
+        <div class="predict-opts">
+          <label class="field">Modelo
+            <select data-predict-model>
+              <option value="world" data-def-conf="0.2" >YOLO-World (sin entrenar, clases como texto)</option><option value="fish" data-def-conf="0.35" >Peces · YOLO11s-OBB entrenado aquí</option><option value="fish_pose" data-def-conf="0.3" >Peces · YOLO11s-pose entrenado aquí (hocico, cola, dorso, vientre)</option><option value="fish_pose_v2" data-def-conf="0.3" >Peces · YOLO11s-pose v2 (BézierFusion + salmón BoostCompTrack)</option><option value="pellet" data-def-conf="0.25" selected>Pellets · YOLO11s entrenado aquí</option><option value="pellet_v2" data-def-conf="0.25" >Pellets · YOLO11s con CAGSDL (RAS real) + Roboflow</option><option value="bct_bbox" data-def-conf="0.25" >BoostCompTrack · YOLOv8m cajas (NTNU)</option><option value="bct_pose" data-def-conf="0.25" >BoostCompTrack · YOLOv8m-pose cajas + puntos (NTNU)</option>
+            </select>
+          </label>
+          <label class="field" data-predict-classes-field hidden>Clases (texto)
+            <input type="text" data-predict-classes value="pellet,fish food" size="16" spellcheck="false">
+          </label>
+          <label class="field">Confianza mínima
+            <input type="range" data-predict-conf min="0.05" max="0.9" step="0.05" value="0.25">
+            <output data-predict-conf-out class="mono">0,25</output>
+          </label>
+          <label class="toggle"><input type="checkbox" data-predict-attention checked> Mapa de atención</label>
+        </div>
+      <p class="small muted" data-predict-msg>Envía la imagen al servicio de visión (http://127.0.0.1:8601) y dibuja cajas y probabilidades en el visor.</p>
+    </div>
+  </div>
+
+  <div class="col">
+      <form class="panel run-pick" method="get">
+        <label for="run">Resultados de</label>
+        <select id="run" name="run" disabled>
+          <option value="pellets_v2-fish_bait-test-centro" selected>best.pt · 2026-11-10T17:19</option><option value="pellets_v1-fish_bait-test-centro" >best.pt · 2026-11-10T16:22</option><option value="pellets_v1-fish_bait-test" >best.pt · 2026-11-10T15:35</option>
+        </select>
+        <noscript><button class="btn">Ver</button></noscript>
+      </form>
+      <div class="stats">
+        <div class="stat"><span class="k">Aciertos</span><span class="v">9</span><span class="s">IoU ≥ 0.5</span></div>
+        <div class="stat"><span class="k">Falsos positivos</span><span class="v">10</span><span class="s">predicciones sin etiqueta</span></div>
+        <div class="stat"><span class="k">No detectados</span><span class="v">8</span><span class="s">etiquetas sin predicción</span></div>
+        <div class="stat"><span class="k">Atención en cajas</span><span class="v">–</span><span class="s">11.6 ms por imagen</span></div>
+      </div>
+
+    <div class="panel">
+      <h3>Etiquetas (17)</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>#</th><th>Clase</th><th class="n">Caja px</th><th class="n">Largo px</th><th class="n">Alto px</th><th>Revisión</th><th class="n">IoU</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">#1</td>
+            <td>pellet</td>
+            <td class="n">135×165</td>
+            <td class="n">165</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#2</td>
+            <td>pellet</td>
+            <td class="n">129×101</td>
+            <td class="n">129</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#3</td>
+            <td>pellet</td>
+            <td class="n">89×131</td>
+            <td class="n">131</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#4</td>
+            <td>pellet</td>
+            <td class="n">115×189</td>
+            <td class="n">189</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#5</td>
+            <td>pellet</td>
+            <td class="n">129×62</td>
+            <td class="n">129</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,72</td>
+          </tr>
+          <tr>
+            <td class="mono">#6</td>
+            <td>pellet</td>
+            <td class="n">120×145</td>
+            <td class="n">145</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,58</td>
+          </tr>
+          <tr>
+            <td class="mono">#7</td>
+            <td>pellet</td>
+            <td class="n">49×59</td>
+            <td class="n">59</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,71</td>
+          </tr>
+          <tr>
+            <td class="mono">#8</td>
+            <td>pellet</td>
+            <td class="n">36×31</td>
+            <td class="n">36</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#9</td>
+            <td>pellet</td>
+            <td class="n">98×80</td>
+            <td class="n">98</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,78</td>
+          </tr>
+          <tr>
+            <td class="mono">#10</td>
+            <td>pellet</td>
+            <td class="n">76×62</td>
+            <td class="n">76</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#11</td>
+            <td>pellet</td>
+            <td class="n">31×32</td>
+            <td class="n">32</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,74</td>
+          </tr>
+          <tr>
+            <td class="mono">#12</td>
+            <td>pellet</td>
+            <td class="n">37×33</td>
+            <td class="n">37</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#13</td>
+            <td>pellet</td>
+            <td class="n">129×149</td>
+            <td class="n">149</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,86</td>
+          </tr>
+          <tr>
+            <td class="mono">#14</td>
+            <td>pellet</td>
+            <td class="n">100×111</td>
+            <td class="n">111</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,71</td>
+          </tr>
+          <tr>
+            <td class="mono">#15</td>
+            <td>pellet</td>
+            <td class="n">73×64</td>
+            <td class="n">73</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#16</td>
+            <td>pellet</td>
+            <td class="n">113×159</td>
+            <td class="n">159</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,74</td>
+          </tr>
+          <tr>
+            <td class="mono">#17</td>
+            <td>pellet</td>
+            <td class="n">80×69</td>
+            <td class="n">80</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,67</td>
+          </tr>
+        </tbody>
+      </table></div>
+      <p class="small muted">Largo según el esquema <strong>caja</strong>. Con la calibración estéreo se convierte a centímetros (<code>ml/salmosonar_cv/measure/stereo.py</code>).</p>
+    </div>
+
+
+    <p class="small muted">Embebible en la interfaz 3D: <code>http://127.0.0.1:3800/vision/embed/datasets/fish_bait/images/1</code></p>
+  </div>
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

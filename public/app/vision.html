@@ -1,0 +1,338 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="./">
+    <title>Resumen</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="KiAg3pWyYHgf8s5XwuUIOkJS1qYYpMI4aXzMByo8aWE3yf3J1BDxv7_fbJ_qaltQmq7CxNmzvkiPOQkZp25C0w" />
+    
+    <link rel="icon" href="./icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "./assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "./assets/viz/colores-57a86e53.js", "viz/estanque": "./assets/viz/estanque-ead4b3e2.js", "viz/formato": "./assets/viz/formato-4622225b.js", "viz/graficos": "./assets/viz/graficos-a40d67ad.js", "viz/indice": "./assets/viz/indice-8fd5f136.js", "viz/registro": "./assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "./assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="./assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="./assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="./assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="./assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="./assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="./assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="./assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="./assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="./index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="./estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="./estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="./vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="./assets/salmosonar_vision/application-49987426.css" />
+  <script src="./assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="./assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link is-active" aria-current="page">Resumen</span>
+      <a class="nav-link" href="./vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="./vision/videos.html">Videos</a>
+      <a class="nav-link" href="./vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="./vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/home/index.html.erb --><section class="intro">
+  <h1>Visión para el estanque piloto</h1>
+  <p class="lede">Imágenes reales de los datasets públicos con sus etiquetas, predicciones de los modelos, mapas de atención y los cuadros que envía la recreación 3D del estanque. Las dos tareas: <strong>peso de los peces</strong> por estéreo y <strong>alimento en el fondo</strong>.</p>
+</section>
+
+<section class="status-row">
+  <div class="status">
+    <span class="k">Servicio de visión</span>
+      <span class="pill ok">en línea</span>
+      <span class="s">NVIDIA GB10 · modelos: fish listo, pellet listo</span>
+  </div>
+  <div class="status">
+    <span class="k">Recreación 3D</span>
+    <span class="pill ">0 cuadros</span>
+    <span class="s">todavía no envía cuadros a POST /api/v1/sim_frames</span>
+  </div>
+  <div class="status">
+    <span class="k">Peso medio vigente</span>
+      <span class="pill">sin mediciones</span>
+      <span class="s">el pipeline de cámaras publica en POST /api/v1/measurements</span>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><h2>Datasets</h2><a href="./vision/datasets.html">Ver todos</a></div>
+  <div class="cards">
+      <a class="card" href="./vision/datasets/bezierfusion.html">
+          <span class="card-img">
+            <img src="./img/bezierfusion/dataset1/rgb/01.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 2048 1536" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt has-issue" x="1024.6" y="132.9" width="822.5" height="238.2" data-kind="gt" data-i="0"/><polyline class="kp-line gt kp-eje" points="1062.4,376.5 1265.5,373.8"/><polyline class="kp-line gt kp-eje" points="1446.2,403.5 1830.9,337.9"/><polyline class="kp-line gt" points="1062.4,376.5 1446.2,403.5"/><polyline class="kp-line gt" points="1446.2,403.5 1265.5,373.8"/><polyline class="kp-line gt" points="1265.5,373.8 1830.9,337.9"/><polyline class="kp-line gt" points="1830.9,337.9 1062.4,376.5"/><circle class="kp gt" cx="1062.4" cy="376.5" r="17.1" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp gt" cx="1265.5" cy="373.8" r="17.1" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp gt" cx="1446.2" cy="403.5" r="17.1" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp gt" cx="1830.9" cy="337.9" r="17.1" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="gt has-issue" x="880.8" y="322.6" width="667.0" height="133.0" data-kind="gt" data-i="1"/><polyline class="kp-line gt kp-eje" points="892.5,391.8 1062.4,376.5"/><polyline class="kp-line gt kp-eje" points="1265.5,373.8 1446.2,403.5"/><polyline class="kp-line gt" points="892.5,391.8 1265.5,373.8"/><polyline class="kp-line gt" points="1265.5,373.8 1062.4,376.5"/><polyline class="kp-line gt" points="1062.4,376.5 1446.2,403.5"/><polyline class="kp-line gt" points="1446.2,403.5 892.5,391.8"/><circle class="kp gt" cx="892.5" cy="391.8" r="17.1" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp gt" cx="1062.4" cy="376.5" r="17.1" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp gt" cx="1265.5" cy="373.8" r="17.1" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp gt" cx="1446.2" cy="403.5" r="17.1" style="fill:#e8a33a"><title>punto 4</title></circle></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Stereo Fish BézierFusion</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO-pose</span><span class="tag">completo</span></span>
+          <span class="s">Bajo el agua, estanque de cultivo; dataset1 con una cámara (2048×1536), dataset2 con par estéreo lado a lado (3840×1080)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/boostcomptrack.html">
+          <span class="card-img">
+            <img src="./img/boostcomptrack/CS_train/images/GH010031_frame_0.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 4242 4242" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="1665.2" y="2575.6" width="86.1" height="97.1" data-kind="gt" data-i="0"/><rect class="gt" x="1429.4" y="2498.2" width="80.9" height="27.2" data-kind="gt" data-i="1"/><rect class="gt" x="1189.0" y="2523.3" width="115.1" height="78.8" data-kind="gt" data-i="2"/><rect class="gt" x="1291.3" y="2577.9" width="72.4" height="18.3" data-kind="gt" data-i="3"/><rect class="gt" x="1624.2" y="2553.7" width="24.9" height="15.9" data-kind="gt" data-i="4"/><rect class="gt" x="1576.7" y="2613.6" width="47.9" height="25.6" data-kind="gt" data-i="5"/><rect class="gt" x="1471.5" y="2612.3" width="53.4" height="12.6" data-kind="gt" data-i="6"/><rect class="gt" x="1187.2" y="2497.4" width="565.0" height="176.1" data-kind="gt" data-i="7"/><rect class="gt" x="3366.7" y="1891.5" width="153.0" height="34.2" data-kind="gt" data-i="8"/><rect class="gt" x="3169.2" y="2065.8" width="123.1" height="46.2" data-kind="gt" data-i="9"/><rect class="gt" x="3486.3" y="2088.0" width="137.6" height="32.5" data-kind="gt" data-i="10"/><rect class="gt" x="3007.7" y="1988.9" width="157.3" height="112.8" data-kind="gt" data-i="11"/><rect class="gt" x="3008.5" y="1917.1" width="847.0" height="204.3" data-kind="gt" data-i="12"/><rect class="gt" x="2910.1" y="1462.0" width="92.4" height="143.0" data-kind="gt" data-i="13"/><rect class="gt" x="2803.8" y="1610.8" width="56.3" height="32.9" data-kind="gt" data-i="14"/><rect class="gt" x="2834.8" y="1536.7" width="32.9" height="18.4" data-kind="gt" data-i="15"/><rect class="gt" x="2638.0" y="1565.8" width="67.7" height="32.9" data-kind="gt" data-i="16"/><rect class="gt" x="2537.3" y="1684.8" width="51.9" height="34.2" data-kind="gt" data-i="17"/><rect class="gt" x="2684.8" y="1665.8" width="68.4" height="27.8" data-kind="gt" data-i="18"/><rect class="gt" x="2478.5" y="1672.2" width="63.3" height="60.1" data-kind="gt" data-i="19"/><rect class="gt" x="2478.5" y="1463.9" width="524.0" height="269.6" data-kind="gt" data-i="20"/><rect class="gt" x="2182.0" y="3382.0" width="37.0" height="29.0" data-kind="gt" data-i="21"/><rect class="gt" x="1968.0" y="3332.0" width="90.0" height="36.0" data-kind="gt" data-i="22"/><rect class="gt" x="1835.0" y="3457.0" width="60.0" height="46.0" data-kind="gt" data-i="23"/><rect class="gt" x="2003.0" y="3507.0" width="66.0" height="33.0" data-kind="gt" data-i="24"/><rect class="gt" x="2148.0" y="3487.0" width="52.0" height="40.0" data-kind="gt" data-i="25"/><rect class="gt" x="1698.0" y="3363.0" width="124.0" height="113.0" data-kind="gt" data-i="26"/><rect class="gt" x="2257.0" y="3385.0" width="101.0" height="121.0" data-kind="gt" data-i="27"/><rect class="gt" x="1698.0" y="3332.0" width="660.0" height="209.0" data-kind="gt" data-i="28"/><rect class="gt" x="2783.7" y="2798.6" width="73.2" height="22.8" data-kind="gt" data-i="29"/><rect class="gt" x="2683.3" y="2871.9" width="54.8" height="28.1" data-kind="gt" data-i="30"/><rect class="gt" x="2590.3" y="2804.3" width="82.0" height="71.0" data-kind="gt" data-i="31"/><rect class="gt" x="2591.6" y="2798.6" width="335.1" height="128.5" data-kind="gt" data-i="32"/><rect class="gt" x="2523.3" y="1540.8" width="388.3" height="190.3" data-kind="gt" data-i="33"/><rect class="gt" x="3124.2" y="1917.7" width="726.6" height="200.0" data-kind="gt" data-i="34"/><rect class="gt" x="1279.1" y="2509.3" width="386.3" height="112.1" data-kind="gt" data-i="35"/><rect class="gt" x="2659.2" y="2800.0" width="267.7" height="124.9" data-kind="gt" data-i="36"/><rect class="gt" x="1800.4" y="3347.8" width="455.7" height="168.7" data-kind="gt" data-i="37"/><rect class="gt" x="2073.7" y="2262.8" width="66.1" height="47.1" data-kind="gt" data-i="38"/><rect class="gt" x="1827.7" y="2225.2" width="54.7" height="66.1" data-kind="gt" data-i="39"/><rect class="gt" x="1974.5" y="2231.4" width="52.6" height="14.6" data-kind="gt" data-i="40"/><rect class="gt" x="1902.2" y="2239.1" width="20.4" height="11.3" data-kind="gt" data-i="41"/><rect class="gt" x="2051.5" y="2289.8" width="26.3" height="19.0" data-kind="gt" data-i="42"/><rect class="gt" x="1961.7" y="2294.5" width="31.4" height="9.5" data-kind="gt" data-i="43"/><rect class="gt" x="1903.3" y="2279.2" width="26.3" height="16.8" data-kind="gt" data-i="44"/><rect class="gt" x="1883.6" y="2245.3" width="212.4" height="65.3" data-kind="gt" data-i="45"/><rect class="gt" x="1827.4" y="2225.9" width="313.1" height="85.8" data-kind="gt" data-i="46"/><rect class="gt" x="2367.8" y="2976.8" width="69.1" height="25.3" data-kind="gt" data-i="47"/><rect class="gt" x="2486.2" y="3012.8" width="16.7" height="8.6" data-kind="gt" data-i="48"/><rect class="gt" x="2506.4" y="3009.0" width="48.5" height="74.2" data-kind="gt" data-i="49"/><rect class="gt" x="2241.6" y="2989.7" width="72.5" height="49.8" data-kind="gt" data-i="50"/><rect class="gt" x="2312.4" y="3041.2" width="28.3" height="18.9" data-kind="gt" data-i="51"/><rect class="gt" x="2409.4" y="3069.1" width="30.0" height="11.6" data-kind="gt" data-i="52"/><rect class="gt" x="2457.9" y="3060.5" width="34.3" height="23.2" data-kind="gt" data-i="53"/><rect class="gt" x="2295.7" y="2983.2" width="211.6" height="90.1" data-kind="gt" data-i="54"/><rect class="gt" x="2242.5" y="2976.8" width="313.7" height="106.4" data-kind="gt" data-i="55"/><rect class="gt" x="1225.5" y="2473.6" width="66.3" height="44.1" data-kind="gt" data-i="56"/><rect class="gt" x="1105.5" y="2429.8" width="55.6" height="14.0" data-kind="gt" data-i="57"/><rect class="gt" x="984.5" y="2424.6" width="23.1" height="10.3" data-kind="gt" data-i="58"/><rect class="gt" x="871.4" y="2396.4" width="87.2" height="76.0" data-kind="gt" data-i="59"/><rect class="gt" x="971.7" y="2465.7" width="41.6" height="24.3" data-kind="gt" data-i="60"/><rect class="gt" x="1059.6" y="2498.5" width="43.8" height="8.5" data-kind="gt" data-i="61"/><rect class="gt" x="959.1" y="2433.5" width="295.3" height="85.6" data-kind="gt" data-i="62"/><rect class="gt" x="874.0" y="2396.7" width="417.7" height="123.7" data-kind="gt" data-i="63"/><rect class="gt" x="1418.2" y="3829.9" width="218.2" height="345.5" data-kind="gt" data-i="64"/><rect class="gt" x="1337.7" y="3826.0" width="58.4" height="44.2" data-kind="gt" data-i="65"/><rect class="gt" x="1118.2" y="3828.6" width="300.0" height="209.1" data-kind="gt" data-i="66"/><rect class="gt" x="1116.9" y="3826.0" width="520.8" height="351.9" data-kind="gt" data-i="67"/><rect class="gt" x="2720.5" y="2625.2" width="43.0" height="49.1" data-kind="gt" data-i="68"/><rect class="gt" x="2591.1" y="2595.3" width="61.7" height="14.0" data-kind="gt" data-i="69"/><rect class="gt" x="2394.4" y="2587.8" width="71.5" height="90.2" data-kind="gt" data-i="70"/><rect class="gt" x="2497.2" y="2607.0" width="21.0" height="8.4" data-kind="gt" data-i="71"/><rect class="gt" x="2499.5" y="2658.9" width="35.5" height="25.2" data-kind="gt" data-i="72"/><rect class="gt" x="2587.3" y="2683.5" width="34.2" height="10.6" data-kind="gt" data-i="73"/><rect class="gt" x="2680.6" y="2672.9" width="39.4" height="13.4" data-kind="gt" data-i="74"/><rect class="gt" x="2465.5" y="2609.5" width="264.1" height="82.4" data-kind="gt" data-i="75"/><rect class="gt" x="2395.1" y="2588.0" width="368.1" height="106.5" data-kind="gt" data-i="76"/><rect class="gt" x="1749.8" y="2261.5" width="55.0" height="35.8" data-kind="gt" data-i="77"/><rect class="gt" x="1709.2" y="2287.5" width="36.4" height="13.8" data-kind="gt" data-i="78"/><rect class="gt" x="1644.6" y="2289.0" width="25.1" height="7.6" data-kind="gt" data-i="79"/><rect class="gt" x="1665.4" y="2230.0" width="34.6" height="11.9" data-kind="gt" data-i="80"/><rect class="gt" x="1512.2" y="2216.5" width="54.4" height="59.3" data-kind="gt" data-i="81"/><rect class="gt" x="1591.4" y="2233.0" width="13.8" height="7.9" data-kind="gt" data-i="82"/><rect class="gt" x="1582.3" y="2269.1" width="33.6" height="20.2" data-kind="gt" data-i="83"/><rect class="gt" x="1567.7" y="2237.4" width="186.1" height="63.3" data-kind="gt" data-i="84"/><rect class="gt" x="1512.6" y="2216.7" width="292.5" height="85.7" data-kind="gt" data-i="85"/><rect class="gt" x="1317.9" y="2015.5" width="40.4" height="13.2" data-kind="gt" data-i="86"/><rect class="gt" x="1232.8" y="2019.8" width="31.8" height="8.6" data-kind="gt" data-i="87"/><rect class="gt" x="1151.0" y="1991.7" width="39.7" height="19.5" data-kind="gt" data-i="88"/><rect class="gt" x="1067.9" y="1923.8" width="57.9" height="73.5" data-kind="gt" data-i="89"/><rect class="gt" x="1154.6" y="1949.0" width="18.9" height="9.3" data-kind="gt" data-i="90"/><rect class="gt" x="1243.4" y="1948.6" width="49.0" height="13.2" data-kind="gt" data-i="91"/><rect class="gt" x="1343.7" y="1979.4" width="79.5" height="58.9" data-kind="gt" data-i="92"/><rect class="gt" x="1126.0" y="1956.1" width="226.0" height="83.7" data-kind="gt" data-i="93"/><rect class="gt" x="1068.4" y="1924.0" width="355.6" height="118.4" data-kind="gt" data-i="94"/><rect class="gt" x="2816.7" y="2288.0" width="36.8" height="14.1" data-kind="gt" data-i="95"/><rect class="gt" x="2733.3" y="2271.8" width="46.6" height="19.7" data-kind="gt" data-i="96"/><rect class="gt" x="2682.5" y="2240.2" width="30.3" height="20.1" data-kind="gt" data-i="97"/><rect class="gt" x="2622.2" y="2170.9" width="50.0" height="69.2" data-kind="gt" data-i="98"/><rect class="gt" x="2687.2" y="2203.8" width="18.8" height="9.0" data-kind="gt" data-i="99"/><rect class="gt" x="2758.5" y="2212.0" width="42.3" height="17.1" data-kind="gt" data-i="100"/><rect class="gt" x="2855.1" y="2265.0" width="57.7" height="40.6" data-kind="gt" data-i="101"/><rect class="gt" x="2672.2" y="2207.3" width="192.7" height="97.9" data-kind="gt" data-i="102"/><rect class="gt" x="2623.5" y="2171.4" width="288.9" height="135.0" data-kind="gt" data-i="103"/><rect class="gt" x="3193.2" y="2217.8" width="57.1" height="85.3" data-kind="gt" data-i="104"/><rect class="gt" x="3259.2" y="2266.5" width="14.7" height="7.9" data-kind="gt" data-i="105"/><rect class="gt" x="3301.6" y="2286.4" width="28.8" height="25.7" data-kind="gt" data-i="106"/><rect class="gt" x="3247.1" y="2309.4" width="30.4" height="40.3" data-kind="gt" data-i="107"/><rect class="gt" x="3248.7" y="2270.7" width="150.8" height="155.5" data-kind="gt" data-i="108"/><rect class="gt" x="3192.7" y="2218.3" width="206.8" height="208.9" data-kind="gt" data-i="109"/><rect class="gt" x="3075.4" y="2492.1" width="84.8" height="89.0" data-kind="gt" data-i="110"/><rect class="gt" x="3178.5" y="2511.5" width="31.4" height="12.0" data-kind="gt" data-i="111"/><rect class="gt" x="3168.1" y="2556.0" width="41.4" height="35.1" data-kind="gt" data-i="112"/><rect class="gt" x="3160.2" y="2515.2" width="95.3" height="44.5" data-kind="gt" data-i="113"/><rect class="gt" x="3075.4" y="2491.6" width="181.2" height="99.5" data-kind="gt" data-i="114"/><rect class="gt" x="2252.3" y="2710.8" width="44.1" height="34.7" data-kind="gt" data-i="115"/><rect class="gt" x="2341.4" y="2674.3" width="46.8" height="17.1" data-kind="gt" data-i="116"/><rect class="gt" x="2290.5" y="2735.6" width="40.5" height="11.3" data-kind="gt" data-i="117"/><rect class="gt" x="2380.6" y="2739.2" width="37.4" height="12.6" data-kind="gt" data-i="118"/><rect class="gt" x="2446.8" y="2705.9" width="29.3" height="27.0" data-kind="gt" data-i="119"/><rect class="gt" x="2289.6" y="2677.0" width="205.9" height="73.4" data-kind="gt" data-i="120"/><rect class="gt" x="2252.3" y="2674.8" width="242.3" height="77.5" data-kind="gt" data-i="121"/><rect class="gt" x="924.5" y="2296.3" width="51.4" height="37.9" data-kind="gt" data-i="122"/><rect class="gt" x="878.9" y="2324.5" width="45.0" height="20.5" data-kind="gt" data-i="123"/><rect class="gt" x="778.9" y="2299.7" width="35.2" height="14.7" data-kind="gt" data-i="124"/><rect class="gt" x="720.5" y="2279.2" width="28.4" height="17.7" data-kind="gt" data-i="125"/><rect class="gt" x="827.8" y="2254.1" width="45.6" height="17.4" data-kind="gt" data-i="126"/><rect class="gt" x="647.9" y="2212.7" width="67.6" height="69.5" data-kind="gt" data-i="127"/><rect class="gt" x="716.4" y="2251.6" width="208.9" height="87.3" data-kind="gt" data-i="128"/><rect class="gt" x="647.9" y="2212.7" width="327.7" height="132.4" data-kind="gt" data-i="129"/><rect class="gt" x="236.4" y="2586.7" width="76.2" height="21.0" data-kind="gt" data-i="130"/><rect class="gt" x="365.7" y="2552.4" width="86.7" height="41.3" data-kind="gt" data-i="131"/><rect class="gt" x="490.9" y="2483.2" width="137.8" height="107.0" data-kind="gt" data-i="132"/><rect class="gt" x="198.6" y="2485.3" width="144.8" height="47.6" data-kind="gt" data-i="133"/><rect class="gt" x="92.3" y="2483.9" width="537.8" height="138.5" data-kind="gt" data-i="134"/><rect class="gt" x="95.1" y="2514.7" width="395.1" height="107.0" data-kind="gt" data-i="135"/><rect class="gt" x="873.9" y="2942.8" width="81.8" height="93.5" data-kind="gt" data-i="136"/><rect class="gt" x="659.0" y="2945.4" width="66.2" height="17.5" data-kind="gt" data-i="137"/><rect class="gt" x="523.9" y="3033.0" width="75.3" height="20.8" data-kind="gt" data-i="138"/><rect class="gt" x="464.2" y="2993.4" width="82.5" height="55.8" data-kind="gt" data-i="139"/><rect class="gt" x="672.0" y="3027.8" width="65.6" height="17.5" data-kind="gt" data-i="140"/><rect class="gt" x="785.0" y="3007.7" width="50.0" height="27.9" data-kind="gt" data-i="141"/><rect class="gt" x="821.3" y="2956.4" width="26.6" height="15.6" data-kind="gt" data-i="142"/><rect class="gt" x="536.9" y="2964.8" width="336.4" height="77.3" data-kind="gt" data-i="143"/><rect class="gt" x="464.2" y="2943.4" width="490.9" height="110.4" data-kind="gt" data-i="144"/><rect class="gt" x="3276.4" y="2359.2" width="44.6" height="34.3" data-kind="gt" data-i="145"/><rect class="gt" x="1460.3" y="2379.9" width="194.0" height="68.8" data-kind="gt" data-i="146"/><rect class="gt" x="2287.1" y="2887.1" width="248.9" height="71.8" data-kind="gt" data-i="147"/><rect class="gt" x="691.7" y="3319.7" width="112.7" height="113.4" data-kind="gt" data-i="148"/><rect class="gt" x="1613.1" y="2379.9" width="41.9" height="56.2" data-kind="gt" data-i="149"/><rect class="gt" x="1593.9" y="2390.7" width="12.8" height="7.3" data-kind="gt" data-i="150"/><rect class="gt" x="1527.8" y="2380.5" width="35.1" height="10.5" data-kind="gt" data-i="151"/><rect class="gt" x="1460.4" y="2406.1" width="35.1" height="35.8" data-kind="gt" data-i="152"/><rect class="gt" x="1484.3" y="2435.1" width="26.5" height="12.1" data-kind="gt" data-i="153"/><rect class="gt" x="1537.4" y="2429.1" width="33.9" height="13.1" data-kind="gt" data-i="154"/><rect class="gt" x="1588.2" y="2420.4" width="19.2" height="18.2" data-kind="gt" data-i="155"/><rect class="gt" x="1488.2" y="2392.7" width="125.2" height="46.0" data-kind="gt" data-i="156"/><rect class="gt" x="2492.3" y="2896.8" width="42.6" height="62.5" data-kind="gt" data-i="157"/><rect class="gt" x="2447.8" y="2941.3" width="25.3" height="17.6" data-kind="gt" data-i="158"/><rect class="gt" x="2374.0" y="2949.4" width="38.8" height="9.9" data-kind="gt" data-i="159"/><rect class="gt" x="2316.3" y="2938.8" width="25.6" height="16.3" data-kind="gt" data-i="160"/><rect class="gt" x="2286.9" y="2909.9" width="39.4" height="31.1" data-kind="gt" data-i="161"/><rect class="gt" x="2370.3" y="2887.6" width="52.3" height="18.1" data-kind="gt" data-i="162"/><rect class="gt" x="2455.2" y="2904.1" width="18.0" height="17.4" data-kind="gt" data-i="163"/><rect class="gt" x="2318.0" y="2906.4" width="174.4" height="45.4" data-kind="gt" data-i="164"/><rect class="gt" x="691.4" y="3319.2" width="113.5" height="115.5" data-kind="gt" data-i="165"/><rect class="gt" x="1164.6" y="2502.0" width="37.0" height="17.5" data-kind="gt" data-i="166"/><rect class="gt" x="1716.6" y="3324.7" width="211.2" height="53.5" data-kind="gt" data-i="167"/><rect class="gt" x="2212.6" y="3339.8" width="199.2" height="84.0" data-kind="gt" data-i="168"/><rect class="gt" x="328.1" y="3005.9" width="332.7" height="128.8" data-kind="gt" data-i="169"/><rect class="gt" x="3.3" y="2663.5" width="427.1" height="107.2" data-kind="gt" data-i="170"/><rect class="gt" x="1716.2" y="3345.2" width="50.2" height="29.7" data-kind="gt" data-i="171"/><rect class="gt" x="1861.1" y="3324.0" width="57.9" height="13.4" data-kind="gt" data-i="172"/><rect class="gt" x="1757.6" y="3330.4" width="168.9" height="37.1" data-kind="gt" data-i="173"/><rect class="gt" x="2265.9" y="3396.9" width="38.8" height="22.9" data-kind="gt" data-i="174"/><rect class="gt" x="2215.4" y="3349.9" width="62.8" height="60.6" data-kind="gt" data-i="175"/><rect class="gt" x="2341.1" y="3333.4" width="49.8" height="20.4" data-kind="gt" data-i="176"/><rect class="gt" x="2256.6" y="3346.1" width="152.6" height="70.9" data-kind="gt" data-i="177"/><rect class="gt" x="539.9" y="3032.7" width="120.3" height="82.4" data-kind="gt" data-i="178"/><rect class="gt" x="386.0" y="3015.2" width="46.7" height="26.3" data-kind="gt" data-i="179"/><rect class="gt" x="414.6" y="3091.8" width="71.1" height="49.7" data-kind="gt" data-i="180"/><rect class="gt" x="328.7" y="3037.4" width="211.4" height="94.0" data-kind="gt" data-i="181"/><rect class="gt" x="235.0" y="2740.9" width="96.4" height="27.4" data-kind="gt" data-i="182"/><rect class="gt" x="313.0" y="2690.3" width="116.1" height="69.0" data-kind="gt" data-i="183"/><rect class="gt" x="158.2" y="2655.2" width="105.4" height="23.2" data-kind="gt" data-i="184"/><rect class="gt" x="64.2" y="2710.0" width="55.4" height="33.3" data-kind="gt" data-i="185"/><rect class="gt" x="141.5" y="2729.6" width="67.3" height="19.6" data-kind="gt" data-i="186"/><rect class="gt" x="107.0" y="2656.4" width="30.4" height="17.9" data-kind="gt" data-i="187"/><rect class="gt" x="1.1" y="2657.0" width="75.6" height="83.9" data-kind="gt" data-i="188"/><rect class="gt" x="77.8" y="2674.9" width="257.7" height="75.6" data-kind="gt" data-i="189"/><rect class="gt" x="725.0" y="2243.1" width="37.2" height="12.6" data-kind="gt" data-i="190"/><rect class="gt" x="2478.5" y="1696.3" width="15.0" height="16.1" data-kind="gt" data-i="191"/><rect class="gt" x="2479.9" y="1695.9" width="13.4" height="21.3" data-kind="gt" data-i="192"/><rect class="gt" x="3008.0" y="2033.0" width="47.4" height="12.5" data-kind="gt" data-i="193"/><rect class="gt" x="3009.2" y="2032.7" width="46.2" height="28.7" data-kind="gt" data-i="194"/><rect class="gt" x="2892.1" y="2280.5" width="15.1" height="12.0" data-kind="gt" data-i="195"/><rect class="gt" x="2891.9" y="2280.1" width="12.6" height="16.7" data-kind="gt" data-i="196"/><rect class="gt" x="2116.8" y="2282.4" width="20.3" height="6.4" data-kind="gt" data-i="197"/><rect class="gt" x="2117.1" y="2282.6" width="20.1" height="7.4" data-kind="gt" data-i="198"/><rect class="gt" x="1782.9" y="2279.4" width="18.7" height="4.5" data-kind="gt" data-i="199"/><rect class="gt" x="1782.9" y="2279.2" width="18.0" height="8.9" data-kind="gt" data-i="200"/><rect class="gt" x="1190.2" y="2555.3" width="37.9" height="2.2" data-kind="gt" data-i="201"/><rect class="gt" x="1190.5" y="2556.1" width="37.3" height="7.9" data-kind="gt" data-i="202"/><rect class="gt" x="954.9" y="2313.2" width="20.5" height="7.7" data-kind="gt" data-i="203"/><rect class="gt" x="954.9" y="2312.9" width="19.2" height="13.0" data-kind="gt" data-i="204"/><rect class="gt" x="1703.8" y="3408.9" width="38.3" height="1.4" data-kind="gt" data-i="205"/><rect class="gt" x="1702.6" y="3410.5" width="39.3" height="6.4" data-kind="gt" data-i="206"/><rect class="gt" x="2246.9" y="3006.0" width="24.1" height="3.7" data-kind="gt" data-i="207"/><rect class="gt has-issue" x="2245.3" y="3009.8" width="25.8" height="0.0" data-kind="gt" data-i="208"/><rect class="gt" x="2592.2" y="2830.4" width="25.7" height="2.7" data-kind="gt" data-i="209"/><rect class="gt" x="2592.4" y="2830.2" width="25.7" height="3.4" data-kind="gt" data-i="210"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">BoostCompTrack, salmón en jaulas</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">LabelMe JSON</span><span class="tag">completo</span></span>
+          <span class="s">Salmón del Atlántico bajo el agua en jaulas de mar (Noruega); cámaras cAIge y GoPro</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/caige_reid.html">
+          <span class="card-img">
+            <img src="./img/caige_reid/part2part__Q1/cross_sheet_0.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 2085 2234" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">cAIge salmón, re-identificación (recortes por individuo)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">Fotos + tablas de verdad</span><span class="tag">completo</span></span>
+          <span class="s">Recortes de salmón bajo el agua en jaulas, agrupados por individuo y cámara, para reconocer al mismo pez en cámaras distintas</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/caige_salmon.html">
+          <span class="card-img">
+            <img src="./img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10832.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 707 210" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><polygon class="gt" points="566.9,94.2 527.5,91.7 493.5,89.7 414.7,83.2 351.4,79.5 352.7,37.4 412.7,40.7 465.7,40.3 569.8,63.6 601.2,75.0 574.7,86.8" data-kind="gt" data-i="0"/><polygon class="gt" points="563.1,153.2 546.9,138.9 543.6,125.5 547.5,113.4 553.8,105.5 566.6,95.0 491.1,90.1 410.5,82.2 350.5,79.6 348.0,139.5" data-kind="gt" data-i="1"/><polygon class="gt" points="645.2,114.5 591.6,88.3 584.3,87.3 572.7,94.1 561.2,103.2 551.7,113.4 547.1,123.8 548.7,137.6 556.0,146.7 563.8,153.2" data-kind="gt" data-i="2"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">cAIge salmón (segmentación y re-identificación)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Recortes de salmón bajo el agua en jaulas; polígonos de las regiones Q1 y Q2 del cuerpo y del opérculo (nombres del data.yaml del autor)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/chinook.html">
+          <span class="card-img">
+            <img src="./img/chinook/test/images/3429scr-1500x720_jpg.rf.dce0ba0df4578a4d1a0e6920eb59e18e.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="40.3" y="69.5" width="313.5" height="337.0" data-kind="gt" data-i="0"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Salmon Detection, Chinook (Roboflow)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Salmón Chinook, cajas de pez completo (40 imágenes)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/fod.html">
+          <span class="card-img">
+            <img src="./img/fod/FOD/data/images/test/718_14_39_53_fish_9_0001_left.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><polygon class="gt" points="1314.1,1058.6 1314.5,1070.6 1314.0,1079.0 1386.4,1079.0 1384.4,1059.2 1384.2,1052.5 1384.4,1042.6 1383.6,1033.2 1382.4,1022.8 1381.8,1010.5 1390.1,993.7 1393.4,988.2 1401.0,978.5 1415.7,951.8 1419.7,946.5 1425.0,937.3 1428.3,931.5 1434.4,927.2 1439.0,930.6 1444.5,938.7 1451.8,953.8 1454.3,964.1 1461.3,979.7 1465.4,992.5 1470.6,1008.8 1472.3,1027.3 1473.6,1037.8 1474.3,1047.9 1476.3,1052.2 1481.0,1056.3 1485.8,1055.7 1485.8,1046.9 1485.5,1035.8 1480.1,1018.2 1478.7,1008.8 1477.7,1000.3 1476.5,986.2 1474.7,976.9 1473.3,968.5 1469.7,958.7 1466.3,950.1 1458.5,940.7 1452.3,930.6 1446.5,922.0 1441.5,912.8 1440.1,907.5 1442.6,901.7 1454.9,873.3 1472.8,834.9 1479.9,824.4 1487.1,826.9 1492.1,829.7 1499.2,834.9 1510.5,843.3 1518.7,849.2 1534.4,859.2 1538.8,863.8 1546.6,871.2 1553.6,877.2 1554.0,873.7 1552.8,870.2 1546.2,861.6 1541.7,854.6 1533.9,844.3 1523.8,833.0 1516.0,823.8 1509.0,817.0 1500.1,805.0 1493.8,796.9 1488.8,790.6 1489.3,785.6 1490.0,779.1 1492.1,773.2 1495.1,766.4 1496.2,761.8 1499.4,753.1 1500.7,742.6 1502.6,731.1 1503.3,724.6 1502.8,714.0 1502.4,711.6 1502.1,707.8 1501.0,703.9 1501.2,695.7 1500.1,689.2 1498.6,678.6 1496.2,674.5 1493.5,668.8 1488.4,659.1 1483.1,650.3 1474.8,638.5 1469.3,630.2 1463.9,621.6 1459.6,614.8 1456.4,609.4 1453.5,605.8 1448.5,599.0 1440.4,592.6 1433.7,585.3 1429.5,580.8 1424.3,577.4 1419.3,575.8 1414.2,574.9 1407.8,571.5 1401.6,571.2 1393.8,570.2 1385.6,572.1 1379.9,573.8 1375.0,580.6 1368.8,586.9 1364.3,591.2 1360.1,597.2 1354.2,605.1 1348.8,612.6 1344.1,621.8 1336.9,632.8 1333.0,640.3 1330.7,647.5 1319.0,684.9 1310.0,732.3 1304.9,769.5 1307.4,815.6 1311.3,851.5 1307.4,860.5 1299.4,863.2 1286.5,864.1 1270.8,867.1 1261.8,870.6 1250.6,874.2 1243.2,875.2 1237.3,879.5 1233.1,882.1 1228.7,886.5 1225.7,891.7 1223.5,895.8 1223.5,901.8 1228.0,907.8 1231.9,913.5 1237.2,920.5 1243.5,927.3 1246.7,931.9 1243.7,935.8 1242.8,940.2 1242.8,948.0 1242.8,956.8 1244.3,966.3 1250.5,967.3 1256.0,967.0 1262.4,966.8 1267.4,966.2 1275.3,963.6 1281.2,962.1 1287.0,960.2 1292.5,958.4 1298.1,956.9 1303.1,954.4 1308.2,953.3 1314.3,951.5 1319.4,950.9 1322.4,952.9 1322.7,956.5 1323.1,958.7 1323.0,963.0 1321.5,968.8 1317.0,972.8 1308.9,977.0 1301.0,980.4 1292.7,983.2 1286.6,985.6 1280.9,990.1 1275.5,996.5 1271.1,1002.3 1270.1,1006.5 1269.9,1009.9 1270.9,1014.0 1274.2,1015.3 1278.5,1014.5 1286.4,1014.4 1290.0,1013.6 1294.7,1013.2 1300.0,1012.9 1302.7,1012.8 1304.7,1015.0 1309.7,1021.7 1311.6,1027.5 1313.8,1034.2 1315.7,1045.3 1315.0,1053.1" data-kind="gt" data-i="0"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">FOD, oclusión de peces</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">COCO JSON</span><span class="tag">completo</span></span>
+          <span class="s">Peces en estanque con oclusión; 14.376 imágenes; incluye largo y peso de 66 carpas</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/salmon_devsoft.html">
+          <span class="card-img">
+            <img src="./img/salmon_devsoft/test/images/VID-20241128-WA0005_011_jpg.rf.b9d3c30d528d1dffccb14a652316407a.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="294.8" y="183.5" width="197.5" height="107.0" data-kind="gt" data-i="0"/><rect class="gt" x="464.0" y="131.0" width="128.0" height="93.0" data-kind="gt" data-i="1"/><rect class="gt" x="417.5" y="31.5" width="78.0" height="61.0" data-kind="gt" data-i="2"/><rect class="gt" x="494.8" y="36.5" width="66.5" height="52.0" data-kind="gt" data-i="3"/><rect class="gt" x="392.3" y="148.5" width="105.5" height="85.0" data-kind="gt" data-i="4"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Salmon (Roboflow, devsoft)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Salmón, cajas de pez completo (54 imágenes)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/salmon_mandag.html">
+          <span class="card-img">
+            <img src="./img/salmon_mandag/test/images/2022-05-01_133737_107668_jpg.rf.7957d34b73f1a43d9edc2a41de1e7e77.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="119.8" y="232.2" width="208.5" height="128.5" data-kind="gt" data-i="0"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">SalmonMandag (Roboflow, río Eidselva)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Salmón bajo el agua en contador de río (Noruega), segunda serie del mismo autor</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/salmon_obb.html">
+          <span class="card-img">
+            <img src="./img/salmon_obb/test/images/P4250030_JPG.rf.8257642734cbe4cb1509b31d4a46f65e.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 1000 750" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><polygon class="gt" points="810.0,277.0 141.3,277.0 141.3,440.3 810.0,440.3" data-kind="gt" data-i="0"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Salmon body OBB</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO-OBB</span><span class="tag">completo</span></span>
+          <span class="s">Salmón del Atlántico adulto fuera del agua, sobre tabla de fenotipado</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/salmon_river.html">
+          <span class="card-img">
+            <img src="./img/salmon_river/test/images/10002_jpg.rf.7a121ee9338f110492e999e13bd7282e.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><polygon class="gt" points="22.8,218.6 36.2,217.9 47.2,218.6 57.7,216.0 69.2,214.7 81.1,209.6 83.5,213.5 90.2,217.3 93.1,218.6 95.5,213.5 105.0,221.1 107.9,219.8 108.8,216.0 102.6,207.1 107.4,205.8 118.4,200.7 126.0,195.6 129.9,197.5 141.3,202.6 152.3,205.2 152.8,200.1 149.9,192.4 149.9,182.9 155.7,179.0 163.8,173.9 173.8,173.9 179.1,185.4 185.3,196.9 192.0,193.7 190.1,177.1 192.0,152.3 193.9,133.2 200.1,116.0 192.5,122.3 180.1,133.2 165.2,148.5 157.6,146.5 151.4,146.5 149.0,145.3 144.7,142.7 140.4,143.4 136.6,146.5 121.7,145.9 112.7,146.5 101.7,146.5 95.5,142.1 91.6,136.3 85.9,133.2 74.4,147.8 68.2,153.6 58.2,156.1 46.2,162.5 36.2,167.6 27.6,173.9 13.2,187.3 8.0,197.5 9.4,207.1 14.2,212.2 22.8,218.6" data-kind="gt" data-i="0"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Salmon (Roboflow, río Eidselva)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Salmón del Atlántico filmado en el río Eidselva (Noruega); cajas de pez completo</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/salmon_vf.html">
+          <span class="card-img">
+            <img src="./img/salmon_vf/test/images/peces5_mp4-137_jpg.rf.d378693dad5b2ff479a85dbbec2597b2.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="67.3" y="0.0" width="164.5" height="138.0" data-kind="gt" data-i="0"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Salmon_VF (Roboflow)</span>
+          <span class="tags"><span class="tag">peces</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Salmón, cajas de pez completo (109 imágenes)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/uib_stereo.html">
+          <span class="card-img">
+            <img src="./img/uib_stereo/dataset_to_zenodo/gt_annotations_and_samples/Dataset_A_fish_specimens/Fish_0.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 921 2048" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">FishSizing estéreo UIB</span>
+          <span class="tags"><span class="tag">estéreo</span><span class="tag">Fotos + tablas de verdad</span><span class="tag">completo</span></span>
+          <span class="s">Bajo el agua, estanque; rosbags estéreo (25–48 GB por parte) con largo total medido a mano</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/bait_5000.html">
+          <span class="card-img">
+            <img src="./img/bait_5000/train/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155121-991_jpg.rf.12fb8329f480d887a75f68b081a00c88.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="353.0" y="481.0" width="80.0" height="46.0" data-kind="gt" data-i="0"/><rect class="gt" x="180.0" y="561.0" width="80.0" height="30.0" data-kind="gt" data-i="1"/><rect class="gt" x="593.0" y="469.0" width="22.0" height="14.0" data-kind="gt" data-i="2"/><rect class="gt" x="510.0" y="116.0" width="32.0" height="14.0" data-kind="gt" data-i="3"/><rect class="gt" x="510.0" y="25.0" width="32.0" height="16.0" data-kind="gt" data-i="4"/><rect class="gt" x="568.0" y="172.0" width="38.0" height="44.0" data-kind="gt" data-i="5"/><rect class="gt" x="510.0" y="95.0" width="100.0" height="54.0" data-kind="gt" data-i="6"/><rect class="gt" x="434.0" y="505.0" width="160.0" height="30.0" data-kind="gt" data-i="7"/><rect class="gt" x="461.0" y="461.0" width="54.0" height="36.0" data-kind="gt" data-i="8"/><rect class="gt" x="485.0" y="454.0" width="42.0" height="33.0" data-kind="gt" data-i="9"/><rect class="gt" x="526.0" y="425.0" width="68.0" height="52.0" data-kind="gt" data-i="10"/><rect class="gt" x="362.0" y="94.0" width="54.0" height="38.0" data-kind="gt" data-i="11"/><rect class="gt" x="364.0" y="32.0" width="82.0" height="37.0" data-kind="gt" data-i="12"/><rect class="gt" x="164.0" y="89.0" width="54.0" height="38.0" data-kind="gt" data-i="13"/><rect class="gt" x="442.0" y="535.0" width="158.0" height="31.0" data-kind="gt" data-i="14"/><rect class="gt" x="217.0" y="473.0" width="44.0" height="31.0" data-kind="gt" data-i="15"/><rect class="gt" x="574.0" y="172.0" width="16.0" height="16.0" data-kind="gt" data-i="16"/><rect class="gt" x="187.0" y="453.0" width="48.0" height="42.0" data-kind="gt" data-i="17"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">bait (Roboflow, 5.000 imágenes)</span>
+          <span class="tags"><span class="tag">pellets</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Mismo tipo de escena que fish bait2; muchas imágenes son mosaicos de 4 (aumento de Roboflow incluido en la exportación)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/cagsdl.html">
+          <span class="card-img">
+            <img src="./img/cagsdl/images/278.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="769.0" y="557.0" width="11.0" height="7.0" data-kind="gt" data-i="0"/><rect class="gt" x="1040.0" y="631.0" width="14.0" height="10.0" data-kind="gt" data-i="1"/><rect class="gt" x="1110.0" y="716.0" width="17.0" height="11.0" data-kind="gt" data-i="2"/><rect class="gt" x="1129.0" y="724.0" width="17.0" height="14.0" data-kind="gt" data-i="3"/><rect class="gt" x="1185.0" y="719.0" width="17.0" height="14.0" data-kind="gt" data-i="4"/><rect class="gt" x="1147.0" y="834.0" width="16.0" height="15.0" data-kind="gt" data-i="5"/><rect class="gt" x="1173.0" y="873.0" width="18.0" height="17.0" data-kind="gt" data-i="6"/><rect class="gt" x="1040.0" y="847.0" width="17.0" height="18.0" data-kind="gt" data-i="7"/><rect class="gt" x="820.0" y="877.0" width="21.0" height="17.0" data-kind="gt" data-i="8"/><rect class="gt" x="441.0" y="1056.0" width="30.0" height="20.0" data-kind="gt" data-i="9"/><rect class="gt" x="1363.0" y="773.0" width="19.0" height="19.0" data-kind="gt" data-i="10"/><rect class="gt" x="1508.0" y="789.0" width="17.0" height="18.0" data-kind="gt" data-i="11"/><rect class="gt" x="1569.0" y="787.0" width="16.0" height="12.0" data-kind="gt" data-i="12"/><rect class="gt" x="1636.0" y="783.0" width="23.0" height="15.0" data-kind="gt" data-i="13"/><rect class="gt" x="1573.0" y="836.0" width="17.0" height="14.0" data-kind="gt" data-i="14"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Alimento no consumido YOLOv5s-CAGSDL</span>
+          <span class="tags"><span class="tag">pellets</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Pellets no consumidos bajo el agua en un sistema de recirculación (RAS), cámara fija, 1920×1080; pellets individuales de ~10 px</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/fish_bait.html">
+          <span class="card-img">
+            <img src="./img/fish_bait/test/images/VID_20241125_171700_HDR10PLUS-mp4_20241127_155121-991_jpg.rf.5e6b058c9ea527e825491534848dfb2b.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="337.6" y="594.2" width="139.8" height="135.6" data-kind="gt" data-i="0"/><rect class="gt" x="147.5" y="303.1" width="88.6" height="135.5" data-kind="gt" data-i="1"/><rect class="gt" x="472.0" y="999.2" width="40.4" height="38.1" data-kind="gt" data-i="2"/><rect class="gt" x="1532.2" y="859.9" width="40.7" height="53.2" data-kind="gt" data-i="3"/><rect class="gt" x="1796.8" y="859.1" width="47.1" height="55.2" data-kind="gt" data-i="4"/><rect class="gt" x="1272.8" y="957.3" width="132.6" height="65.2" data-kind="gt" data-i="5"/><rect class="gt" x="1474.0" y="860.2" width="161.6" height="169.2" data-kind="gt" data-i="6"/><rect class="gt" x="318.2" y="731.6" width="88.1" height="269.1" data-kind="gt" data-i="7"/><rect class="gt" x="430.0" y="777.2" width="105.9" height="90.1" data-kind="gt" data-i="8"/><rect class="gt" x="459.5" y="817.5" width="99.0" height="71.5" data-kind="gt" data-i="9"/><rect class="gt" x="489.8" y="887.5" width="156.1" height="115.8" data-kind="gt" data-i="10"/><rect class="gt" x="1523.0" y="610.7" width="115.9" height="91.6" data-kind="gt" data-i="11"/><rect class="gt" x="1712.8" y="612.9" width="110.7" height="139.2" data-kind="gt" data-i="12"/><rect class="gt" x="1538.4" y="276.1" width="114.9" height="90.5" data-kind="gt" data-i="13"/><rect class="gt" x="224.5" y="745.7" width="92.3" height="266.6" data-kind="gt" data-i="14"/><rect class="gt" x="408.8" y="366.4" width="92.5" height="73.2" data-kind="gt" data-i="15"/><rect class="gt" x="1358.2" y="968.9" width="46.4" height="26.9" data-kind="gt" data-i="16"/><rect class="gt" x="435.0" y="315.0" width="125.0" height="81.7" data-kind="gt" data-i="17"/><rect class="gt" x="157.1" y="597.1" width="118.6" height="167.1" data-kind="gt" data-i="18"/><rect class="gt" x="110.0" y="768.6" width="90.0" height="165.7" data-kind="gt" data-i="19"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">fish bait2 (Roboflow)</span>
+          <span class="tags"><span class="tag">pellets</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Estanque de vidrio con peces ornamentales, cámara cenital; alimento residual en el fondo marcado por grupos (1920×1080)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/fish_food.html">
+          <span class="card-img">
+            <img src="./img/fish_food/test/images/img1010_jpg.rf.32a397b97dbca1c5d2d9592cac631ff4.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 640 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="420.0" y="47.8" width="9.0" height="6.5" data-kind="gt" data-i="0"/><rect class="gt" x="389.5" y="47.5" width="15.0" height="8.0" data-kind="gt" data-i="1"/><rect class="gt" x="377.0" y="67.2" width="7.0" height="9.5" data-kind="gt" data-i="2"/><rect class="gt" x="312.0" y="38.0" width="7.0" height="9.0" data-kind="gt" data-i="3"/><rect class="gt" x="317.7" y="83.0" width="10.5" height="10.0" data-kind="gt" data-i="4"/><rect class="gt" x="258.0" y="85.0" width="12.0" height="11.0" data-kind="gt" data-i="5"/><rect class="gt" x="278.8" y="63.0" width="9.5" height="5.0" data-kind="gt" data-i="6"/><rect class="gt" x="290.0" y="67.8" width="9.0" height="7.5" data-kind="gt" data-i="7"/><rect class="gt" x="321.0" y="55.0" width="12.0" height="7.0" data-kind="gt" data-i="8"/><rect class="gt" x="246.5" y="124.0" width="10.0" height="9.0" data-kind="gt" data-i="9"/><rect class="gt" x="263.7" y="148.0" width="10.5" height="15.0" data-kind="gt" data-i="10"/><rect class="gt" x="257.7" y="189.2" width="7.5" height="10.5" data-kind="gt" data-i="11"/><rect class="gt" x="490.5" y="170.0" width="16.0" height="9.0" data-kind="gt" data-i="12"/><rect class="gt" x="495.5" y="66.8" width="8.0" height="5.5" data-kind="gt" data-i="13"/><rect class="gt" x="489.7" y="84.5" width="7.5" height="8.0" data-kind="gt" data-i="14"/><rect class="gt" x="469.5" y="107.2" width="6.0" height="4.5" data-kind="gt" data-i="15"/><rect class="gt" x="470.5" y="124.8" width="11.0" height="5.5" data-kind="gt" data-i="16"/><rect class="gt" x="370.5" y="101.2" width="12.0" height="7.5" data-kind="gt" data-i="17"/><rect class="gt" x="328.5" y="29.0" width="10.0" height="6.0" data-kind="gt" data-i="18"/><rect class="gt" x="225.5" y="220.2" width="10.0" height="5.5" data-kind="gt" data-i="19"/><rect class="gt" x="402.5" y="189.5" width="8.0" height="16.0" data-kind="gt" data-i="20"/><rect class="gt" x="396.8" y="176.2" width="6.5" height="9.5" data-kind="gt" data-i="21"/><rect class="gt" x="325.7" y="137.8" width="7.5" height="7.5" data-kind="gt" data-i="22"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">fish-food (Roboflow)</span>
+          <span class="tags"><span class="tag">pellets</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Acuario de fondo blanco, cámara cenital; alimento hundido en el fondo, una partícula por caja (640×320)</span>
+        </span>
+</a>      <a class="card" href="./vision/datasets/fish_pellet.html">
+          <span class="card-img">
+            <img src="./img/fish_pellet/test/images/Preset_10_20260526_160726_jpg.rf.c04acc9345673f6c0960a52e104f1201.jpg" alt="" loading="lazy">
+            <svg class="overlay" viewBox="0 0 640 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect class="gt" x="170.8" y="112.5" width="5.5" height="8.0" data-kind="gt" data-i="0"/><rect class="gt" x="28.0" y="85.5" width="5.0" height="8.0" data-kind="gt" data-i="1"/><rect class="gt" x="152.5" y="74.0" width="6.0" height="8.0" data-kind="gt" data-i="2"/><rect class="gt" x="139.7" y="131.7" width="5.5" height="9.5" data-kind="gt" data-i="3"/><rect class="gt" x="138.5" y="78.3" width="5.0" height="7.5" data-kind="gt" data-i="4"/><rect class="gt" x="137.0" y="67.7" width="6.0" height="7.5" data-kind="gt" data-i="5"/><rect class="gt" x="106.3" y="34.8" width="5.5" height="7.5" data-kind="gt" data-i="6"/><rect class="gt" x="120.8" y="136.8" width="5.5" height="8.5" data-kind="gt" data-i="7"/><rect class="gt" x="389.2" y="12.0" width="5.5" height="7.0" data-kind="gt" data-i="8"/><rect class="gt" x="214.3" y="123.7" width="5.5" height="7.5" data-kind="gt" data-i="9"/><rect class="gt" x="143.7" y="45.0" width="5.5" height="8.0" data-kind="gt" data-i="10"/><rect class="gt" x="119.0" y="74.5" width="7.0" height="10.0" data-kind="gt" data-i="11"/><rect class="gt" x="50.3" y="40.3" width="5.5" height="6.5" data-kind="gt" data-i="12"/><rect class="gt" x="228.8" y="111.0" width="4.5" height="8.0" data-kind="gt" data-i="13"/><rect class="gt" x="64.8" y="37.2" width="5.5" height="8.5" data-kind="gt" data-i="14"/><rect class="gt" x="26.8" y="39.5" width="6.5" height="10.0" data-kind="gt" data-i="15"/><rect class="gt" x="202.8" y="39.7" width="9.5" height="11.5" data-kind="gt" data-i="16"/><rect class="gt" x="93.5" y="0.3" width="5.0" height="5.5" data-kind="gt" data-i="17"/><rect class="gt" x="223.5" y="15.2" width="10.0" height="10.5" data-kind="gt" data-i="18"/><rect class="gt" x="202.5" y="23.0" width="7.0" height="7.0" data-kind="gt" data-i="19"/><rect class="gt" x="234.3" y="0.0" width="5.5" height="6.0" data-kind="gt" data-i="20"/><rect class="gt" x="249.7" y="0.3" width="6.5" height="7.5" data-kind="gt" data-i="21"/><rect class="gt" x="254.8" y="16.0" width="6.5" height="8.0" data-kind="gt" data-i="22"/><rect class="gt" x="183.2" y="54.0" width="7.5" height="8.0" data-kind="gt" data-i="23"/><rect class="gt" x="297.0" y="0.3" width="6.0" height="5.5" data-kind="gt" data-i="24"/></svg>
+          </span>
+        <span class="card-body">
+          <span class="card-title">Fish_Pellet (Roboflow)</span>
+          <span class="tags"><span class="tag">pellets</span><span class="tag">YOLO cajas</span><span class="tag">completo</span></span>
+          <span class="s">Vista cenital de la superficie de un estanque con peces ornamentales; pellets flotando (640×640)</span>
+        </span>
+</a>  </div>
+</section>
+
+<section>
+  <div class="section-head"><h2>Últimas corridas de modelos</h2><a href="./vision/runs.html">Ver todas</a></div>
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb --><div class="tablewrap"><table>
+  <thead><tr><th>Corrida</th><th>Dataset</th><th>Modelo</th><th class="n">Imágenes</th><th class="n">Precisión</th><th class="n">Recall</th><th class="n">F1</th><th class="n">IoU medio</th><th class="n">Error puntos</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><a href="./vision/runs/pellets_v1-cagsdl-test-centro.html">pellets_v1-cagsdl-test-centro</a><br><span class="small muted">2026-11-10 17:59</span></td>
+      <td>cagsdl</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">13</td>
+      <td class="n">17,9 %</td>
+      <td class="n">7,9 %</td>
+      <td class="n">10,9 %</td>
+      <td class="n">0,79</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="./vision/runs/pellets_v2-cagsdl-test-centro.html">pellets_v2-cagsdl-test-centro</a><br><span class="small muted">2026-11-10 17:59</span></td>
+      <td>cagsdl</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">13</td>
+      <td class="n">96,9 %</td>
+      <td class="n">91,1 %</td>
+      <td class="n">93,9 %</td>
+      <td class="n">0,91</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="./vision/runs/pellets_v2-fish_food-test-centro.html">pellets_v2-fish_food-test-centro</a><br><span class="small muted">2026-11-10 17:21</span></td>
+      <td>fish_food</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">72</td>
+      <td class="n">83,3 %</td>
+      <td class="n">25,6 %</td>
+      <td class="n">39,2 %</td>
+      <td class="n">0,86</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="./vision/runs/pellets_v2-fish_bait-test-centro.html">pellets_v2-fish_bait-test-centro</a><br><span class="small muted">2026-11-10 17:19</span></td>
+      <td>fish_bait</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">71</td>
+      <td class="n">50,3 %</td>
+      <td class="n">32,4 %</td>
+      <td class="n">39,4 %</td>
+      <td class="n">0,80</td>
+      <td class="n">–</td>
+    </tr>
+    <tr>
+      <td><a href="./vision/runs/pose_v2-bezierfusion-dataset2.html">pose_v2-bezierfusion-dataset2</a><br><span class="small muted">2026-11-10 17:02</span></td>
+      <td>bezierfusion</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">159</td>
+      <td class="n">92,5 %</td>
+      <td class="n">94,4 %</td>
+      <td class="n">93,4 %</td>
+      <td class="n">0,86</td>
+      <td class="n">6,2 %</td>
+    </tr>
+    <tr>
+      <td><a href="./vision/runs/pose_v2-boostcomptrack-solo_salmon.html">pose_v2-boostcomptrack-solo_salmon</a><br><span class="small muted">2026-11-10 17:01</span></td>
+      <td>boostcomptrack</td>
+      <td class="mono small">best.pt</td>
+      <td class="n">61</td>
+      <td class="n">82,2 %</td>
+      <td class="n">74,0 %</td>
+      <td class="n">77,9 %</td>
+      <td class="n">0,80</td>
+      <td class="n">–</td>
+    </tr>
+  </tbody>
+</table></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/_table.html.erb -->
+</section>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/home/index.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

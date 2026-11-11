@@ -1,0 +1,122 @@
+Páginas…
+  / → index.html
+  /estanques/E14 → estanques/E14.html
+  /estanques/E6 → estanques/E6.html
+  /vision → vision.html
+  /vision/datasets → vision/datasets.html
+  /vision/runs → vision/runs.html
+  /vision/videos → vision/videos.html
+  /vision/integracion → vision/integracion.html
+  /vision/datasets/bezierfusion?per=12 → vision/datasets/bezierfusion.html
+  /vision/datasets/bezierfusion/images/0 → vision/datasets/bezierfusion/images/0.html
+  /vision/datasets/bezierfusion/images/1 → vision/datasets/bezierfusion/images/1.html
+  /vision/datasets/bezierfusion/images/2 → vision/datasets/bezierfusion/images/2.html
+  /vision/datasets/boostcomptrack?per=12 → vision/datasets/boostcomptrack.html
+  /vision/datasets/boostcomptrack/images/0 → vision/datasets/boostcomptrack/images/0.html
+  /vision/datasets/boostcomptrack/images/1 → vision/datasets/boostcomptrack/images/1.html
+  /vision/datasets/boostcomptrack/images/2 → vision/datasets/boostcomptrack/images/2.html
+  /vision/datasets/caige_reid?per=12 → vision/datasets/caige_reid.html
+  /vision/datasets/caige_reid/images/0 → vision/datasets/caige_reid/images/0.html
+  /vision/datasets/caige_reid/images/1 → vision/datasets/caige_reid/images/1.html
+  /vision/datasets/caige_reid/images/2 → vision/datasets/caige_reid/images/2.html
+  /vision/datasets/caige_salmon?per=12 → vision/datasets/caige_salmon.html
+  /vision/datasets/caige_salmon/images/0 → vision/datasets/caige_salmon/images/0.html
+  /vision/datasets/caige_salmon/images/1 → vision/datasets/caige_salmon/images/1.html
+  /vision/datasets/caige_salmon/images/2 → vision/datasets/caige_salmon/images/2.html
+  /vision/datasets/chinook?per=12 → vision/datasets/chinook.html
+  /vision/datasets/chinook/images/0 → vision/datasets/chinook/images/0.html
+  /vision/datasets/chinook/images/1 → vision/datasets/chinook/images/1.html
+  /vision/datasets/chinook/images/2 → vision/datasets/chinook/images/2.html
+  /vision/datasets/fod?per=12 → vision/datasets/fod.html
+  /vision/datasets/fod/images/0 → vision/datasets/fod/images/0.html
+  /vision/datasets/fod/images/1 → vision/datasets/fod/images/1.html
+  /vision/datasets/fod/images/2 → vision/datasets/fod/images/2.html
+  /vision/datasets/salmon_devsoft?per=12 → vision/datasets/salmon_devsoft.html
+  /vision/datasets/salmon_devsoft/images/0 → vision/datasets/salmon_devsoft/images/0.html
+  /vision/datasets/salmon_devsoft/images/1 → vision/datasets/salmon_devsoft/images/1.html
+  /vision/datasets/salmon_devsoft/images/2 → vision/datasets/salmon_devsoft/images/2.html
+  /vision/datasets/salmon_mandag?per=12 → vision/datasets/salmon_mandag.html
+  /vision/datasets/salmon_mandag/images/0 → vision/datasets/salmon_mandag/images/0.html
+  /vision/datasets/salmon_mandag/images/1 → vision/datasets/salmon_mandag/images/1.html
+  /vision/datasets/salmon_mandag/images/2 → vision/datasets/salmon_mandag/images/2.html
+  /vision/datasets/salmon_obb?per=12 → vision/datasets/salmon_obb.html
+  /vision/datasets/salmon_obb/images/0 → vision/datasets/salmon_obb/images/0.html
+  /vision/datasets/salmon_obb/images/1 → vision/datasets/salmon_obb/images/1.html
+  /vision/datasets/salmon_obb/images/2 → vision/datasets/salmon_obb/images/2.html
+  /vision/datasets/salmon_river?per=12 → vision/datasets/salmon_river.html
+  /vision/datasets/salmon_river/images/0 → vision/datasets/salmon_river/images/0.html
+  /vision/datasets/salmon_river/images/1 → vision/datasets/salmon_river/images/1.html
+  /vision/datasets/salmon_river/images/2 → vision/datasets/salmon_river/images/2.html
+  /vision/datasets/salmon_vf?per=12 → vision/datasets/salmon_vf.html
+  /vision/datasets/salmon_vf/images/0 → vision/datasets/salmon_vf/images/0.html
+  /vision/datasets/salmon_vf/images/1 → vision/datasets/salmon_vf/images/1.html
+  /vision/datasets/salmon_vf/images/2 → vision/datasets/salmon_vf/images/2.html
+  /vision/datasets/uib_stereo?per=12 → vision/datasets/uib_stereo.html
+  /vision/datasets/uib_stereo/images/0 → vision/datasets/uib_stereo/images/0.html
+  /vision/datasets/uib_stereo/images/1 → vision/datasets/uib_stereo/images/1.html
+  /vision/datasets/uib_stereo/images/2 → vision/datasets/uib_stereo/images/2.html
+  /vision/datasets/bait_5000?per=12 → vision/datasets/bait_5000.html
+  /vision/datasets/bait_5000/images/0 → vision/datasets/bait_5000/images/0.html
+  /vision/datasets/bait_5000/images/1 → vision/datasets/bait_5000/images/1.html
+  /vision/datasets/bait_5000/images/2 → vision/datasets/bait_5000/images/2.html
+  /vision/datasets/cagsdl?per=12 → vision/datasets/cagsdl.html
+  /vision/datasets/cagsdl/images/0 → vision/datasets/cagsdl/images/0.html
+  /vision/datasets/cagsdl/images/1 → vision/datasets/cagsdl/images/1.html
+  /vision/datasets/cagsdl/images/2 → vision/datasets/cagsdl/images/2.html
+  /vision/datasets/fish_bait?per=12 → vision/datasets/fish_bait.html
+  /vision/datasets/fish_bait/images/0 → vision/datasets/fish_bait/images/0.html
+  /vision/datasets/fish_bait/images/1 → vision/datasets/fish_bait/images/1.html
+  /vision/datasets/fish_bait/images/2 → vision/datasets/fish_bait/images/2.html
+  /vision/datasets/fish_food?per=12 → vision/datasets/fish_food.html
+  /vision/datasets/fish_food/images/0 → vision/datasets/fish_food/images/0.html
+  /vision/datasets/fish_food/images/1 → vision/datasets/fish_food/images/1.html
+  /vision/datasets/fish_food/images/2 → vision/datasets/fish_food/images/2.html
+  /vision/datasets/fish_pellet?per=12 → vision/datasets/fish_pellet.html
+  /vision/datasets/fish_pellet/images/0 → vision/datasets/fish_pellet/images/0.html
+  /vision/datasets/fish_pellet/images/1 → vision/datasets/fish_pellet/images/1.html
+  /vision/datasets/fish_pellet/images/2 → vision/datasets/fish_pellet/images/2.html
+  /vision/runs/pellets_v1-cagsdl-test-centro?max=12 → vision/runs/pellets_v1-cagsdl-test-centro.html
+  /vision/runs/pellets_v2-cagsdl-test-centro?max=12 → vision/runs/pellets_v2-cagsdl-test-centro.html
+  /vision/runs/pellets_v2-fish_food-test-centro?max=12 → vision/runs/pellets_v2-fish_food-test-centro.html
+  /vision/runs/pellets_v2-fish_bait-test-centro?max=12 → vision/runs/pellets_v2-fish_bait-test-centro.html
+  /vision/runs/pose_v2-bezierfusion-dataset2?max=12 → vision/runs/pose_v2-bezierfusion-dataset2.html
+  /vision/runs/pose_v2-boostcomptrack-solo_salmon?max=12 → vision/runs/pose_v2-boostcomptrack-solo_salmon.html
+  /vision/runs/pose-bezierfusion-dataset1-solo_cajas?max=12 → vision/runs/pose-bezierfusion-dataset1-solo_cajas.html
+  /vision/runs/pose-bezierfusion-dataset2?max=12 → vision/runs/pose-bezierfusion-dataset2.html
+  /vision/runs/pellets_v1-fish_food-test-centro?max=12 → vision/runs/pellets_v1-fish_food-test-centro.html
+  /vision/runs/pellets_v1-fish_bait-test-centro?max=12 → vision/runs/pellets_v1-fish_bait-test-centro.html
+  /vision/runs/pellets_v1-cagsdl-centro?max=12 → vision/runs/pellets_v1-cagsdl-centro.html
+  /vision/runs/pellets_v1-bait_5000-300?max=12 → vision/runs/pellets_v1-bait_5000-300.html
+  /vision/runs/peces_obb-bezierfusion-todo?max=12 → vision/runs/peces_obb-bezierfusion-todo.html
+  /vision/runs/peces_obb-boostcomptrack-solo_salmon?max=12 → vision/runs/peces_obb-boostcomptrack-solo_salmon.html
+  /vision/runs/peces_obb-chinook-todo?max=12 → vision/runs/peces_obb-chinook-todo.html
+  /vision/runs/peces_obb-salmon_mandag-test?max=12 → vision/runs/peces_obb-salmon_mandag-test.html
+  /vision/runs/peces_obb-salmon_vf-test?max=12 → vision/runs/peces_obb-salmon_vf-test.html
+  /vision/runs/peces_obb-salmon_river-test?max=12 → vision/runs/peces_obb-salmon_river-test.html
+  /vision/runs/pellets_v1-fish_food-test?max=12 → vision/runs/pellets_v1-fish_food-test.html
+  /vision/runs/pellets_v1-fish_bait-test?max=12 → vision/runs/pellets_v1-fish_bait-test.html
+  /vision/runs/pellets_v1-cagsdl-todo?max=12 → vision/runs/pellets_v1-cagsdl-todo.html
+  /vision/runs/base_yoloworld-salmon_river-test?max=12 → vision/runs/base_yoloworld-salmon_river-test.html
+  /vision/runs/base_yoloworld_fish_food_muestra?max=12 → vision/runs/base_yoloworld_fish_food_muestra.html
+  /vision/runs/base_yoloworld_bezierfusion_muestra?max=12 → vision/runs/base_yoloworld_bezierfusion_muestra.html
+  /vision/runs/base_yoloworld_boostcomptrack_muestra?max=12 → vision/runs/base_yoloworld_boostcomptrack_muestra.html
+  /vision/videos/boostcomptrack-e23d37c3 → vision/videos/boostcomptrack-e23d37c3.html
+  /vision/videos/boostcomptrack-5711c95b → vision/videos/boostcomptrack-5711c95b.html
+  /vision/videos/seq-cagsdl-20e72262 → vision/videos/seq-cagsdl-20e72262.html
+  (omitida /vision/videos/seq-fish_food-978ea7af: HTTP Error 404: Not Found)
+  /vision/embed/videos/boostcomptrack-e23d37c3?autoplay=1&max_w=640&model=fish&step=5 → vision/embed/videos/boostcomptrack-e23d37c3__autoplay=1_max_w=640_model=fish_step=5.html
+  /vision/embed/videos/seq-cagsdl-20e72262?autoplay=1&max_w=640&model=pellet&step=10 → vision/embed/videos/seq-cagsdl-20e72262__autoplay=1_max_w=640_model=pellet_step=10.html
+Assets…
+  13 assets
+Imágenes…
+  367 imágenes reducidas
+Nubes 3D…
+  nubes E14: 240 escaneos
+  nubes E6: 240 escaneos
+Videos…
+  video boostcomptrack-e23d37c3 · fish: 48 cuadros
+  video boostcomptrack-e23d37c3 · fish_pose_v2: 48 cuadros
+  video boostcomptrack-5711c95b · fish: 48 cuadros
+  video seq-cagsdl-20e72262 · pellet: 48 cuadros
+  (video seq-fish_food-978ea7af no disponible)
+Listo: /home/admin/salmo-sonar-demo/public/app · 53 MB · 148 páginas

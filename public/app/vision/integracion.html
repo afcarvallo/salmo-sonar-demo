@@ -1,0 +1,148 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../">
+    <title>Integración</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="gn98-mkSBQtHuQQ_6496GYBw_E4dqOGoZ1pWm0ucPzExhYr4p9r-E2xbd5TeaTObWVRTJ1CKwD4ybTBZyJO0eQ" />
+    
+    <link rel="icon" href="../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../assets/viz/colores-57a86e53.js", "viz/estanque": "../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../assets/viz/formato-4622225b.js", "viz/graficos": "../assets/viz/graficos-a40d67ad.js", "viz/indice": "../assets/viz/indice-8fd5f136.js", "viz/registro": "../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link" href="../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link is-active" aria-current="page" href="../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/integration/show.html.erb --><h1>Integración con la interfaz 3D</h1>
+<p class="lede">La recreación 3D del estanque y esta interfaz hablan por HTTP. Sirve cualquier tecnología del lado 3D: Three.js, Babylon, Unity WebGL u otra app Rails. Hay tres caminos, y se pueden usar juntos.</p>
+
+<div class="grid2">
+  <div class="col">
+    <section class="panel">
+      <h2>1. El 3D envía sus cuadros</h2>
+      <p>Cada render con su verdad (peces con largo y peso, pellets con su estado) entra como dataset sintético. Con <code>?predict=1</code> se corre el detector y se compara con la verdad: así se mide el recall por turbidez y luz.</p>
+<pre>// desde el renderer (navegador)
+const blob = await new Promise(r =&gt; renderer.domElement.toBlob(r, "image/png"));
+const form = new FormData();
+form.append("frame", JSON.stringify(frame));     // esquema abajo
+form.append("image", blob, `${frame.camera.id}_${frame.frame_id}.png`);
+await fetch("http://127.0.0.1:3800/api/v1/sim_frames?predict=1", {
+  method: "POST", body: form
+});</pre>
+    </section>
+
+    <section class="panel">
+      <h2>2. El 3D lee lo medido por las cámaras</h2>
+      <p><code>GET /api/v1/tank_state</code> devuelve el último peso medio, el % de alimento no consumido y la grilla de pellets del fondo en coordenadas del estanque. El 3D puede pintar esas celdas sobre el fondo cónico y mostrar lo simulado junto a lo medido.</p>
+<pre>const s = await (await fetch("http://127.0.0.1:3800/api/v1/tank_state")).json();
+// s.weight.data.mean_weight_g, s.uneaten.data.uneaten_pct
+const g = s.bottom_grid?.data;                    // {cell_m, origin_m:[x0,y0], grid:[[n,…],…]}
+g?.grid.forEach((row, j) =&gt; row.forEach((n, i) =&gt; {
+  const x = g.origin_m[0] + (i + 0.5) * g.cell_m;
+  const z = g.origin_m[1] + (j + 0.5) * g.cell_m;
+  const y = -depth + (radius - Math.hypot(x, z)) * 0.05;   // fondo 1:20
+  paintCell(x, y, z, n);                                    // función del 3D
+}));</pre>
+    </section>
+
+    <section class="panel">
+      <h2>3. El 3D incrusta vistas</h2>
+      <p>Vistas sin menú para un panel lateral del 3D.</p>
+<pre>&lt;iframe src="http://127.0.0.1:3800/vision/embed/estanque"&gt;&lt;/iframe&gt;
+&lt;iframe src="http://127.0.0.1:3800/embed/datasets/bezierfusion/images/0"&gt;&lt;/iframe&gt;</pre>
+    </section>
+  </div>
+
+  <div class="col">
+    <section class="panel">
+      <h2>API</h2>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/health</span><span class="d">Estado, servicio de visión, datasets y cuadros</span></div>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/tank_state</span><span class="d">Último peso, alimento no consumido, grilla del fondo, agua</span></div>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/datasets</span><span class="d">Datasets con su formato, licencia y conteos</span></div>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/datasets/:id</span><span class="d">Imágenes reales con URL y etiquetas normalizadas</span></div>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/runs</span><span class="d">Corridas de modelos con métricas</span></div>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/runs/:id</span><span class="d">Predicciones y emparejamiento por imagen</span></div>
+        <div class="endpoint"><span class="m">POST</span><span class="p">/api/v1/sim_frames</span><span class="d">Cuadro del 3D (multipart frame + image, o JSON con image_base64)</span></div>
+        <div class="endpoint"><span class="m">GET</span><span class="p">/api/v1/sim_frames</span><span class="d">Últimos cuadros recibidos</span></div>
+        <div class="endpoint"><span class="m">POST</span><span class="p">/api/v1/measurements</span><span class="d">Medición de cámaras: weight_summary, uneaten, bottom_grid, water</span></div>
+        <div class="endpoint"><span class="m">POST</span><span class="p">/api/v1/predict</span><span class="d">Reenvía una imagen al servicio de visión (task=fish|pellet|stereo)</span></div>
+      <p class="small muted">Escrituras no requieren (definir SALMOSONAR_API_TOKEN para exigir) <code>Authorization: Bearer &lt;token&gt;</code>. CORS: <code>*</code>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Cuadro que envía el 3D</h2>
+<pre>{
+  "frame_id": "000123",
+  "t": "2026-11-09T10:15:03Z",
+  "camera": {"id": "stereo_L", "width": 1920, "height": 1080},
+  "scenario": {"ph": 7.1, "temp_c": 12.5, "o2_mg_l": 9.8,
+               "turbidity_ntu": 1.2, "light": "day",
+               "meal_id": "m42", "feed_kg": 3.2},
+  "fish": [{"id": 17, "length_cm": 14.2, "weight_g": 31.5,
+            "obb": [[812,402],[1030,388],[1034,452],[816,466]],
+            "snout": [1032,420], "tail": [814,434],
+            "distance_m": 0.55, "occluded_frac": 0.1}],
+  "pellets": [{"id": 901, "center": [640,880], "radius_px": 3.1,
+               "state": "bottom", "world_xy_m": [1.2,-0.4]}]
+}</pre>
+      <p class="small muted"><code>camera.id</code>: stereo_L, stereo_R, drain o bottom. Coordenadas en píxeles de la imagen enviada.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Medición que publica el pipeline de cámaras</h2>
+<pre>import requests
+requests.post("http://127.0.0.1:3800/api/v1/measurements", json={
+    "kind": "weight_summary", "source": "camera",
+    "data": {"mean_weight_g": 34.8, "ci95_g": [33.9, 35.7], "n": 312}})</pre>
+    </section>
+  </div>
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/integration/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

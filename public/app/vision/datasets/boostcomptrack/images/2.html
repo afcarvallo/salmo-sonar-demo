@@ -1,0 +1,1499 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../../../">
+    <title>GH010031_frame_1000.jpg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="p-vPJc_jTm_fV5T48gUItDiPy-AWvEdRqPn6Mfg57tBDIa-MjmyNItkpdmwWoaiyXV8vRLswExAhtnIQ_fgT_Q" />
+    
+    <link rel="icon" href="../../../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../../../assets/viz/formato-4622225b.js", "viz/graficos": "../../../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+<p class="crumbs"><a href="../../../../vision/datasets.html">Datasets</a> / <a href="../../../../vision/datasets/boostcomptrack.html">BoostCompTrack, salmón en jaulas</a> /</p>
+<div class="title-row">
+  <h1 class="mono h-file">CS_train/images/GH010031_frame_1000.jpg</h1>
+  <div class="pn">
+    <a class="btn" href="../../../../vision/datasets/boostcomptrack/images/1.html">← anterior</a>
+    <span class="btn">siguiente →</span>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="col">
+    <div class="controls" data-controls>
+      <label class="toggle"><input type="checkbox" id="t-gt" data-layer="gt" checked> Etiquetas del dataset</label>
+      <label class="toggle"><input type="checkbox" id="t-pred" data-layer="pred" checked > Predicciones (best.pt)</label>
+      <label class="toggle"><input type="checkbox" id="t-kp" data-layer="kp" checked> Puntos clave</label>
+      <label class="toggle"><input type="checkbox" id="t-att" data-layer="attention" > Atención (EigenCAM)</label>
+    </div>
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb --><figure class="viewer" data-viewer style="aspect-ratio: 4242 / 4242">
+  <img src="../../../../img/boostcomptrack/CS_train/images/GH010031_frame_1000.jpg" alt="CS_train/images/GH010031_frame_1000.jpg" width="4242" height="4242" decoding="async">
+    <canvas class="attention" data-attention-src="../../../../img/runs/pose_v2-boostcomptrack-solo_salmon/attention/00002.png" hidden></canvas>
+  <svg class="overlay" viewBox="0 0 4242 4242" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="1893.4" y="948.6" width="175.3" height="157.1" data-kind="gt" data-i="0" style="stroke:#e8a33a"/><rect class="gt" x="2049.9" y="1053.8" width="126.6" height="66.2" data-kind="gt" data-i="1" style="stroke:#5bc0eb"/><rect class="gt" x="2285.0" y="1142.8" width="55.8" height="30.5" data-kind="gt" data-i="2" style="stroke:#b9773c"/><rect class="gt" x="2409.6" y="1158.3" width="70.8" height="59.7" data-kind="gt" data-i="3" style="stroke:#8aa63a"/><rect class="gt" x="2522.0" y="1082.4" width="144.2" height="161.7" data-kind="gt" data-i="4" style="stroke:#d6409f"/><rect class="gt" x="2458.3" y="1055.1" width="27.3" height="20.8" data-kind="gt" data-i="5" style="stroke:#3e8ed0"/><rect class="gt" x="2207.7" y="944.1" width="98.7" height="50.0" data-kind="gt" data-i="6" style="stroke:#7a6fd6"/><rect class="gt" x="2045.6" y="945.6" width="476.8" height="223.9" data-kind="gt" data-i="7" style="stroke:#2f9e8f"/><rect class="gt" x="1893.5" y="947.6" width="773.9" height="295.5" data-kind="gt" data-i="8" style="stroke:#e2553f"/><rect class="gt" x="2444.0" y="464.7" width="175.7" height="255.0" data-kind="gt" data-i="9" style="stroke:#d6409f"/><rect class="gt" x="2298.0" y="651.2" width="83.8" height="67.6" data-kind="gt" data-i="10" style="stroke:#8aa63a"/><rect class="gt" x="2038.6" y="664.7" width="134.2" height="36.0" data-kind="gt" data-i="11" style="stroke:#b9773c"/><rect class="gt" x="2339.5" y="498.9" width="46.8" height="19.8" data-kind="gt" data-i="12" style="stroke:#3e8ed0"/><rect class="gt" x="1991.7" y="478.2" width="455.0" height="244.1" data-kind="gt" data-i="13" style="stroke:#2f9e8f"/><rect class="gt" x="1989.9" y="463.8" width="630.6" height="258.6" data-kind="gt" data-i="14" style="stroke:#e2553f"/><rect class="gt" x="2481.8" y="2.6" width="309.1" height="267.5" data-kind="gt" data-i="15" style="stroke:#e8a33a"/><rect class="gt" x="2744.2" y="63.6" width="81.8" height="131.2" data-kind="gt" data-i="16" style="stroke:#5bc0eb"/><rect class="gt" x="2688.3" y="101.3" width="222.1" height="149.4" data-kind="gt" data-i="17" style="stroke:#2f9e8f"/><rect class="gt" x="2479.2" y="5.2" width="436.4" height="267.5" data-kind="gt" data-i="18" style="stroke:#e2553f"/><rect class="gt" x="3584.3" y="1275.7" width="279.1" height="245.2" data-kind="gt" data-i="19" style="stroke:#d6409f"/><rect class="gt" x="3449.6" y="1334.8" width="69.6" height="26.1" data-kind="gt" data-i="20" style="stroke:#3e8ed0"/><rect class="gt" x="3359.1" y="1462.6" width="98.3" height="53.9" data-kind="gt" data-i="21" style="stroke:#8aa63a"/><rect class="gt" x="3100.0" y="1489.6" width="114.8" height="13.9" data-kind="gt" data-i="22" style="stroke:#b9773c"/><rect class="gt" x="2815.7" y="1453.0" width="120.9" height="50.4" data-kind="gt" data-i="23" style="stroke:#5bc0eb"/><rect class="gt" x="2689.6" y="1383.5" width="143.5" height="129.6" data-kind="gt" data-i="24" style="stroke:#e8a33a"/><rect class="gt" x="3062.7" y="1284.1" width="171.7" height="41.4" data-kind="gt" data-i="25" style="stroke:#7a6fd6"/><rect class="gt" x="2816.0" y="1325.5" width="769.1" height="201.1" data-kind="gt" data-i="26" style="stroke:#2f9e8f"/><rect class="gt" x="2688.3" y="1276.6" width="1177.7" height="253.2" data-kind="gt" data-i="27" style="stroke:#e2553f"/><rect class="gt" x="2715.9" y="1526.5" width="122.9" height="134.1" data-kind="gt" data-i="28" style="stroke:#d6409f"/><rect class="gt" x="2656.5" y="1561.8" width="30.6" height="13.5" data-kind="gt" data-i="29" style="stroke:#3e8ed0"/><rect class="gt" x="2455.3" y="1525.3" width="81.8" height="29.4" data-kind="gt" data-i="30" style="stroke:#7a6fd6"/><rect class="gt" x="2233.5" y="1558.2" width="109.4" height="82.4" data-kind="gt" data-i="31" style="stroke:#e8a33a"/><rect class="gt" x="2327.6" y="1616.5" width="68.2" height="40.0" data-kind="gt" data-i="32" style="stroke:#5bc0eb"/><rect class="gt" x="2492.9" y="1649.4" width="54.7" height="12.9" data-kind="gt" data-i="33" style="stroke:#b9773c"/><rect class="gt" x="2610.6" y="1631.2" width="59.4" height="34.7" data-kind="gt" data-i="34" style="stroke:#8aa63a"/><rect class="gt" x="2321.2" y="1551.8" width="395.3" height="114.7" data-kind="gt" data-i="35" style="stroke:#2f9e8f"/><rect class="gt" x="2234.1" y="1525.3" width="606.5" height="152.9" data-kind="gt" data-i="36" style="stroke:#e2553f"/><rect class="gt" x="1465.2" y="1439.3" width="36.3" height="24.4" data-kind="gt" data-i="37" style="stroke:#3e8ed0"/><rect class="gt" x="1527.9" y="1424.4" width="110.4" height="176.1" data-kind="gt" data-i="38" style="stroke:#d6409f"/><rect class="gt" x="1410.0" y="1534.8" width="73.1" height="46.3" data-kind="gt" data-i="39" style="stroke:#8aa63a"/><rect class="gt" x="1232.8" y="1524.9" width="102.5" height="41.3" data-kind="gt" data-i="40" style="stroke:#b9773c"/><rect class="gt" x="1184.6" y="1405.5" width="345.8" height="147.8" data-kind="gt" data-i="41" style="stroke:#2f9e8f"/><rect class="gt" x="1184.6" y="1405.5" width="454.7" height="196.0" data-kind="gt" data-i="42" style="stroke:#e2553f"/><rect class="gt" x="3491.7" y="1693.0" width="321.3" height="305.3" data-kind="gt" data-i="43" style="stroke:#d6409f"/><rect class="gt" x="3311.7" y="1830.3" width="77.3" height="20.0" data-kind="gt" data-i="44" style="stroke:#3e8ed0"/><rect class="gt" x="2826.3" y="1810.3" width="165.3" height="50.7" data-kind="gt" data-i="45" style="stroke:#7a6fd6"/><rect class="gt" x="2629.0" y="2023.7" width="160.0" height="50.7" data-kind="gt" data-i="46" style="stroke:#5bc0eb"/><rect class="gt" x="2418.3" y="1910.3" width="234.7" height="146.7" data-kind="gt" data-i="47" style="stroke:#e8a33a"/><rect class="gt" x="2961.0" y="2049.0" width="122.7" height="46.7" data-kind="gt" data-i="48" style="stroke:#b9773c"/><rect class="gt" x="3233.0" y="1975.7" width="140.0" height="61.3" data-kind="gt" data-i="49" style="stroke:#8aa63a"/><rect class="gt" x="2601.1" y="1848.1" width="890.4" height="237.3" data-kind="gt" data-i="50" style="stroke:#2f9e8f"/><rect class="gt" x="2416.8" y="1693.9" width="1397.6" height="392.8" data-kind="gt" data-i="51" style="stroke:#e2553f"/><rect class="gt" x="3265.8" y="1646.3" width="225.8" height="154.6" data-kind="gt" data-i="52" style="stroke:#d6409f"/><rect class="gt" x="3159.7" y="1751.4" width="49.5" height="20.6" data-kind="gt" data-i="53" style="stroke:#3e8ed0"/><rect class="gt" x="2851.4" y="1781.3" width="102.1" height="46.4" data-kind="gt" data-i="54" style="stroke:#7a6fd6"/><rect class="gt" x="2730.8" y="1754.5" width="537.1" height="108.2" data-kind="gt" data-i="55" style="stroke:#2f9e8f"/><rect class="gt" x="2729.8" y="1647.3" width="763.9" height="214.4" data-kind="gt" data-i="56" style="stroke:#e2553f"/><rect class="gt" x="3471.4" y="1998.3" width="188.5" height="136.9" data-kind="gt" data-i="57" style="stroke:#d6409f"/><rect class="gt" x="3384.5" y="2042.9" width="42.3" height="17.7" data-kind="gt" data-i="58" style="stroke:#3e8ed0"/><rect class="gt" x="3155.2" y="2024.5" width="73.8" height="20.8" data-kind="gt" data-i="59" style="stroke:#7a6fd6"/><rect class="gt" x="2859.8" y="2072.9" width="143.8" height="93.1" data-kind="gt" data-i="60" style="stroke:#e8a33a"/><rect class="gt" x="2982.2" y="2134.5" width="114.6" height="29.2" data-kind="gt" data-i="61" style="stroke:#5bc0eb"/><rect class="gt" x="3350.6" y="2119.8" width="86.2" height="40.8" data-kind="gt" data-i="62" style="stroke:#8aa63a"/><rect class="gt" x="3202.2" y="2152.2" width="72.3" height="17.7" data-kind="gt" data-i="63" style="stroke:#b9773c"/><rect class="gt" x="2977.5" y="2043.7" width="493.1" height="135.4" data-kind="gt" data-i="64" style="stroke:#2f9e8f"/><rect class="gt" x="2861.4" y="1999.1" width="799.2" height="179.2" data-kind="gt" data-i="65" style="stroke:#e2553f"/><rect class="gt" x="2669.8" y="2367.4" width="214.0" height="225.6" data-kind="gt" data-i="66" style="stroke:#d6409f"/><rect class="gt" x="2166.3" y="2373.3" width="162.8" height="39.5" data-kind="gt" data-i="67" style="stroke:#7a6fd6"/><rect class="gt" x="1972.1" y="2561.6" width="133.7" height="47.7" data-kind="gt" data-i="68" style="stroke:#5bc0eb"/><rect class="gt" x="1820.9" y="2455.8" width="168.6" height="140.7" data-kind="gt" data-i="69" style="stroke:#e8a33a"/><rect class="gt" x="2282.6" y="2588.4" width="83.1" height="26.7" data-kind="gt" data-i="70" style="stroke:#b9773c"/><rect class="gt" x="2497.1" y="2539.0" width="108.7" height="52.3" data-kind="gt" data-i="71" style="stroke:#8aa63a"/><rect class="gt" x="2531.4" y="2410.5" width="64.0" height="24.4" data-kind="gt" data-i="72" style="stroke:#3e8ed0"/><rect class="gt" x="1820.4" y="2367.4" width="1061.6" height="254.2" data-kind="gt" data-i="73" style="stroke:#e2553f"/><rect class="gt" x="1961.3" y="2405.7" width="710.2" height="215.9" data-kind="gt" data-i="74" style="stroke:#2f9e8f"/><rect class="gt" x="2383.7" y="2022.2" width="136.9" height="113.1" data-kind="gt" data-i="75" style="stroke:#d6409f"/><rect class="gt" x="2322.2" y="2074.5" width="38.5" height="22.3" data-kind="gt" data-i="76" style="stroke:#3e8ed0"/><rect class="gt" x="2166.8" y="2129.8" width="48.5" height="30.8" data-kind="gt" data-i="77" style="stroke:#7a6fd6"/><rect class="gt" x="2313.7" y="2161.4" width="56.9" height="43.8" data-kind="gt" data-i="78" style="stroke:#8aa63a"/><rect class="gt" x="2207.5" y="2242.2" width="45.4" height="23.1" data-kind="gt" data-i="79" style="stroke:#b9773c"/><rect class="gt" x="2094.5" y="2287.5" width="44.6" height="25.4" data-kind="gt" data-i="80" style="stroke:#5bc0eb"/><rect class="gt" x="2062.9" y="2259.8" width="36.2" height="74.6" data-kind="gt" data-i="81" style="stroke:#e8a33a"/><rect class="gt" x="2082.2" y="2078.3" width="301.5" height="257.7" data-kind="gt" data-i="82" style="stroke:#2f9e8f"/><rect class="gt" x="2061.4" y="2019.8" width="458.5" height="316.9" data-kind="gt" data-i="83" style="stroke:#e2553f"/><rect class="gt" x="1162.7" y="2315.2" width="151.9" height="122.4" data-kind="gt" data-i="84" style="stroke:#e8a33a"/><rect class="gt" x="1298.6" y="2406.9" width="61.5" height="56.4" data-kind="gt" data-i="85" style="stroke:#5bc0eb"/><rect class="gt" x="1497.3" y="2199.8" width="131.4" height="45.5" data-kind="gt" data-i="86" style="stroke:#7a6fd6"/><rect class="gt" x="1787.0" y="2324.8" width="86.5" height="54.5" data-kind="gt" data-i="87" style="stroke:#8aa63a"/><rect class="gt" x="1597.9" y="2377.4" width="98.1" height="26.9" data-kind="gt" data-i="88" style="stroke:#b9773c"/><rect class="gt" x="1925.5" y="2178.1" width="156.4" height="173.1" data-kind="gt" data-i="89" style="stroke:#d6409f"/><rect class="gt" x="1820.4" y="2219.7" width="55.8" height="23.1" data-kind="gt" data-i="90" style="stroke:#3e8ed0"/><rect class="gt" x="1277.0" y="2231.9" width="648.7" height="207.1" data-kind="gt" data-i="91" style="stroke:#2f9e8f"/><rect class="gt" x="1161.1" y="2177.9" width="921.2" height="284.1" data-kind="gt" data-i="92" style="stroke:#e2553f"/><rect class="gt" x="1786.9" y="1880.5" width="98.9" height="120.0" data-kind="gt" data-i="93" style="stroke:#d6409f"/><rect class="gt" x="1717.8" y="1901.0" width="35.1" height="14.6" data-kind="gt" data-i="94" style="stroke:#3e8ed0"/><rect class="gt" x="1511.3" y="1875.6" width="71.9" height="41.6" data-kind="gt" data-i="95" style="stroke:#7a6fd6"/><rect class="gt" x="1297.2" y="1957.8" width="110.3" height="77.3" data-kind="gt" data-i="96" style="stroke:#e8a33a"/><rect class="gt" x="1401.0" y="2008.6" width="66.5" height="22.7" data-kind="gt" data-i="97" style="stroke:#5bc0eb"/><rect class="gt" x="1697.2" y="1966.4" width="51.9" height="38.4" data-kind="gt" data-i="98" style="stroke:#8aa63a"/><rect class="gt" x="1573.4" y="2007.5" width="61.6" height="18.9" data-kind="gt" data-i="99" style="stroke:#b9773c"/><rect class="gt" x="1383.7" y="1908.7" width="402.5" height="132.8" data-kind="gt" data-i="100" style="stroke:#2f9e8f"/><rect class="gt" x="1297.5" y="1875.6" width="587.8" height="167.1" data-kind="gt" data-i="101" style="stroke:#e2553f"/><rect class="gt" x="1282.8" y="2609.9" width="174.3" height="120.7" data-kind="gt" data-i="102" style="stroke:#e8a33a"/><rect class="gt" x="1416.4" y="2714.9" width="122.1" height="39.3" data-kind="gt" data-i="103" style="stroke:#5bc0eb"/><rect class="gt" x="1664.2" y="2758.5" width="50.0" height="17.9" data-kind="gt" data-i="104" style="stroke:#b9773c"/><rect class="gt" x="1822.8" y="2752.1" width="70.0" height="47.9" data-kind="gt" data-i="105" style="stroke:#8aa63a"/><rect class="gt" x="1615.6" y="2579.9" width="114.3" height="37.9" data-kind="gt" data-i="106" style="stroke:#7a6fd6"/><rect class="gt" x="1887.8" y="2658.5" width="35.0" height="25.0" data-kind="gt" data-i="107" style="stroke:#3e8ed0"/><rect class="gt" x="1940.6" y="2689.2" width="155.0" height="132.1" data-kind="gt" data-i="108" style="stroke:#d6409f"/><rect class="gt" x="1427.7" y="2593.1" width="512.9" height="176.2" data-kind="gt" data-i="109" style="stroke:#2f9e8f"/><rect class="gt" x="1283.2" y="2579.2" width="813.9" height="242.6" data-kind="gt" data-i="110" style="stroke:#e2553f"/><rect class="gt" x="1129.1" y="2789.0" width="83.5" height="62.2" data-kind="gt" data-i="111" style="stroke:#e8a33a"/><rect class="gt" x="1204.2" y="2841.5" width="45.7" height="38.3" data-kind="gt" data-i="112" style="stroke:#5bc0eb"/><rect class="gt" x="1313.8" y="2781.9" width="38.3" height="18.6" data-kind="gt" data-i="113" style="stroke:#7a6fd6"/><rect class="gt" x="1455.3" y="2826.6" width="19.7" height="12.8" data-kind="gt" data-i="114" style="stroke:#3e8ed0"/><rect class="gt" x="1483.0" y="2815.9" width="78.7" height="109.6" data-kind="gt" data-i="115" style="stroke:#d6409f"/><rect class="gt" x="1435.1" y="2894.7" width="30.9" height="30.9" data-kind="gt" data-i="116" style="stroke:#8aa63a"/><rect class="gt" x="1313.3" y="2898.4" width="37.2" height="28.2" data-kind="gt" data-i="117" style="stroke:#b9773c"/><rect class="gt" x="1200.5" y="2786.0" width="282.8" height="121.5" data-kind="gt" data-i="118" style="stroke:#2f9e8f"/><rect class="gt" x="1129.0" y="2782.8" width="433.3" height="143.5" data-kind="gt" data-i="119" style="stroke:#e2553f"/><rect class="gt" x="1474.8" y="3134.8" width="103.5" height="101.7" data-kind="gt" data-i="120" style="stroke:#e8a33a"/><rect class="gt" x="1573.0" y="3213.9" width="87.8" height="42.6" data-kind="gt" data-i="121" style="stroke:#5bc0eb"/><rect class="gt" x="1719.1" y="3066.1" width="85.2" height="28.7" data-kind="gt" data-i="122" style="stroke:#7a6fd6"/><rect class="gt" x="1899.1" y="3107.8" width="27.0" height="19.1" data-kind="gt" data-i="123" style="stroke:#3e8ed0"/><rect class="gt" x="1933.0" y="3107.0" width="52.2" height="173.9" data-kind="gt" data-i="124" style="stroke:#d6409f"/><rect class="gt" x="1767.0" y="3242.6" width="84.3" height="19.1" data-kind="gt" data-i="125" style="stroke:#b9773c"/><rect class="gt" x="1890.0" y="3218.2" width="30.0" height="45.3" data-kind="gt" data-i="126" style="stroke:#8aa63a"/><rect class="gt" x="1564.1" y="3091.8" width="368.8" height="171.8" data-kind="gt" data-i="127" style="stroke:#2f9e8f"/><rect class="gt" x="1474.7" y="3065.3" width="512.4" height="215.9" data-kind="gt" data-i="128" style="stroke:#e2553f"/><rect class="gt" x="1268.1" y="3079.8" width="72.3" height="166.0" data-kind="gt" data-i="129" style="stroke:#d6409f"/><rect class="gt" x="700.0" y="3174.5" width="127.7" height="46.8" data-kind="gt" data-i="130" style="stroke:#5bc0eb"/><rect class="gt" x="947.9" y="3022.3" width="97.9" height="31.9" data-kind="gt" data-i="131" style="stroke:#7a6fd6"/><rect class="gt" x="1202.1" y="3070.2" width="29.8" height="23.4" data-kind="gt" data-i="132" style="stroke:#3e8ed0"/><rect class="gt" x="977.7" y="3207.4" width="58.5" height="24.5" data-kind="gt" data-i="133" style="stroke:#b9773c"/><rect class="gt" x="592.6" y="3081.9" width="131.9" height="106.4" data-kind="gt" data-i="134" style="stroke:#e8a33a"/><rect class="gt" x="700.0" y="3043.6" width="567.0" height="180.8" data-kind="gt" data-i="135" style="stroke:#2f9e8f"/><rect class="gt" x="593.6" y="3023.4" width="746.8" height="222.3" data-kind="gt" data-i="136" style="stroke:#e2553f"/><rect class="gt" x="1151.4" y="3172.8" width="75.0" height="59.3" data-kind="gt" data-i="137" style="stroke:#8aa63a"/><rect class="gt" x="1591.9" y="2175.7" width="60.3" height="48.5" data-kind="gt" data-i="138" style="stroke:#d6409f"/><rect class="gt" x="1517.6" y="2180.1" width="26.5" height="11.0" data-kind="gt" data-i="139" style="stroke:#3e8ed0"/><rect class="gt" x="1350.0" y="2144.1" width="64.0" height="22.8" data-kind="gt" data-i="140" style="stroke:#7a6fd6"/><rect class="gt" x="1220.6" y="2213.2" width="76.5" height="22.8" data-kind="gt" data-i="141" style="stroke:#5bc0eb"/><rect class="gt" x="1380.9" y="2247.1" width="56.6" height="8.8" data-kind="gt" data-i="142" style="stroke:#b9773c"/><rect class="gt" x="1132.4" y="2163.2" width="98.5" height="60.3" data-kind="gt" data-i="143" style="stroke:#e8a33a"/><rect class="gt" x="1213.2" y="2155.1" width="380.2" height="97.1" data-kind="gt" data-i="144" style="stroke:#2f9e8f"/><rect class="gt" x="1132.4" y="2144.9" width="520.6" height="105.9" data-kind="gt" data-i="145" style="stroke:#e2553f"/><rect class="gt" x="3791.5" y="1793.6" width="61.7" height="23.4" data-kind="gt" data-i="146" style="stroke:#3e8ed0"/><rect class="gt" x="3460.6" y="1762.8" width="92.6" height="41.5" data-kind="gt" data-i="147" style="stroke:#7a6fd6"/><rect class="gt" x="3275.5" y="1791.5" width="673.4" height="89.4" data-kind="gt" data-i="148" style="stroke:#2f9e8f"/><rect class="gt" x="3270.4" y="1761.3" width="679.6" height="160.4" data-kind="gt" data-i="149" style="stroke:#e2553f"/><rect class="gt" x="1911.0" y="2079.2" width="53.5" height="60.4" data-kind="gt" data-i="150" style="stroke:#d6409f"/><rect class="gt" x="1987.3" y="2113.4" width="19.6" height="11.8" data-kind="gt" data-i="151" style="stroke:#3e8ed0"/><rect class="gt" x="1973.0" y="2150.6" width="30.6" height="18.8" data-kind="gt" data-i="152" style="stroke:#8aa63a"/><rect class="gt" x="2059.6" y="2129.8" width="48.2" height="21.6" data-kind="gt" data-i="153" style="stroke:#7a6fd6"/><rect class="gt" x="1965.3" y="2113.4" width="188.2" height="107.8" data-kind="gt" data-i="154" style="stroke:#2f9e8f"/><rect class="gt" x="1910.6" y="2079.2" width="243.3" height="143.7" data-kind="gt" data-i="155" style="stroke:#e2553f"/><rect class="gt" x="2156.4" y="3044.9" width="62.4" height="48.3" data-kind="gt" data-i="156" style="stroke:#e8a33a"/><rect class="gt" x="2209.4" y="3086.3" width="48.3" height="19.2" data-kind="gt" data-i="157" style="stroke:#5bc0eb"/><rect class="gt" x="2286.3" y="3100.4" width="23.1" height="12.4" data-kind="gt" data-i="158" style="stroke:#b9773c"/><rect class="gt" x="2214.2" y="3036.7" width="147.3" height="72.8" data-kind="gt" data-i="159" style="stroke:#2f9e8f"/><rect class="gt" x="2156.2" y="3036.1" width="230.2" height="76.4" data-kind="gt" data-i="160" style="stroke:#e2553f"/><rect class="gt" x="2296.4" y="3282.8" width="84.6" height="69.8" data-kind="gt" data-i="161" style="stroke:#e8a33a"/><rect class="gt" x="2296.4" y="3282.8" width="175.1" height="97.6" data-kind="gt" data-i="162" style="stroke:#e2553f"/><rect class="gt" x="2363.3" y="3288.8" width="103.0" height="88.8" data-kind="gt" data-i="163" style="stroke:#2f9e8f"/><rect class="gt" x="2352.5" y="3346.2" width="39.0" height="31.5" data-kind="gt" data-i="164" style="stroke:#5bc0eb"/><rect class="gt" x="3407.0" y="2030.4" width="331.6" height="157.0" data-kind="gt" data-i="165" style="stroke:#2f9e8f"/><rect class="gt" x="3307.0" y="2146.8" width="114.6" height="42.4" data-kind="gt" data-i="166" style="stroke:#e8a33a"/><rect class="gt" x="3408.9" y="2160.8" width="79.1" height="27.2" data-kind="gt" data-i="167" style="stroke:#5bc0eb"/><rect class="gt" x="3307.0" y="2030.4" width="429.7" height="158.9" data-kind="gt" data-i="168" style="stroke:#e2553f"/><rect class="gt" x="827.5" y="2052.7" width="178.8" height="156.8" data-kind="gt" data-i="169" style="stroke:#e2553f"/><rect class="gt" x="585.5" y="2074.4" width="259.6" height="114.8" data-kind="gt" data-i="170" style="stroke:#e2553f"/><rect class="gt" x="873.0" y="2433.3" width="409.9" height="135.6" data-kind="gt" data-i="171" style="stroke:#e2553f"/><rect class="gt" x="890.5" y="2494.6" width="327.9" height="50.9" data-kind="gt" data-i="172" style="stroke:#e2553f"/><rect class="gt" x="878.8" y="2552.7" width="348.2" height="90.5" data-kind="gt" data-i="173" style="stroke:#e2553f"/><rect class="gt" x="889.8" y="3308.7" width="368.8" height="201.5" data-kind="gt" data-i="174" style="stroke:#e2553f"/><rect class="gt" x="1349.7" y="3331.4" width="488.0" height="179.8" data-kind="gt" data-i="175" style="stroke:#e2553f"/><rect class="gt" x="1727.1" y="2589.0" width="253.5" height="93.0" data-kind="gt" data-i="176" style="stroke:#e2553f"/><rect class="gt" x="958.6" y="2696.7" width="262.3" height="73.1" data-kind="gt" data-i="177" style="stroke:#e2553f"/><rect class="gt" x="796.7" y="2455.4" width="88.4" height="40.7" data-kind="gt" data-i="178" style="stroke:#e2553f"/><rect class="gt" x="958.0" y="2053.6" width="48.3" height="73.4" data-kind="gt" data-i="179" style="stroke:#d6409f"/><rect class="gt" x="923.8" y="2088.4" width="14.1" height="9.7" data-kind="gt" data-i="180" style="stroke:#3e8ed0"/><rect class="gt" x="907.9" y="2127.1" width="31.4" height="22.4" data-kind="gt" data-i="181" style="stroke:#8aa63a"/><rect class="gt" x="865.7" y="2156.7" width="22.4" height="12.6" data-kind="gt" data-i="182" style="stroke:#b9773c"/><rect class="gt" x="829.6" y="2171.8" width="18.8" height="14.4" data-kind="gt" data-i="183" style="stroke:#5bc0eb"/><rect class="gt" x="833.2" y="2183.4" width="39.3" height="23.5" data-kind="gt" data-i="184" style="stroke:#e8a33a"/><rect class="gt" x="843.3" y="2095.7" width="113.7" height="91.7" data-kind="gt" data-i="185" style="stroke:#2f9e8f"/><rect class="gt" x="670.2" y="2153.3" width="41.0" height="13.8" data-kind="gt" data-i="186" style="stroke:#b9773c"/><rect class="gt" x="667.7" y="2073.8" width="43.6" height="18.5" data-kind="gt" data-i="187" style="stroke:#7a6fd6"/><rect class="gt" x="585.5" y="2079.1" width="257.3" height="96.2" data-kind="gt" data-i="188" style="stroke:#2f9e8f"/><rect class="gt" x="1200.4" y="2486.3" width="82.1" height="82.0" data-kind="gt" data-i="189" style="stroke:#d6409f"/><rect class="gt" x="926.5" y="2488.9" width="35.0" height="19.7" data-kind="gt" data-i="190" style="stroke:#5bc0eb"/><rect class="gt" x="1030.8" y="2512.0" width="35.9" height="16.7" data-kind="gt" data-i="191" style="stroke:#b9773c"/><rect class="gt" x="1125.2" y="2513.2" width="37.6" height="19.7" data-kind="gt" data-i="192" style="stroke:#8aa63a"/><rect class="gt" x="1019.2" y="2435.5" width="53.0" height="12.8" data-kind="gt" data-i="193" style="stroke:#7a6fd6"/><rect class="gt" x="873.5" y="2438.5" width="64.1" height="47.4" data-kind="gt" data-i="194" style="stroke:#e8a33a"/><rect class="gt" x="928.2" y="2438.0" width="273.5" height="87.2" data-kind="gt" data-i="195" style="stroke:#2f9e8f"/><rect class="gt" x="1151.7" y="2470.5" width="29.5" height="16.2" data-kind="gt" data-i="196" style="stroke:#3e8ed0"/><rect class="gt" x="935.1" y="2523.5" width="33.9" height="19.1" data-kind="gt" data-i="197" style="stroke:#5bc0eb"/><rect class="gt" x="891.2" y="2500.4" width="47.8" height="33.1" data-kind="gt" data-i="198" style="stroke:#e8a33a"/><rect class="gt" x="1019.5" y="2532.3" width="26.3" height="10.0" data-kind="gt" data-i="199" style="stroke:#b9773c"/><rect class="gt" x="1108.3" y="2522.0" width="38.3" height="14.8" data-kind="gt" data-i="200" style="stroke:#8aa63a"/><rect class="gt" x="1165.7" y="2517.7" width="53.4" height="28.2" data-kind="gt" data-i="201" style="stroke:#d6409f"/><rect class="gt" x="931.4" y="2498.9" width="234.3" height="45.5" data-kind="gt" data-i="202" style="stroke:#2f9e8f"/><rect class="gt" x="879.0" y="2586.3" width="55.3" height="40.7" data-kind="gt" data-i="203" style="stroke:#e8a33a"/><rect class="gt" x="1017.6" y="2623.9" width="27.0" height="12.8" data-kind="gt" data-i="204" style="stroke:#b9773c"/><rect class="gt" x="1101.7" y="2615.6" width="31.1" height="22.5" data-kind="gt" data-i="205" style="stroke:#8aa63a"/><rect class="gt" x="1152.6" y="2585.5" width="73.4" height="57.4" data-kind="gt" data-i="206" style="stroke:#d6409f"/><rect class="gt" x="1112.5" y="2576.5" width="21.1" height="12.5" data-kind="gt" data-i="207" style="stroke:#3e8ed0"/><rect class="gt" x="999.0" y="2555.0" width="46.7" height="14.5" data-kind="gt" data-i="208" style="stroke:#7a6fd6"/><rect class="gt" x="941.9" y="2619.4" width="39.8" height="16.3" data-kind="gt" data-i="209" style="stroke:#5bc0eb"/><rect class="gt" x="924.2" y="2570.6" width="228.0" height="65.7" data-kind="gt" data-i="210" style="stroke:#2f9e8f"/><rect class="gt" x="1189.0" y="3309.4" width="70.1" height="154.3" data-kind="gt" data-i="211" style="stroke:#d6409f"/><rect class="gt" x="1039.4" y="3318.1" width="74.0" height="40.2" data-kind="gt" data-i="212" style="stroke:#7a6fd6"/><rect class="gt" x="891.3" y="3429.9" width="59.1" height="82.7" data-kind="gt" data-i="213" style="stroke:#e8a33a"/><rect class="gt" x="934.6" y="3467.7" width="55.1" height="34.6" data-kind="gt" data-i="214" style="stroke:#5bc0eb"/><rect class="gt" x="1048.8" y="3465.4" width="41.7" height="22.8" data-kind="gt" data-i="215" style="stroke:#b9773c"/><rect class="gt" x="1131.5" y="3428.3" width="37.8" height="40.2" data-kind="gt" data-i="216" style="stroke:#8aa63a"/><rect class="gt" x="1166.1" y="3341.7" width="22.8" height="18.1" data-kind="gt" data-i="217" style="stroke:#3e8ed0"/><rect class="gt" x="933.9" y="3358.3" width="259.1" height="138.6" data-kind="gt" data-i="218" style="stroke:#2f9e8f"/><rect class="gt" x="1748.5" y="3372.4" width="88.4" height="137.0" data-kind="gt" data-i="219" style="stroke:#d6409f"/><rect class="gt" x="1689.1" y="3380.4" width="28.3" height="20.3" data-kind="gt" data-i="220" style="stroke:#3e8ed0"/><rect class="gt" x="1526.1" y="3331.1" width="80.4" height="26.1" data-kind="gt" data-i="221" style="stroke:#7a6fd6"/><rect class="gt" x="1404.3" y="3424.6" width="77.5" height="33.3" data-kind="gt" data-i="222" style="stroke:#5bc0eb"/><rect class="gt" x="1547.1" y="3460.1" width="55.1" height="24.6" data-kind="gt" data-i="223" style="stroke:#b9773c"/><rect class="gt" x="1642.0" y="3450.7" width="56.5" height="50.0" data-kind="gt" data-i="224" style="stroke:#8aa63a"/><rect class="gt" x="1349.7" y="3355.5" width="81.4" height="74.9" data-kind="gt" data-i="225" style="stroke:#e8a33a"/><rect class="gt" x="1408.4" y="3344.9" width="341.3" height="123.2" data-kind="gt" data-i="226" style="stroke:#2f9e8f"/><rect class="gt" x="1726.5" y="2590.2" width="73.5" height="19.0" data-kind="gt" data-i="227" style="stroke:#7a6fd6"/><rect class="gt" x="1873.4" y="2610.2" width="24.3" height="14.6" data-kind="gt" data-i="228" style="stroke:#3e8ed0"/><rect class="gt" x="1917.7" y="2611.0" width="62.8" height="72.1" data-kind="gt" data-i="229" style="stroke:#d6409f"/><rect class="gt" x="1727.9" y="2606.2" width="190.3" height="55.3" data-kind="gt" data-i="230" style="stroke:#2f9e8f"/><rect class="gt" x="1171.5" y="2710.8" width="48.9" height="41.6" data-kind="gt" data-i="231" style="stroke:#d6409f"/><rect class="gt" x="1131.5" y="2745.6" width="25.2" height="15.7" data-kind="gt" data-i="232" style="stroke:#8aa63a"/><rect class="gt" x="1063.9" y="2753.8" width="26.2" height="14.4" data-kind="gt" data-i="233" style="stroke:#b9773c"/><rect class="gt" x="994.8" y="2741.3" width="30.8" height="18.4" data-kind="gt" data-i="234" style="stroke:#5bc0eb"/><rect class="gt" x="958.9" y="2714.7" width="52.3" height="34.1" data-kind="gt" data-i="235" style="stroke:#e8a33a"/><rect class="gt" x="1059.0" y="2697.1" width="38.0" height="17.0" data-kind="gt" data-i="236" style="stroke:#7a6fd6"/><rect class="gt" x="1154.8" y="2716.1" width="14.8" height="10.2" data-kind="gt" data-i="237" style="stroke:#3e8ed0"/><rect class="gt" x="1004.9" y="2713.4" width="166.9" height="47.5" data-kind="gt" data-i="238" style="stroke:#2f9e8f"/><rect class="gt" x="830.9" y="2478.3" width="53.1" height="17.1" data-kind="gt" data-i="239" style="stroke:#5bc0eb"/><rect class="gt" x="798.0" y="2455.9" width="49.6" height="33.3" data-kind="gt" data-i="240" style="stroke:#e8a33a"/><rect class="gt" x="839.3" y="2456.9" width="45.8" height="39.5" data-kind="gt" data-i="241" style="stroke:#2f9e8f"/><rect class="gt" x="3780.6" y="1883.9" width="44.4" height="37.9" data-kind="gt" data-i="242" style="stroke:#8aa63a"/><rect class="gt" x="2095.5" y="2204.1" width="22.0" height="17.1" data-kind="gt" data-i="243" style="stroke:#5bc0eb"/><rect class="gt" x="2271.3" y="3026.4" width="49.6" height="23.3" data-kind="gt" data-i="244" style="stroke:#7a6fd6"/><rect class="gt" x="2329.5" y="3051.2" width="28.7" height="15.5" data-kind="gt" data-i="245" style="stroke:#3e8ed0"/><rect class="gt" x="2359.5" y="3062.2" width="26.1" height="46.3" data-kind="gt" data-i="246" style="stroke:#d6409f"/><rect class="gt" x="2324.5" y="3096.9" width="20.2" height="16.3" data-kind="gt" data-i="247" style="stroke:#8aa63a"/><rect class="gt" x="1952.2" y="2370.3" width="210.6" height="51.8" data-kind="gt" data-i="248" style="stroke:#e2553f"/><rect class="gt" x="1719.0" y="2397.6" width="217.7" height="59.3" data-kind="gt" data-i="249" style="stroke:#e2553f"/><rect class="gt" x="2581.0" y="2542.4" width="132.6" height="117.9" data-kind="gt" data-i="250" style="stroke:#e2553f"/><rect class="gt" x="2056.2" y="2713.3" width="176.1" height="119.0" data-kind="gt" data-i="251" style="stroke:#e2553f"/><rect class="gt" x="2276.3" y="2313.1" width="231.4" height="70.8" data-kind="gt" data-i="252" style="stroke:#e2553f"/><rect class="gt" x="1630.3" y="1962.2" width="255.9" height="91.0" data-kind="gt" data-i="253" style="stroke:#e2553f"/><rect class="gt" x="2124.9" y="2379.7" width="37.7" height="28.8" data-kind="gt" data-i="254" style="stroke:#d6409f"/><rect class="gt" x="2091.9" y="2383.3" width="21.5" height="9.4" data-kind="gt" data-i="255" style="stroke:#3e8ed0"/><rect class="gt" x="2016.7" y="2370.2" width="39.3" height="10.7" data-kind="gt" data-i="256" style="stroke:#7a6fd6"/><rect class="gt" x="1986.2" y="2405.3" width="17.3" height="10.5" data-kind="gt" data-i="257" style="stroke:#5bc0eb"/><rect class="gt" x="2046.9" y="2413.2" width="20.8" height="8.8" data-kind="gt" data-i="258" style="stroke:#b9773c"/><rect class="gt" x="1952.4" y="2375.5" width="40.4" height="34.7" data-kind="gt" data-i="259" style="stroke:#e8a33a"/><rect class="gt" x="1992.5" y="2378.9" width="133.5" height="41.0" data-kind="gt" data-i="260" style="stroke:#2f9e8f"/><rect class="gt" x="1874.6" y="2409.0" width="14.9" height="9.0" data-kind="gt" data-i="261" style="stroke:#3e8ed0"/><rect class="gt" x="1905.7" y="2412.5" width="31.0" height="40.9" data-kind="gt" data-i="262" style="stroke:#d6409f"/><rect class="gt" x="1863.0" y="2438.2" width="22.0" height="15.0" data-kind="gt" data-i="263" style="stroke:#8aa63a"/><rect class="gt" x="1828.5" y="2448.9" width="21.6" height="8.2" data-kind="gt" data-i="264" style="stroke:#b9773c"/><rect class="gt" x="1760.2" y="2436.1" width="37.6" height="12.5" data-kind="gt" data-i="265" style="stroke:#5bc0eb"/><rect class="gt" x="1719.3" y="2414.7" width="44.6" height="32.1" data-kind="gt" data-i="266" style="stroke:#e8a33a"/><rect class="gt" x="1789.0" y="2397.2" width="40.4" height="14.4" data-kind="gt" data-i="267" style="stroke:#7a6fd6"/><rect class="gt" x="1759.3" y="2410.7" width="146.2" height="37.6" data-kind="gt" data-i="268" style="stroke:#2f9e8f"/><rect class="gt" x="2598.9" y="2544.8" width="12.0" height="10.1" data-kind="gt" data-i="269" style="stroke:#3e8ed0"/><rect class="gt" x="2652.6" y="2561.8" width="27.2" height="21.7" data-kind="gt" data-i="270" style="stroke:#7a6fd6"/><rect class="gt" x="2669.7" y="2624.8" width="43.7" height="36.1" data-kind="gt" data-i="271" style="stroke:#e8a33a"/><rect class="gt" x="2639.8" y="2622.0" width="31.2" height="23.9" data-kind="gt" data-i="272" style="stroke:#5bc0eb"/><rect class="gt" x="2610.4" y="2595.1" width="14.7" height="13.5" data-kind="gt" data-i="273" style="stroke:#b9773c"/><rect class="gt" x="2581.3" y="2541.9" width="128.4" height="103.4" data-kind="gt" data-i="274" style="stroke:#2f9e8f"/><rect class="gt" x="2114.4" y="2794.0" width="46.5" height="21.4" data-kind="gt" data-i="275" style="stroke:#8aa63a"/><rect class="gt" x="2195.2" y="2738.0" width="33.2" height="94.8" data-kind="gt" data-i="276" style="stroke:#d6409f"/><rect class="gt" x="2150.5" y="2744.1" width="19.1" height="13.1" data-kind="gt" data-i="277" style="stroke:#3e8ed0"/><rect class="gt" x="2083.6" y="2714.3" width="26.1" height="20.1" data-kind="gt" data-i="278" style="stroke:#7a6fd6"/><rect class="gt" x="2058.2" y="2733.8" width="136.5" height="69.2" data-kind="gt" data-i="279" style="stroke:#2f9e8f"/><rect class="gt" x="2356.5" y="2321.0" width="38.3" height="13.9" data-kind="gt" data-i="280" style="stroke:#7a6fd6"/><rect class="gt" x="2380.9" y="2372.5" width="17.0" height="10.8" data-kind="gt" data-i="281" style="stroke:#b9773c"/><rect class="gt" x="2322.2" y="2362.3" width="27.5" height="13.9" data-kind="gt" data-i="282" style="stroke:#5bc0eb"/><rect class="gt" x="2277.4" y="2333.2" width="48.3" height="37.5" data-kind="gt" data-i="283" style="stroke:#e8a33a"/><rect class="gt" x="2458.0" y="2313.9" width="50.9" height="50.6" data-kind="gt" data-i="284" style="stroke:#d6409f"/><rect class="gt" x="2436.5" y="2327.5" width="13.1" height="11.2" data-kind="gt" data-i="285" style="stroke:#3e8ed0"/><rect class="gt" x="2417.7" y="2358.3" width="26.3" height="21.2" data-kind="gt" data-i="286" style="stroke:#8aa63a"/><rect class="gt" x="1840.5" y="1998.1" width="42.8" height="54.3" data-kind="gt" data-i="287" style="stroke:#d6409f"/><rect class="gt" x="1795.9" y="2020.8" width="24.9" height="25.7" data-kind="gt" data-i="288" style="stroke:#8aa63a"/><rect class="gt" x="1725.3" y="2026.4" width="34.2" height="10.8" data-kind="gt" data-i="289" style="stroke:#b9773c"/><rect class="gt" x="1632.3" y="2005.9" width="27.5" height="15.2" data-kind="gt" data-i="290" style="stroke:#5bc0eb"/><rect class="gt" x="1776.6" y="1972.9" width="18.2" height="13.0" data-kind="gt" data-i="291" style="stroke:#3e8ed0"/><rect class="gt" x="1639.4" y="1982.5" width="201.1" height="49.1" data-kind="gt" data-i="292" style="stroke:#2f9e8f"/><rect class="gt" x="2319.3" y="2333.0" width="138.3" height="40.3" data-kind="gt" data-i="293" style="stroke:#2f9e8f"/><rect class="gt" x="586.3" y="2121.8" width="38.9" height="16.2" data-kind="gt" data-i="294" style="stroke:#5bc0eb"/><rect class="gt" x="772.7" y="2166.2" width="35.0" height="23.9" data-kind="gt" data-i="295" style="stroke:#8aa63a"/><rect class="gt" x="804.7" y="2120.5" width="18.4" height="15.0" data-kind="gt" data-i="296" style="stroke:#3e8ed0"/><rect class="gt" x="1903.3" y="986.8" width="59.9" height="0.5" data-kind="gt" data-i="297" style="stroke:#c44f8a"/><rect class="gt" x="1897.6" y="987.3" width="67.0" height="30.7" data-kind="gt" data-i="298" style="stroke:#6d8f99"/><rect class="gt" x="2694.1" y="1432.9" width="42.3" height="21.7" data-kind="gt" data-i="299" style="stroke:#c44f8a"/><rect class="gt" x="2692.7" y="1433.6" width="43.0" height="33.6" data-kind="gt" data-i="300" style="stroke:#6d8f99"/><rect class="gt" x="2234.9" y="1584.4" width="36.1" height="11.8" data-kind="gt" data-i="301" style="stroke:#c44f8a"/><rect class="gt" x="2235.2" y="1584.5" width="35.7" height="12.3" data-kind="gt" data-i="302" style="stroke:#6d8f99"/><rect class="gt" x="2421.7" y="1970.3" width="82.5" height="23.1" data-kind="gt" data-i="303" style="stroke:#c44f8a"/><rect class="gt" x="2423.0" y="1970.2" width="81.7" height="36.9" data-kind="gt" data-i="304" style="stroke:#6d8f99"/><rect class="gt" x="2865.6" y="2108.5" width="43.9" height="11.9" data-kind="gt" data-i="305" style="stroke:#c44f8a"/><rect class="gt" x="2865.6" y="2108.5" width="44.2" height="17.4" data-kind="gt" data-i="306" style="stroke:#6d8f99"/><rect class="gt" x="1824.0" y="2513.8" width="50.0" height="15.7" data-kind="gt" data-i="307" style="stroke:#c44f8a"/><rect class="gt" x="1825.0" y="2514.5" width="49.8" height="34.3" data-kind="gt" data-i="308" style="stroke:#6d8f99"/><rect class="gt" x="1298.5" y="1995.0" width="31.7" height="15.9" data-kind="gt" data-i="309" style="stroke:#c44f8a"/><rect class="gt" x="1301.1" y="1995.0" width="29.6" height="22.8" data-kind="gt" data-i="310" style="stroke:#6d8f99"/><rect class="gt" x="1136.8" y="2183.6" width="32.3" height="6.4" data-kind="gt" data-i="311" style="stroke:#c44f8a"/><rect class="gt" x="1136.9" y="2183.6" width="32.3" height="11.5" data-kind="gt" data-i="312" style="stroke:#6d8f99"/><rect class="gt" x="1165.0" y="2366.2" width="38.2" height="24.5" data-kind="gt" data-i="313" style="stroke:#c44f8a"/><rect class="gt" x="1168.8" y="2366.3" width="34.5" height="35.7" data-kind="gt" data-i="314" style="stroke:#6d8f99"/><rect class="gt" x="1287.0" y="2654.1" width="62.2" height="8.1" data-kind="gt" data-i="315" style="stroke:#c44f8a"/><rect class="gt" x="1285.8" y="2654.6" width="63.8" height="16.7" data-kind="gt" data-i="316" style="stroke:#6d8f99"/><rect class="gt" x="595.4" y="3130.8" width="39.1" height="8.3" data-kind="gt" data-i="317" style="stroke:#c44f8a"/><rect class="gt" x="595.0" y="3130.4" width="39.9" height="14.4" data-kind="gt" data-i="318" style="stroke:#6d8f99"/><rect class="gt" x="2302.2" y="3297.0" width="28.9" height="13.5" data-kind="gt" data-i="319" style="stroke:#c44f8a"/><rect class="gt" x="2300.0" y="3301.8" width="30.7" height="8.5" data-kind="gt" data-i="320" style="stroke:#6d8f99"/><rect class="pred" x="1350.1" y="3315.3" width="496.4" height="210.2" data-kind="pred" data-i="0"/><polyline class="kp-line pred kp-eje" points="1352.8,3383.4 1772.8,3455.6"/><polyline class="kp-line pred kp-eje" points="1567.2,3350.7 1576.3,3477.1"/><polyline class="kp-line pred" points="1352.8,3383.4 1567.2,3350.7"/><polyline class="kp-line pred" points="1567.2,3350.7 1772.8,3455.6"/><polyline class="kp-line pred" points="1772.8,3455.6 1576.3,3477.1"/><polyline class="kp-line pred" points="1576.3,3477.1 1352.8,3383.4"/><circle class="kp pred" cx="1352.8" cy="3383.4" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1772.8" cy="3455.6" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1567.2" cy="3350.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1576.3" cy="3477.1" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1287.4" y="1848.8" width="599.9" height="212.9" data-kind="pred" data-i="1"/><polyline class="kp-line pred kp-eje" points="1289.0,1998.8 1832.0,1933.1"/><polyline class="kp-line pred kp-eje" points="1540.0,1899.7 1597.4,2021.6"/><polyline class="kp-line pred" points="1289.0,1998.8 1540.0,1899.7"/><polyline class="kp-line pred" points="1540.0,1899.7 1832.0,1933.1"/><polyline class="kp-line pred" points="1832.0,1933.1 1597.4,2021.6"/><polyline class="kp-line pred" points="1597.4,2021.6 1289.0,1998.8"/><circle class="kp pred" cx="1289.0" cy="1998.8" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1832.0" cy="1933.1" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1540.0" cy="1899.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1597.4" cy="2021.6" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1474.2" y="3053.0" width="517.1" height="238.1" data-kind="pred" data-i="2"/><polyline class="kp-line pred kp-eje" points="1487.8,3168.6 1978.3,3179.6"/><polyline class="kp-line pred kp-eje" points="1760.2,3096.5 1790.4,3244.8"/><polyline class="kp-line pred" points="1487.8,3168.6 1760.2,3096.5"/><polyline class="kp-line pred" points="1760.2,3096.5 1978.3,3179.6"/><polyline class="kp-line pred" points="1978.3,3179.6 1790.4,3244.8"/><polyline class="kp-line pred" points="1790.4,3244.8 1487.8,3168.6"/><circle class="kp pred" cx="1487.8" cy="3168.6" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1978.3" cy="3179.6" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1760.2" cy="3096.5" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1790.4" cy="3244.8" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1880.3" y="919.4" width="801.9" height="329.1" data-kind="pred" data-i="3"/><polyline class="kp-line pred kp-eje" points="1894.7,1005.6 2599.0,1154.9"/><polyline class="kp-line pred kp-eje" points="2270.3,961.7 2252.9,1153.8"/><polyline class="kp-line pred" points="1894.7,1005.6 2270.3,961.7"/><polyline class="kp-line pred" points="2270.3,961.7 2599.0,1154.9"/><polyline class="kp-line pred" points="2599.0,1154.9 2252.9,1153.8"/><polyline class="kp-line pred" points="2252.9,1153.8 1894.7,1005.6"/><circle class="kp pred" cx="1894.7" cy="1005.6" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2599.0" cy="1154.9" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2270.3" cy="961.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2252.9" cy="1153.8" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2228.1" y="1504.1" width="613.8" height="199.4" data-kind="pred" data-i="4"/><polyline class="kp-line pred kp-eje" points="2258.2,1602.1 2769.1,1609.1"/><polyline class="kp-line pred kp-eje" points="2508.7,1539.4 2528.0,1650.2"/><polyline class="kp-line pred" points="2258.2,1602.1 2508.7,1539.4"/><polyline class="kp-line pred" points="2508.7,1539.4 2769.1,1609.1"/><polyline class="kp-line pred" points="2769.1,1609.1 2528.0,1650.2"/><polyline class="kp-line pred" points="2528.0,1650.2 2258.2,1602.1"/><circle class="kp pred" cx="2258.2" cy="1602.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2769.1" cy="1609.1" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2508.7" cy="1539.4" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2528.0" cy="1650.2" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1131.8" y="2769.3" width="431.8" height="172.9" data-kind="pred" data-i="5"/><polyline class="kp-line pred kp-eje" points="1143.6,2818.5 1520.0,2879.8"/><polyline class="kp-line pred kp-eje" points="1338.5,2783.6 1336.0,2892.7"/><polyline class="kp-line pred" points="1143.6,2818.5 1338.5,2783.6"/><polyline class="kp-line pred" points="1338.5,2783.6 1520.0,2879.8"/><polyline class="kp-line pred" points="1520.0,2879.8 1336.0,2892.7"/><polyline class="kp-line pred" points="1336.0,2892.7 1143.6,2818.5"/><circle class="kp pred" cx="1143.6" cy="2818.5" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1520.0" cy="2879.8" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1338.5" cy="2783.6" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1336.0" cy="2892.7" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2414.9" y="1634.4" width="1407.0" height="521.3" data-kind="pred" data-i="6"/><polyline class="kp-line pred kp-eje" points="2459.8,2047.1 3634.0,1825.6"/><polyline class="kp-line pred kp-eje" points="3008.8,1761.5 3045.5,2040.3"/><polyline class="kp-line pred" points="2459.8,2047.1 3008.8,1761.5"/><polyline class="kp-line pred" points="3008.8,1761.5 3634.0,1825.6"/><polyline class="kp-line pred" points="3634.0,1825.6 3045.5,2040.3"/><polyline class="kp-line pred" points="3045.5,2040.3 2459.8,2047.1"/><circle class="kp pred" cx="2459.8" cy="2047.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="3634.0" cy="1825.6" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="3008.8" cy="1761.5" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="3045.5" cy="2040.3" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2033.4" y="2008.7" width="497.9" height="341.9" data-kind="pred" data-i="7"/><polyline class="kp-line pred kp-eje" points="2049.0,2297.1 2454.0,2074.5"/><polyline class="kp-line pred kp-eje" points="2207.7,2148.2 2280.1,2244.0"/><polyline class="kp-line pred" points="2049.0,2297.1 2207.7,2148.2"/><polyline class="kp-line pred" points="2207.7,2148.2 2454.0,2074.5"/><polyline class="kp-line pred" points="2454.0,2074.5 2280.1,2244.0"/><polyline class="kp-line pred" points="2280.1,2244.0 2049.0,2297.1"/><circle class="kp pred" cx="2049.0" cy="2297.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2454.0" cy="2074.5" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2207.7" cy="2148.2" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2280.1" cy="2244.0" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="840.1" y="2409.9" width="447.6" height="162.0" data-kind="pred" data-i="8"/><polyline class="kp-line pred kp-eje" points="842.8,2462.2 1240.3,2514.8"/><polyline class="kp-line pred kp-eje" points="1044.0,2441.0 1073.1,2521.7"/><polyline class="kp-line pred" points="842.8,2462.2 1044.0,2441.0"/><polyline class="kp-line pred" points="1044.0,2441.0 1240.3,2514.8"/><polyline class="kp-line pred" points="1240.3,2514.8 1073.1,2521.7"/><polyline class="kp-line pred" points="1073.1,2521.7 842.8,2462.2"/><circle class="kp pred" cx="842.8" cy="2462.2" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1240.3" cy="2514.8" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1044.0" cy="2441.0" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1073.1" cy="2521.7" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="584.4" y="2988.3" width="774.9" height="279.4" data-kind="pred" data-i="9"/><polyline class="kp-line pred kp-eje" points="626.1,3138.9 1311.6,3156.1"/><polyline class="kp-line pred kp-eje" points="985.5,3035.2 1022.5,3217.6"/><polyline class="kp-line pred" points="626.1,3138.9 985.5,3035.2"/><polyline class="kp-line pred" points="985.5,3035.2 1311.6,3156.1"/><polyline class="kp-line pred" points="1311.6,3156.1 1022.5,3217.6"/><polyline class="kp-line pred" points="1022.5,3217.6 626.1,3138.9"/><circle class="kp pred" cx="626.1" cy="3138.9" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1311.6" cy="3156.1" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="985.5" cy="3035.2" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1022.5" cy="3217.6" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1290.9" y="2544.1" width="805.4" height="295.9" data-kind="pred" data-i="10"/><polyline class="kp-line pred kp-eje" points="1315.7,2680.3 2014.6,2745.1"/><polyline class="kp-line pred kp-eje" points="1701.4,2591.1 1720.7,2779.0"/><polyline class="kp-line pred" points="1315.7,2680.3 1701.4,2591.1"/><polyline class="kp-line pred" points="1701.4,2591.1 2014.6,2745.1"/><polyline class="kp-line pred" points="2014.6,2745.1 1720.7,2779.0"/><polyline class="kp-line pred" points="1720.7,2779.0 1315.7,2680.3"/><circle class="kp pred" cx="1315.7" cy="2680.3" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2014.6" cy="2745.1" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1701.4" cy="2591.1" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1720.7" cy="2779.0" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2680.0" y="1221.1" width="1191.7" height="354.8" data-kind="pred" data-i="11"/><polyline class="kp-line pred kp-eje" points="2748.6,1455.1 3670.9,1379.7"/><polyline class="kp-line pred kp-eje" points="3203.8,1283.5 3214.3,1502.9"/><polyline class="kp-line pred" points="2748.6,1455.1 3203.8,1283.5"/><polyline class="kp-line pred" points="3203.8,1283.5 3670.9,1379.7"/><polyline class="kp-line pred" points="3670.9,1379.7 3214.3,1502.9"/><polyline class="kp-line pred" points="3214.3,1502.9 2748.6,1455.1"/><circle class="kp pred" cx="2748.6" cy="1455.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="3670.9" cy="1379.7" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="3203.8" cy="1283.5" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="3214.3" cy="1502.9" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2861.6" y="1978.5" width="774.2" height="231.9" data-kind="pred" data-i="12"/><polyline class="kp-line pred kp-eje" points="2871.4,2122.7 3542.7,2078.0"/><polyline class="kp-line pred kp-eje" points="3197.0,2036.1 3266.5,2154.5"/><polyline class="kp-line pred" points="2871.4,2122.7 3197.0,2036.1"/><polyline class="kp-line pred" points="3197.0,2036.1 3542.7,2078.0"/><polyline class="kp-line pred" points="3542.7,2078.0 3266.5,2154.5"/><polyline class="kp-line pred" points="3266.5,2154.5 2871.4,2122.7"/><circle class="kp pred" cx="2871.4" cy="2122.7" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="3542.7" cy="2078.0" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="3197.0" cy="2036.1" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="3266.5" cy="2154.5" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2277.7" y="2310.4" width="225.1" height="77.5" data-kind="pred" data-i="13"/><polyline class="kp-line pred kp-eje" points="2286.8,2359.2 2478.8,2341.5"/><polyline class="kp-line pred kp-eje" points="2370.6,2323.7 2382.8,2373.5"/><polyline class="kp-line pred" points="2286.8,2359.2 2370.6,2323.7"/><polyline class="kp-line pred" points="2370.6,2323.7 2478.8,2341.5"/><polyline class="kp-line pred" points="2478.8,2341.5 2382.8,2373.5"/><polyline class="kp-line pred" points="2382.8,2373.5 2286.8,2359.2"/><circle class="kp pred" cx="2286.8" cy="2359.2" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2478.8" cy="2341.5" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2370.6" cy="2323.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2382.8" cy="2373.5" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1816.1" y="2352.8" width="1073.3" height="303.4" data-kind="pred" data-i="14"/><polyline class="kp-line pred kp-eje" points="1853.2,2552.1 2797.0,2488.2"/><polyline class="kp-line pred kp-eje" points="2320.7,2433.9 2345.6,2612.8"/><polyline class="kp-line pred" points="1853.2,2552.1 2320.7,2433.9"/><polyline class="kp-line pred" points="2320.7,2433.9 2797.0,2488.2"/><polyline class="kp-line pred" points="2797.0,2488.2 2345.6,2612.8"/><polyline class="kp-line pred" points="2345.6,2612.8 1853.2,2552.1"/><circle class="kp pred" cx="1853.2" cy="2552.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2797.0" cy="2488.2" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2320.7" cy="2433.9" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2345.6" cy="2612.8" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="885.6" y="3304.9" width="386.7" height="221.2" data-kind="pred" data-i="15"/><polyline class="kp-line pred kp-eje" points="879.1,3471.2 1227.2,3385.4"/><polyline class="kp-line pred kp-eje" points="1038.1,3374.7 1080.1,3483.4"/><polyline class="kp-line pred" points="879.1,3471.2 1038.1,3374.7"/><polyline class="kp-line pred" points="1038.1,3374.7 1227.2,3385.4"/><polyline class="kp-line pred" points="1227.2,3385.4 1080.1,3483.4"/><polyline class="kp-line pred" points="1080.1,3483.4 879.1,3471.2"/><circle class="kp pred" cx="879.1" cy="3471.2" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1227.2" cy="3385.4" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1038.1" cy="3374.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1080.1" cy="3483.4" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1163.7" y="2149.8" width="925.5" height="324.9" data-kind="pred" data-i="16"/><polyline class="kp-line pred kp-eje" points="1217.5,2386.6 1987.8,2258.6"/><polyline class="kp-line pred kp-eje" points="1577.0,2258.9 1668.0,2396.3"/><polyline class="kp-line pred" points="1217.5,2386.6 1577.0,2258.9"/><polyline class="kp-line pred" points="1577.0,2258.9 1987.8,2258.6"/><polyline class="kp-line pred" points="1987.8,2258.6 1668.0,2396.3"/><polyline class="kp-line pred" points="1668.0,2396.3 1217.5,2386.6"/><circle class="kp pred" cx="1217.5" cy="2386.6" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1987.8" cy="2258.6" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1577.0" cy="2258.9" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1668.0" cy="2396.3" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1136.7" y="2124.8" width="513.2" height="153.3" data-kind="pred" data-i="17"/><polyline class="kp-line pred kp-eje" points="1140.0,2197.0 1600.6,2199.8"/><polyline class="kp-line pred kp-eje" points="1363.9,2150.2 1401.5,2236.4"/><polyline class="kp-line pred" points="1140.0,2197.0 1363.9,2150.2"/><polyline class="kp-line pred" points="1363.9,2150.2 1600.6,2199.8"/><polyline class="kp-line pred" points="1600.6,2199.8 1401.5,2236.4"/><polyline class="kp-line pred" points="1401.5,2236.4 1140.0,2197.0"/><circle class="kp pred" cx="1140.0" cy="2197.0" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1600.6" cy="2199.8" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1363.9" cy="2150.2" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1401.5" cy="2236.4" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="817.6" y="2049.7" width="197.7" height="159.6" data-kind="pred" data-i="18"/><polyline class="kp-line pred kp-eje" points="834.0,2165.8 980.9,2094.7"/><polyline class="kp-line pred kp-eje" points="890.0,2111.5 917.3,2155.8"/><polyline class="kp-line pred" points="834.0,2165.8 890.0,2111.5"/><polyline class="kp-line pred" points="890.0,2111.5 980.9,2094.7"/><polyline class="kp-line pred" points="980.9,2094.7 917.3,2155.8"/><polyline class="kp-line pred" points="917.3,2155.8 834.0,2165.8"/><circle class="kp pred" cx="834.0" cy="2165.8" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="980.9" cy="2094.7" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="890.0" cy="2111.5" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="917.3" cy="2155.8" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="2157.3" y="3016.8" width="226.0" height="110.2" data-kind="pred" data-i="19"/><polyline class="kp-line pred kp-eje" points="2174.0,3071.1 2371.6,3083.8"/><polyline class="kp-line pred kp-eje" points="2285.7,3036.4 2290.0,3105.1"/><polyline class="kp-line pred" points="2174.0,3071.1 2285.7,3036.4"/><polyline class="kp-line pred" points="2285.7,3036.4 2371.6,3083.8"/><polyline class="kp-line pred" points="2371.6,3083.8 2290.0,3105.1"/><polyline class="kp-line pred" points="2290.0,3105.1 2174.0,3071.1"/><circle class="kp pred" cx="2174.0" cy="3071.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2371.6" cy="3083.8" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2285.7" cy="3036.4" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2290.0" cy="3105.1" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="880.5" y="2541.1" width="352.6" height="116.5" data-kind="pred" data-i="20"/><polyline class="kp-line pred kp-eje" points="877.9,2590.1 1193.3,2603.0"/><polyline class="kp-line pred kp-eje" points="1029.9,2563.7 1051.3,2634.6"/><polyline class="kp-line pred" points="877.9,2590.1 1029.9,2563.7"/><polyline class="kp-line pred" points="1029.9,2563.7 1193.3,2603.0"/><polyline class="kp-line pred" points="1193.3,2603.0 1051.3,2634.6"/><polyline class="kp-line pred" points="1051.3,2634.6 877.9,2590.1"/><circle class="kp pred" cx="877.9" cy="2590.1" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1193.3" cy="2603.0" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1029.9" cy="2563.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1051.3" cy="2634.6" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="949.1" y="2682.3" width="290.3" height="99.9" data-kind="pred" data-i="21"/><polyline class="kp-line pred kp-eje" points="947.3,2738.4 1225.2,2738.3"/><polyline class="kp-line pred kp-eje" points="1081.5,2699.2 1094.8,2760.1"/><polyline class="kp-line pred" points="947.3,2738.4 1081.5,2699.2"/><polyline class="kp-line pred" points="1081.5,2699.2 1225.2,2738.3"/><polyline class="kp-line pred" points="1225.2,2738.3 1094.8,2760.1"/><polyline class="kp-line pred" points="1094.8,2760.1 947.3,2738.4"/><circle class="kp pred" cx="947.3" cy="2738.4" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1225.2" cy="2738.3" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1081.5" cy="2699.2" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1094.8" cy="2760.1" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1748.3" y="2393.9" width="190.8" height="68.2" data-kind="pred" data-i="22"/><polyline class="kp-line pred kp-eje" points="1761.8,2430.7 1914.5,2425.1"/><polyline class="kp-line pred kp-eje" points="1824.8,2407.5 1834.1,2441.7"/><polyline class="kp-line pred" points="1761.8,2430.7 1824.8,2407.5"/><polyline class="kp-line pred" points="1824.8,2407.5 1914.5,2425.1"/><polyline class="kp-line pred" points="1914.5,2425.1 1834.1,2441.7"/><polyline class="kp-line pred" points="1834.1,2441.7 1761.8,2430.7"/><circle class="kp pred" cx="1761.8" cy="2430.7" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1914.5" cy="2425.1" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1824.8" cy="2407.5" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1834.1" cy="2441.7" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1952.9" y="2356.8" width="230.2" height="69.0" data-kind="pred" data-i="23"/><polyline class="kp-line pred kp-eje" points="1962.8,2385.8 2154.7,2392.9"/><polyline class="kp-line pred kp-eje" points="2046.3,2365.7 2052.9,2412.4"/><polyline class="kp-line pred" points="1962.8,2385.8 2046.3,2365.7"/><polyline class="kp-line pred" points="2046.3,2365.7 2154.7,2392.9"/><polyline class="kp-line pred" points="2154.7,2392.9 2052.9,2412.4"/><polyline class="kp-line pred" points="2052.9,2412.4 1962.8,2385.8"/><circle class="kp pred" cx="1962.8" cy="2385.8" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="2154.7" cy="2392.9" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2046.3" cy="2365.7" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2052.9" cy="2412.4" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1908.4" y="2085.8" width="254.6" height="112.7" data-kind="pred" data-i="24"/><polyline class="kp-line pred kp-eje" points="2142.2,2172.8 1957.0,2122.6"/><polyline class="kp-line pred kp-eje" points="2074.8,2121.0 2050.6,2171.5"/><polyline class="kp-line pred" points="2142.2,2172.8 2074.8,2121.0"/><polyline class="kp-line pred" points="2074.8,2121.0 1957.0,2122.6"/><polyline class="kp-line pred" points="1957.0,2122.6 2050.6,2171.5"/><polyline class="kp-line pred" points="2050.6,2171.5 2142.2,2172.8"/><circle class="kp pred" cx="2142.2" cy="2172.8" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1957.0" cy="2122.6" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="2074.8" cy="2121.0" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="2050.6" cy="2171.5" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="1575.4" y="2372.5" width="235.9" height="87.7" data-kind="pred" data-i="25"/><polyline class="kp-line pred kp-eje" points="1576.4,2434.4 1807.0,2408.5"/><polyline class="kp-line pred kp-eje" points="1684.3,2397.9 1703.8,2444.6"/><polyline class="kp-line pred" points="1576.4,2434.4 1684.3,2397.9"/><polyline class="kp-line pred" points="1684.3,2397.9 1807.0,2408.5"/><polyline class="kp-line pred" points="1807.0,2408.5 1703.8,2444.6"/><polyline class="kp-line pred" points="1703.8,2444.6 1576.4,2434.4"/><circle class="kp pred" cx="1576.4" cy="2434.4" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1807.0" cy="2408.5" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1684.3" cy="2397.9" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1703.8" cy="2444.6" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle><rect class="pred" x="875.6" y="2486.2" width="344.1" height="77.6" data-kind="pred" data-i="26"/><polyline class="kp-line pred kp-eje" points="878.5,2509.0 1188.5,2518.0"/><polyline class="kp-line pred kp-eje" points="1011.5,2480.9 1040.9,2537.9"/><polyline class="kp-line pred" points="878.5,2509.0 1011.5,2480.9"/><polyline class="kp-line pred" points="1011.5,2480.9 1188.5,2518.0"/><polyline class="kp-line pred" points="1188.5,2518.0 1040.9,2537.9"/><polyline class="kp-line pred" points="1040.9,2537.9 878.5,2509.0"/><circle class="kp pred" cx="878.5" cy="2509.0" r="15.6" style="fill:#e5484d"><title>punto 1</title></circle><circle class="kp pred" cx="1188.5" cy="2518.0" r="15.6" style="fill:#30a46c"><title>punto 2</title></circle><circle class="kp pred" cx="1011.5" cy="2480.9" r="15.6" style="fill:#3e8ed0"><title>punto 3</title></circle><circle class="kp pred" cx="1040.9" cy="2537.9" r="15.6" style="fill:#e8a33a"><title>punto 4</title></circle></svg>
+  
+</figure>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb -->
+    <div class="legend">
+        <span><i class="sw" style="border:2px solid #e2553f"></i>salmon (39)</span><span><i class="sw" style="border:2px solid #2f9e8f"></i>body (39)</span><span><i class="sw" style="border:2px solid #e8a33a"></i>head (30)</span><span><i class="sw" style="border:2px solid #7a6fd6"></i>dorsal_fin (30)</span><span><i class="sw" style="border:2px solid #3e8ed0"></i>adi_fin (34)</span><span><i class="sw" style="border:2px solid #d6409f"></i>tail_fin (32)</span><span><i class="sw" style="border:2px solid #8aa63a"></i>anal_fin (30)</span><span><i class="sw" style="border:2px solid #b9773c"></i>pelv_fin (30)</span><span><i class="sw" style="border:2px solid #5bc0eb"></i>pec_fin (33)</span><span><i class="sw" style="border:2px solid #c44f8a"></i>line_ujaw (12)</span><span><i class="sw" style="border:2px solid #6d8f99"></i>line_ljaw (12)</span>
+      <span><i class="sw sw-pred"></i>predicción del modelo</span>
+      <span><i class="sw sw-issue"></i>etiqueta a revisar</span>
+      
+      <span><i class="sw sw-att"></i>atención baja → alta</span>
+    </div>
+    
+
+    <div class="panel" data-live-predict data-url="/vision/datasets/boostcomptrack/images/2/predict">
+      <div class="section-head"><h3>Predicción en vivo</h3>
+        <button type="button" class="btn primary" data-predict >Correr el modelo sobre esta imagen</button></div>
+        <div class="predict-opts">
+          <label class="field">Modelo
+            <select data-predict-model>
+              <option value="world" data-def-conf="0.2" selected>YOLO-World (sin entrenar, clases como texto)</option><option value="fish" data-def-conf="0.35" >Peces · YOLO11s-OBB entrenado aquí</option><option value="fish_pose" data-def-conf="0.3" >Peces · YOLO11s-pose entrenado aquí (hocico, cola, dorso, vientre)</option><option value="fish_pose_v2" data-def-conf="0.3" >Peces · YOLO11s-pose v2 (BézierFusion + salmón BoostCompTrack)</option><option value="pellet" data-def-conf="0.25" >Pellets · YOLO11s entrenado aquí</option><option value="pellet_v2" data-def-conf="0.25" >Pellets · YOLO11s con CAGSDL (RAS real) + Roboflow</option><option value="bct_bbox" data-def-conf="0.25" >BoostCompTrack · YOLOv8m cajas (NTNU)</option><option value="bct_pose" data-def-conf="0.25" >BoostCompTrack · YOLOv8m-pose cajas + puntos (NTNU)</option>
+            </select>
+          </label>
+          <label class="field" data-predict-classes-field >Clases (texto)
+            <input type="text" data-predict-classes value="salmon,fish" size="16" spellcheck="false">
+          </label>
+          <label class="field">Confianza mínima
+            <input type="range" data-predict-conf min="0.05" max="0.9" step="0.05" value="0.2">
+            <output data-predict-conf-out class="mono">0,20</output>
+          </label>
+          <label class="toggle"><input type="checkbox" data-predict-attention checked> Mapa de atención</label>
+        </div>
+      <p class="small muted" data-predict-msg>Envía la imagen al servicio de visión (http://127.0.0.1:8601) y dibuja cajas y probabilidades en el visor.</p>
+    </div>
+  </div>
+
+  <div class="col">
+      <form class="panel run-pick" method="get">
+        <label for="run">Resultados de</label>
+        <select id="run" name="run" disabled>
+          <option value="pose_v2-boostcomptrack-solo_salmon" selected>best.pt · 2026-11-10T17:01</option><option value="peces_obb-boostcomptrack-solo_salmon" >best.pt · 2026-11-10T15:45</option><option value="base_yoloworld_boostcomptrack_muestra" >yolov8s-worldv2.pt [salmon] · 2026-11-10T13:48</option>
+        </select>
+        <noscript><button class="btn">Ver</button></noscript>
+      </form>
+      <div class="stats">
+        <div class="stat"><span class="k">Aciertos</span><span class="v">26</span><span class="s">IoU ≥ 0.5</span></div>
+        <div class="stat"><span class="k">Falsos positivos</span><span class="v">1</span><span class="s">predicciones sin etiqueta</span></div>
+        <div class="stat"><span class="k">No detectados</span><span class="v">13</span><span class="s">etiquetas sin predicción</span></div>
+        <div class="stat"><span class="k">Atención en cajas</span><span class="v">71 %</span><span class="s">46.0 ms por imagen</span></div>
+      </div>
+
+    <div class="panel">
+      <h3>Etiquetas (321) · se muestran las primeras 150</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>#</th><th>Clase</th><th class="n">Caja px</th><th class="n">Largo px</th><th class="n">Alto px</th><th>Revisión</th><th class="n">IoU</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">#1</td>
+            <td>head · pez 1</td>
+            <td class="n">175×157</td>
+            <td class="n">175</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,87</td>
+          </tr>
+          <tr>
+            <td class="mono">#2</td>
+            <td>pec_fin · pez 1</td>
+            <td class="n">127×66</td>
+            <td class="n">127</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#3</td>
+            <td>pelv_fin · pez 1</td>
+            <td class="n">56×31</td>
+            <td class="n">56</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#4</td>
+            <td>anal_fin · pez 1</td>
+            <td class="n">71×60</td>
+            <td class="n">71</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,71</td>
+          </tr>
+          <tr>
+            <td class="mono">#5</td>
+            <td>tail_fin · pez 1</td>
+            <td class="n">144×162</td>
+            <td class="n">162</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,76</td>
+          </tr>
+          <tr>
+            <td class="mono">#6</td>
+            <td>adi_fin · pez 1</td>
+            <td class="n">27×21</td>
+            <td class="n">27</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#7</td>
+            <td>dorsal_fin · pez 1</td>
+            <td class="n">99×50</td>
+            <td class="n">99</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,75</td>
+          </tr>
+          <tr>
+            <td class="mono">#8</td>
+            <td>body · pez 1</td>
+            <td class="n">477×224</td>
+            <td class="n">477</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#9</td>
+            <td>salmon · pez 1</td>
+            <td class="n">774×295</td>
+            <td class="n">774</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,75</td>
+          </tr>
+          <tr>
+            <td class="mono">#10</td>
+            <td>tail_fin · pez 2</td>
+            <td class="n">176×255</td>
+            <td class="n">255</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,83</td>
+          </tr>
+          <tr>
+            <td class="mono">#11</td>
+            <td>anal_fin · pez 2</td>
+            <td class="n">84×68</td>
+            <td class="n">84</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,85</td>
+          </tr>
+          <tr>
+            <td class="mono">#12</td>
+            <td>pelv_fin · pez 2</td>
+            <td class="n">134×36</td>
+            <td class="n">134</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,87</td>
+          </tr>
+          <tr>
+            <td class="mono">#13</td>
+            <td>adi_fin · pez 2</td>
+            <td class="n">47×20</td>
+            <td class="n">47</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,77</td>
+          </tr>
+          <tr>
+            <td class="mono">#14</td>
+            <td>body · pez 2</td>
+            <td class="n">455×244</td>
+            <td class="n">455</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,81</td>
+          </tr>
+          <tr>
+            <td class="mono">#15</td>
+            <td>salmon · pez 2</td>
+            <td class="n">631×259</td>
+            <td class="n">631</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,82</td>
+          </tr>
+          <tr>
+            <td class="mono">#16</td>
+            <td>head · pez 3</td>
+            <td class="n">309×268</td>
+            <td class="n">309</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,90</td>
+          </tr>
+          <tr>
+            <td class="mono">#17</td>
+            <td>pec_fin · pez 3</td>
+            <td class="n">82×131</td>
+            <td class="n">131</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,77</td>
+          </tr>
+          <tr>
+            <td class="mono">#18</td>
+            <td>body · pez 3</td>
+            <td class="n">222×149</td>
+            <td class="n">222</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,68</td>
+          </tr>
+          <tr>
+            <td class="mono">#19</td>
+            <td>salmon · pez 3</td>
+            <td class="n">436×268</td>
+            <td class="n">436</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#20</td>
+            <td>tail_fin · pez 4</td>
+            <td class="n">279×245</td>
+            <td class="n">279</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,76</td>
+          </tr>
+          <tr>
+            <td class="mono">#21</td>
+            <td>adi_fin · pez 4</td>
+            <td class="n">70×26</td>
+            <td class="n">70</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,68</td>
+          </tr>
+          <tr>
+            <td class="mono">#22</td>
+            <td>anal_fin · pez 4</td>
+            <td class="n">98×54</td>
+            <td class="n">98</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#23</td>
+            <td>pelv_fin · pez 4</td>
+            <td class="n">115×14</td>
+            <td class="n">115</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#24</td>
+            <td>pec_fin · pez 4</td>
+            <td class="n">121×50</td>
+            <td class="n">121</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,89</td>
+          </tr>
+          <tr>
+            <td class="mono">#25</td>
+            <td>head · pez 4</td>
+            <td class="n">143×130</td>
+            <td class="n">143</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#26</td>
+            <td>dorsal_fin · pez 4</td>
+            <td class="n">172×41</td>
+            <td class="n">172</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,77</td>
+          </tr>
+          <tr>
+            <td class="mono">#27</td>
+            <td>body · pez 4</td>
+            <td class="n">769×201</td>
+            <td class="n">769</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,63</td>
+          </tr>
+          <tr>
+            <td class="mono">#28</td>
+            <td>salmon · pez 4</td>
+            <td class="n">1178×253</td>
+            <td class="n">1.178</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,76</td>
+          </tr>
+          <tr>
+            <td class="mono">#29</td>
+            <td>tail_fin · pez 5</td>
+            <td class="n">123×134</td>
+            <td class="n">134</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,87</td>
+          </tr>
+          <tr>
+            <td class="mono">#30</td>
+            <td>adi_fin · pez 5</td>
+            <td class="n">31×14</td>
+            <td class="n">31</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,84</td>
+          </tr>
+          <tr>
+            <td class="mono">#31</td>
+            <td>dorsal_fin · pez 5</td>
+            <td class="n">82×29</td>
+            <td class="n">82</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#32</td>
+            <td>head · pez 5</td>
+            <td class="n">109×82</td>
+            <td class="n">109</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,66</td>
+          </tr>
+          <tr>
+            <td class="mono">#33</td>
+            <td>pec_fin · pez 5</td>
+            <td class="n">68×40</td>
+            <td class="n">68</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#34</td>
+            <td>pelv_fin · pez 5</td>
+            <td class="n">55×13</td>
+            <td class="n">55</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,68</td>
+          </tr>
+          <tr>
+            <td class="mono">#35</td>
+            <td>anal_fin · pez 5</td>
+            <td class="n">59×35</td>
+            <td class="n">59</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,76</td>
+          </tr>
+          <tr>
+            <td class="mono">#36</td>
+            <td>body · pez 5</td>
+            <td class="n">395×115</td>
+            <td class="n">395</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#37</td>
+            <td>salmon · pez 5</td>
+            <td class="n">606×153</td>
+            <td class="n">606</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#38</td>
+            <td>adi_fin · pez 6</td>
+            <td class="n">36×24</td>
+            <td class="n">36</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n">0,89</td>
+          </tr>
+          <tr>
+            <td class="mono">#39</td>
+            <td>tail_fin · pez 6</td>
+            <td class="n">110×176</td>
+            <td class="n">176</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#40</td>
+            <td>anal_fin · pez 6</td>
+            <td class="n">73×46</td>
+            <td class="n">73</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#41</td>
+            <td>pelv_fin · pez 6</td>
+            <td class="n">102×41</td>
+            <td class="n">102</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#42</td>
+            <td>body · pez 6</td>
+            <td class="n">346×148</td>
+            <td class="n">346</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#43</td>
+            <td>salmon · pez 6</td>
+            <td class="n">455×196</td>
+            <td class="n">455</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#44</td>
+            <td>tail_fin · pez 7</td>
+            <td class="n">321×305</td>
+            <td class="n">321</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#45</td>
+            <td>adi_fin · pez 7</td>
+            <td class="n">77×20</td>
+            <td class="n">77</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#46</td>
+            <td>dorsal_fin · pez 7</td>
+            <td class="n">165×51</td>
+            <td class="n">165</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#47</td>
+            <td>pec_fin · pez 7</td>
+            <td class="n">160×51</td>
+            <td class="n">160</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#48</td>
+            <td>head · pez 7</td>
+            <td class="n">235×147</td>
+            <td class="n">235</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#49</td>
+            <td>pelv_fin · pez 7</td>
+            <td class="n">123×47</td>
+            <td class="n">123</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#50</td>
+            <td>anal_fin · pez 7</td>
+            <td class="n">140×61</td>
+            <td class="n">140</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#51</td>
+            <td>body · pez 7</td>
+            <td class="n">890×237</td>
+            <td class="n">890</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#52</td>
+            <td>salmon · pez 7</td>
+            <td class="n">1398×393</td>
+            <td class="n">1.398</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#53</td>
+            <td>tail_fin · pez 8</td>
+            <td class="n">226×155</td>
+            <td class="n">226</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#54</td>
+            <td>adi_fin · pez 8</td>
+            <td class="n">49×21</td>
+            <td class="n">49</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#55</td>
+            <td>dorsal_fin · pez 8</td>
+            <td class="n">102×46</td>
+            <td class="n">102</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#56</td>
+            <td>body · pez 8</td>
+            <td class="n">537×108</td>
+            <td class="n">537</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#57</td>
+            <td>salmon · pez 8</td>
+            <td class="n">764×214</td>
+            <td class="n">764</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#58</td>
+            <td>tail_fin · pez 9</td>
+            <td class="n">188×137</td>
+            <td class="n">188</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#59</td>
+            <td>adi_fin · pez 9</td>
+            <td class="n">42×18</td>
+            <td class="n">42</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#60</td>
+            <td>dorsal_fin · pez 9</td>
+            <td class="n">74×21</td>
+            <td class="n">74</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#61</td>
+            <td>head · pez 9</td>
+            <td class="n">144×93</td>
+            <td class="n">144</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#62</td>
+            <td>pec_fin · pez 9</td>
+            <td class="n">115×29</td>
+            <td class="n">115</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#63</td>
+            <td>anal_fin · pez 9</td>
+            <td class="n">86×41</td>
+            <td class="n">86</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#64</td>
+            <td>pelv_fin · pez 9</td>
+            <td class="n">72×18</td>
+            <td class="n">72</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#65</td>
+            <td>body · pez 9</td>
+            <td class="n">493×135</td>
+            <td class="n">493</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#66</td>
+            <td>salmon · pez 9</td>
+            <td class="n">799×179</td>
+            <td class="n">799</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#67</td>
+            <td>tail_fin · pez 10</td>
+            <td class="n">214×226</td>
+            <td class="n">226</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#68</td>
+            <td>dorsal_fin · pez 10</td>
+            <td class="n">163×40</td>
+            <td class="n">163</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#69</td>
+            <td>pec_fin · pez 10</td>
+            <td class="n">134×48</td>
+            <td class="n">134</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#70</td>
+            <td>head · pez 10</td>
+            <td class="n">169×141</td>
+            <td class="n">169</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#71</td>
+            <td>pelv_fin · pez 10</td>
+            <td class="n">83×27</td>
+            <td class="n">83</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#72</td>
+            <td>anal_fin · pez 10</td>
+            <td class="n">109×52</td>
+            <td class="n">109</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#73</td>
+            <td>adi_fin · pez 10</td>
+            <td class="n">64×24</td>
+            <td class="n">64</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#74</td>
+            <td>salmon · pez 10</td>
+            <td class="n">1062×254</td>
+            <td class="n">1.062</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#75</td>
+            <td>body · pez 10</td>
+            <td class="n">710×216</td>
+            <td class="n">710</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#76</td>
+            <td>tail_fin · pez 11</td>
+            <td class="n">137×113</td>
+            <td class="n">137</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#77</td>
+            <td>adi_fin · pez 11</td>
+            <td class="n">38×22</td>
+            <td class="n">38</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#78</td>
+            <td>dorsal_fin · pez 11</td>
+            <td class="n">48×31</td>
+            <td class="n">48</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#79</td>
+            <td>anal_fin · pez 11</td>
+            <td class="n">57×44</td>
+            <td class="n">57</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#80</td>
+            <td>pelv_fin · pez 11</td>
+            <td class="n">45×23</td>
+            <td class="n">45</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#81</td>
+            <td>pec_fin · pez 11</td>
+            <td class="n">45×25</td>
+            <td class="n">45</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#82</td>
+            <td>head · pez 11</td>
+            <td class="n">36×75</td>
+            <td class="n">75</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#83</td>
+            <td>body · pez 11</td>
+            <td class="n">302×258</td>
+            <td class="n">302</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#84</td>
+            <td>salmon · pez 11</td>
+            <td class="n">458×317</td>
+            <td class="n">458</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#85</td>
+            <td>head · pez 12</td>
+            <td class="n">152×122</td>
+            <td class="n">152</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#86</td>
+            <td>pec_fin · pez 12</td>
+            <td class="n">62×56</td>
+            <td class="n">62</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#87</td>
+            <td>dorsal_fin · pez 12</td>
+            <td class="n">131×46</td>
+            <td class="n">131</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#88</td>
+            <td>anal_fin · pez 12</td>
+            <td class="n">87×54</td>
+            <td class="n">87</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#89</td>
+            <td>pelv_fin · pez 12</td>
+            <td class="n">98×27</td>
+            <td class="n">98</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#90</td>
+            <td>tail_fin · pez 12</td>
+            <td class="n">156×173</td>
+            <td class="n">173</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#91</td>
+            <td>adi_fin · pez 12</td>
+            <td class="n">56×23</td>
+            <td class="n">56</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#92</td>
+            <td>body · pez 12</td>
+            <td class="n">649×207</td>
+            <td class="n">649</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#93</td>
+            <td>salmon · pez 12</td>
+            <td class="n">921×284</td>
+            <td class="n">921</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#94</td>
+            <td>tail_fin · pez 13</td>
+            <td class="n">99×120</td>
+            <td class="n">120</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#95</td>
+            <td>adi_fin · pez 13</td>
+            <td class="n">35×15</td>
+            <td class="n">35</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#96</td>
+            <td>dorsal_fin · pez 13</td>
+            <td class="n">72×42</td>
+            <td class="n">72</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#97</td>
+            <td>head · pez 13</td>
+            <td class="n">110×77</td>
+            <td class="n">110</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#98</td>
+            <td>pec_fin · pez 13</td>
+            <td class="n">66×23</td>
+            <td class="n">66</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#99</td>
+            <td>anal_fin · pez 13</td>
+            <td class="n">52×38</td>
+            <td class="n">52</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#100</td>
+            <td>pelv_fin · pez 13</td>
+            <td class="n">62×19</td>
+            <td class="n">62</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#101</td>
+            <td>body · pez 13</td>
+            <td class="n">402×133</td>
+            <td class="n">402</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#102</td>
+            <td>salmon · pez 13</td>
+            <td class="n">588×167</td>
+            <td class="n">588</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#103</td>
+            <td>head · pez 14</td>
+            <td class="n">174×121</td>
+            <td class="n">174</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#104</td>
+            <td>pec_fin · pez 14</td>
+            <td class="n">122×39</td>
+            <td class="n">122</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#105</td>
+            <td>pelv_fin · pez 14</td>
+            <td class="n">50×18</td>
+            <td class="n">50</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#106</td>
+            <td>anal_fin · pez 14</td>
+            <td class="n">70×48</td>
+            <td class="n">70</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#107</td>
+            <td>dorsal_fin · pez 14</td>
+            <td class="n">114×38</td>
+            <td class="n">114</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#108</td>
+            <td>adi_fin · pez 14</td>
+            <td class="n">35×25</td>
+            <td class="n">35</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#109</td>
+            <td>tail_fin · pez 14</td>
+            <td class="n">155×132</td>
+            <td class="n">155</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#110</td>
+            <td>body · pez 14</td>
+            <td class="n">513×176</td>
+            <td class="n">513</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#111</td>
+            <td>salmon · pez 14</td>
+            <td class="n">814×243</td>
+            <td class="n">814</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#112</td>
+            <td>head · pez 15</td>
+            <td class="n">83×62</td>
+            <td class="n">83</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#113</td>
+            <td>pec_fin · pez 15</td>
+            <td class="n">46×38</td>
+            <td class="n">46</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#114</td>
+            <td>dorsal_fin · pez 15</td>
+            <td class="n">38×19</td>
+            <td class="n">38</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#115</td>
+            <td>adi_fin · pez 15</td>
+            <td class="n">20×13</td>
+            <td class="n">20</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#116</td>
+            <td>tail_fin · pez 15</td>
+            <td class="n">79×110</td>
+            <td class="n">110</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#117</td>
+            <td>anal_fin · pez 15</td>
+            <td class="n">31×31</td>
+            <td class="n">31</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#118</td>
+            <td>pelv_fin · pez 15</td>
+            <td class="n">37×28</td>
+            <td class="n">37</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#119</td>
+            <td>body · pez 15</td>
+            <td class="n">283×122</td>
+            <td class="n">283</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#120</td>
+            <td>salmon · pez 15</td>
+            <td class="n">433×144</td>
+            <td class="n">433</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#121</td>
+            <td>head · pez 16</td>
+            <td class="n">103×102</td>
+            <td class="n">103</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#122</td>
+            <td>pec_fin · pez 16</td>
+            <td class="n">88×43</td>
+            <td class="n">88</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#123</td>
+            <td>dorsal_fin · pez 16</td>
+            <td class="n">85×29</td>
+            <td class="n">85</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#124</td>
+            <td>adi_fin · pez 16</td>
+            <td class="n">27×19</td>
+            <td class="n">27</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#125</td>
+            <td>tail_fin · pez 16</td>
+            <td class="n">52×174</td>
+            <td class="n">174</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#126</td>
+            <td>pelv_fin · pez 16</td>
+            <td class="n">84×19</td>
+            <td class="n">84</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#127</td>
+            <td>anal_fin · pez 16</td>
+            <td class="n">30×45</td>
+            <td class="n">45</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#128</td>
+            <td>body · pez 16</td>
+            <td class="n">369×172</td>
+            <td class="n">369</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#129</td>
+            <td>salmon · pez 16</td>
+            <td class="n">512×216</td>
+            <td class="n">512</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#130</td>
+            <td>tail_fin · pez 17</td>
+            <td class="n">72×166</td>
+            <td class="n">166</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#131</td>
+            <td>pec_fin · pez 17</td>
+            <td class="n">128×47</td>
+            <td class="n">128</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#132</td>
+            <td>dorsal_fin · pez 17</td>
+            <td class="n">98×32</td>
+            <td class="n">98</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#133</td>
+            <td>adi_fin · pez 17</td>
+            <td class="n">30×23</td>
+            <td class="n">30</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#134</td>
+            <td>pelv_fin · pez 17</td>
+            <td class="n">59×24</td>
+            <td class="n">59</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#135</td>
+            <td>head · pez 17</td>
+            <td class="n">132×106</td>
+            <td class="n">132</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#136</td>
+            <td>body · pez 17</td>
+            <td class="n">567×181</td>
+            <td class="n">567</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#137</td>
+            <td>salmon · pez 17</td>
+            <td class="n">747×222</td>
+            <td class="n">747</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#138</td>
+            <td>anal_fin · pez 17</td>
+            <td class="n">75×59</td>
+            <td class="n">75</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#139</td>
+            <td>tail_fin · pez 18</td>
+            <td class="n">60×49</td>
+            <td class="n">60</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#140</td>
+            <td>adi_fin · pez 18</td>
+            <td class="n">26×11</td>
+            <td class="n">26</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#141</td>
+            <td>dorsal_fin · pez 18</td>
+            <td class="n">64×23</td>
+            <td class="n">64</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#142</td>
+            <td>pec_fin · pez 18</td>
+            <td class="n">76×23</td>
+            <td class="n">76</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#143</td>
+            <td>pelv_fin · pez 18</td>
+            <td class="n">57×9</td>
+            <td class="n">57</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#144</td>
+            <td>head · pez 18</td>
+            <td class="n">99×60</td>
+            <td class="n">99</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#145</td>
+            <td>body · pez 18</td>
+            <td class="n">380×97</td>
+            <td class="n">380</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#146</td>
+            <td>salmon · pez 18</td>
+            <td class="n">521×106</td>
+            <td class="n">521</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#147</td>
+            <td>adi_fin · pez 19</td>
+            <td class="n">62×23</td>
+            <td class="n">62</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#148</td>
+            <td>dorsal_fin · pez 19</td>
+            <td class="n">93×41</td>
+            <td class="n">93</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#149</td>
+            <td>body · pez 19</td>
+            <td class="n">673×89</td>
+            <td class="n">673</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#150</td>
+            <td>salmon · pez 19</td>
+            <td class="n">680×160</td>
+            <td class="n">680</td>
+            <td class="n">–</td>
+            <td><span class="pill ok">ok</span></td>
+            <td class="n"><span class="pill warn">no detectado</span></td>
+          </tr>
+        </tbody>
+      </table></div>
+      <p class="small muted">Largo según el esquema <strong>caja</strong>. Con la calibración estéreo se convierte a centímetros (<code>ml/salmosonar_cv/measure/stereo.py</code>).</p>
+    </div>
+
+
+    <p class="small muted">Embebible en la interfaz 3D: <code>http://127.0.0.1:3800/vision/embed/datasets/boostcomptrack/images/2</code></p>
+  </div>
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

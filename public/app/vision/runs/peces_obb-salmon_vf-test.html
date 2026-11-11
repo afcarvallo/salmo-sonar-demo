@@ -1,0 +1,151 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>peces_obb-salmon_vf-test</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="2qunV370bernptBfgOAFUXdbEt34yzy--6IzGgD_XUJJ9IP6FJ7dB2QIylSE1qWiy4TVlYvBsifm0lw6f20FqA" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/runs/show.html.erb --><p class="crumbs"><a href="../../vision/runs.html">Resultados</a> /</p>
+<h1 class="mono h-file">peces_obb-salmon_vf-test</h1>
+<div class="stats stats-6">
+  <div class="stat"><span class="k">Precisión</span><span class="v">0,0 %</span><span class="s">0 aciertos, 4 falsos</span></div>
+  <div class="stat"><span class="k">Recall</span><span class="v">0,0 %</span><span class="s">6 no detectados</span></div>
+  <div class="stat"><span class="k">F1</span><span class="v">0,0 %</span><span class="s">IoU ≥ 0.5</span></div>
+  <div class="stat"><span class="k">IoU medio</span><span class="v">–</span><span class="s">de los aciertos</span></div>
+  <div class="stat"><span class="k">Error de puntos</span><span class="v">–</span><span class="s">de la diagonal de la caja</span></div>
+  <div class="stat"><span class="k">Tiempo</span><span class="v">499 ms</span><span class="s">por imagen</span></div>
+</div>
+<p class="small muted">Modelo <span class="mono">best.pt</span> · confianza mínima 0.25 · imagen 1024 px · dataset completo · split test</p>
+
+<div class="panel">
+  <div class="section-head">
+    <h3>Dónde acierta y dónde se equivoca</h3>
+    <form method="get" class="controls">
+      <label class="field">Orden
+        <select name="orden" disabled><option value="errores" selected>más errores primero</option><option value="fn" >más no detectados</option><option value="fp" >más falsos positivos</option><option value="aciertos" >mejores primero</option><option value="archivo" >por archivo</option></select>
+      </label>
+      <label class="toggle"><input type="checkbox" name="solo" value="errores"  disabled> solo imágenes con errores</label>
+    </form>
+  </div>
+  <p class="small muted">
+    1 de 8 imágenes sin ningún error · 2 sin etiquetas (todo lo detectado cuenta como falso positivo).
+    En cada imagen: <span class="pill ok">✓</span> acierto (IoU ≥ 0.5), <span class="pill warn">FP</span> detección sin etiqueta, <span class="pill warn">FN</span> etiqueta sin detección.
+    Clic en una imagen para ver cajas, probabilidades y el mapa de atención.
+  </p>
+</div>
+
+<div class="gallery">
+    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-319_jpg.rf.373286d223eb04dd6298e1cdeae3ee5f.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="65.0" y="0.3" width="292.0" height="309.5" data-kind="gt" data-i="0"/><polygon class="pred" points="387.3,276.9 421.2,277.1 422.6,95.5 388.7,95.3" data-kind="pred" data-i="0"/><polygon class="pred" points="400.9,384.6 425.0,383.5 417.7,222.7 393.6,223.8" data-kind="pred" data-i="1"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-319_jpg.rf...</span>
+        <span>0 ✓ · <span class="err">2 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <a class="thumb" href="../../vision/datasets/salmon_vf/images/2.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-226_jpg.rf.3934bfe735d129dbfc7a94bb3ee03c7a.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><polygon class="pred" points="378.8,416.5 423.4,415.6 420.4,266.1 375.7,267.0" data-kind="pred" data-i="0"/><polygon class="pred" points="415.7,158.1 417.9,113.7 371.3,111.4 369.0,155.7" data-kind="pred" data-i="1"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-226_jpg.rf...</span>
+        <span>0 ✓ · <span class="err">2 FP</span> · <span class="">0 FN</span></span></span>
+</a>    <a class="thumb" href="../../vision/datasets/salmon_vf/images/0.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-137_jpg.rf.d378693dad5b2ff479a85dbbec2597b2.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="67.3" y="0.0" width="164.5" height="138.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-137_jpg.rf...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</a>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-230_jpg.rf.d8473cee6467c8f56aa54484d520b2f3.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="94.5" y="0.3" width="253.0" height="266.5" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-230_jpg.rf...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-241_jpg.rf.ddf33ad34914c3e2d8652b4a425846a0.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="68.0" y="33.0" width="239.0" height="383.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-241_jpg.rf...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-335_jpg.rf.7490105711d53e181bc4bd26caf159f5.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="106.0" y="0.0" width="187.0" height="147.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-335_jpg.rf...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <span class="thumb">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-50_jpg.rf.bd47513da0f65d6dbd170afd1ff3741e.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"><rect class="gt" x="64.2" y="0.0" width="196.5" height="198.0" data-kind="gt" data-i="0"/></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-50_jpg.rf....</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="err">1 FN</span></span></span>
+</span>    <a class="thumb" href="../../vision/datasets/salmon_vf/images/1.html">
+      <span class="thumb-img" style="aspect-ratio: 416 / 416">
+        <img src="../../img/salmon_vf/test/images/peces5_mp4-218_jpg.rf.ce22f7819c77c590ec8fd6bd15931eb0.jpg" alt="" loading="lazy">
+        <svg class="overlay" viewBox="0 0 416 416" preserveAspectRatio="none" aria-hidden="true"></svg>
+      </span>
+      <span class="thumb-meta"><span class="mono">peces5_mp4-218_jpg.rf...</span>
+        <span>0 ✓ · <span class="">0 FP</span> · <span class="">0 FN</span></span></span>
+</a></div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/runs/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

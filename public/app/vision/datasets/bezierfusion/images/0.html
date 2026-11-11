@@ -1,0 +1,164 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../../../">
+    <title>01.jpg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="_YSu3EhQlVrrGM5jLPq-XVwtuqOR5T5no_kF504ZY54j_AbNGCenWheP70bQ7aBQ6Y74C-erJM3s4XWalC9BKg" />
+    
+    <link rel="icon" href="../../../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../../../assets/viz/formato-4622225b.js", "viz/graficos": "../../../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+<p class="crumbs"><a href="../../../../vision/datasets.html">Datasets</a> / <a href="../../../../vision/datasets/bezierfusion.html">Stereo Fish BézierFusion</a> /</p>
+<div class="title-row">
+  <h1 class="mono h-file">dataset1/rgb/01.jpg</h1>
+  <div class="pn">
+    
+    <a class="btn" href="../../../../vision/datasets/bezierfusion/images/1.html">siguiente →</a>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="col">
+    <div class="controls" data-controls>
+      <label class="toggle"><input type="checkbox" id="t-gt" data-layer="gt" checked> Etiquetas del dataset</label>
+      <label class="toggle"><input type="checkbox" id="t-pred" data-layer="pred" checked disabled> Predicciones (best.pt)</label>
+      <label class="toggle"><input type="checkbox" id="t-kp" data-layer="kp" checked> Puntos clave</label>
+      <label class="toggle"><input type="checkbox" id="t-att" data-layer="attention" disabled> Atención (EigenCAM)</label>
+    </div>
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb --><figure class="viewer" data-viewer style="aspect-ratio: 2048 / 1536">
+  <img src="../../../../img/bezierfusion/dataset1/rgb/01.jpg" alt="dataset1/rgb/01.jpg" width="2048" height="1536" decoding="async">
+  <svg class="overlay" viewBox="0 0 2048 1536" preserveAspectRatio="none" aria-hidden="true"><rect class="gt has-issue" x="1024.6" y="132.9" width="822.5" height="238.2" data-kind="gt" data-i="0"/><polyline class="kp-line gt kp-eje" points="1062.4,376.5 1265.5,373.8"/><polyline class="kp-line gt kp-eje" points="1446.2,403.5 1830.9,337.9"/><polyline class="kp-line gt" points="1062.4,376.5 1446.2,403.5"/><polyline class="kp-line gt" points="1446.2,403.5 1265.5,373.8"/><polyline class="kp-line gt" points="1265.5,373.8 1830.9,337.9"/><polyline class="kp-line gt" points="1830.9,337.9 1062.4,376.5"/><circle class="kp gt" cx="1062.4" cy="376.5" r="17.1" style="fill:#e5484d"><title>extremo 1</title></circle><circle class="kp gt" cx="1265.5" cy="373.8" r="17.1" style="fill:#30a46c"><title>control 1</title></circle><circle class="kp gt" cx="1446.2" cy="403.5" r="17.1" style="fill:#3e8ed0"><title>control 2</title></circle><circle class="kp gt" cx="1830.9" cy="337.9" r="17.1" style="fill:#e8a33a"><title>extremo 2</title></circle><text class="lbl gt" x="1038.3" y="112.5" font-size="37.2">fish</text><rect class="gt has-issue" x="880.8" y="322.6" width="667.0" height="133.0" data-kind="gt" data-i="1"/><polyline class="kp-line gt kp-eje" points="892.5,391.8 1062.4,376.5"/><polyline class="kp-line gt kp-eje" points="1265.5,373.8 1446.2,403.5"/><polyline class="kp-line gt" points="892.5,391.8 1265.5,373.8"/><polyline class="kp-line gt" points="1265.5,373.8 1062.4,376.5"/><polyline class="kp-line gt" points="1062.4,376.5 1446.2,403.5"/><polyline class="kp-line gt" points="1446.2,403.5 892.5,391.8"/><circle class="kp gt" cx="892.5" cy="391.8" r="17.1" style="fill:#e5484d"><title>extremo 1</title></circle><circle class="kp gt" cx="1062.4" cy="376.5" r="17.1" style="fill:#30a46c"><title>control 1</title></circle><circle class="kp gt" cx="1265.5" cy="373.8" r="17.1" style="fill:#3e8ed0"><title>control 2</title></circle><circle class="kp gt" cx="1446.2" cy="403.5" r="17.1" style="fill:#e8a33a"><title>extremo 2</title></circle><text class="lbl gt" x="894.5" y="302.1" font-size="37.2">fish</text></svg>
+  
+</figure>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_viewer.html.erb -->
+    <div class="legend">
+      <span><i class="sw sw-gt"></i>etiqueta del dataset</span>
+      <span><i class="sw sw-pred"></i>predicción del modelo</span>
+      <span><i class="sw sw-issue"></i>etiqueta a revisar</span>
+      <span><i class="sw" style="background:#e5484d;border-radius:50%"></i>extremo 1</span><span><i class="sw" style="background:#30a46c;border-radius:50%"></i>control 1</span><span><i class="sw" style="background:#3e8ed0;border-radius:50%"></i>control 2</span><span><i class="sw" style="background:#e8a33a;border-radius:50%"></i>extremo 2</span>
+      
+    </div>
+    
+      <details class="panel">
+        <summary>Mapa de profundidad que trae el dataset</summary>
+        <img src="../../../../img/bezierfusion/dataset1/depth/01.jpg" alt="Mapa de profundidad" loading="lazy" class="depth">
+      </details>
+
+    <div class="panel" data-live-predict data-url="/vision/datasets/bezierfusion/images/0/predict">
+      <div class="section-head"><h3>Predicción en vivo</h3>
+        <button type="button" class="btn primary" data-predict >Correr el modelo sobre esta imagen</button></div>
+        <div class="predict-opts">
+          <label class="field">Modelo
+            <select data-predict-model>
+              <option value="world" data-def-conf="0.2" selected>YOLO-World (sin entrenar, clases como texto)</option><option value="fish" data-def-conf="0.35" >Peces · YOLO11s-OBB entrenado aquí</option><option value="fish_pose" data-def-conf="0.3" >Peces · YOLO11s-pose entrenado aquí (hocico, cola, dorso, vientre)</option><option value="fish_pose_v2" data-def-conf="0.3" >Peces · YOLO11s-pose v2 (BézierFusion + salmón BoostCompTrack)</option><option value="pellet" data-def-conf="0.25" >Pellets · YOLO11s entrenado aquí</option><option value="pellet_v2" data-def-conf="0.25" >Pellets · YOLO11s con CAGSDL (RAS real) + Roboflow</option><option value="bct_bbox" data-def-conf="0.25" >BoostCompTrack · YOLOv8m cajas (NTNU)</option><option value="bct_pose" data-def-conf="0.25" >BoostCompTrack · YOLOv8m-pose cajas + puntos (NTNU)</option>
+            </select>
+          </label>
+          <label class="field" data-predict-classes-field >Clases (texto)
+            <input type="text" data-predict-classes value="salmon,fish" size="16" spellcheck="false">
+          </label>
+          <label class="field">Confianza mínima
+            <input type="range" data-predict-conf min="0.05" max="0.9" step="0.05" value="0.2">
+            <output data-predict-conf-out class="mono">0,20</output>
+          </label>
+          <label class="toggle"><input type="checkbox" data-predict-attention checked> Mapa de atención</label>
+        </div>
+      <p class="small muted" data-predict-msg>Envía la imagen al servicio de visión (http://127.0.0.1:8601) y dibuja cajas y probabilidades en el visor.</p>
+    </div>
+  </div>
+
+  <div class="col">
+      <form class="panel run-pick" method="get">
+        <label for="run">Resultados de</label>
+        <select id="run" name="run" disabled>
+          <option value="pose_v2-bezierfusion-dataset2" selected>best.pt · 2026-11-10T17:02</option><option value="pose-bezierfusion-dataset1-solo_cajas" >best.pt · 2026-11-10T16:30</option><option value="pose-bezierfusion-dataset2" >best.pt · 2026-11-10T16:29</option><option value="peces_obb-bezierfusion-todo" >best.pt · 2026-11-10T16:04</option><option value="base_yoloworld_bezierfusion_muestra" >yolov8s-worldv2.pt [fish] · 2026-11-10T13:48</option>
+        </select>
+        <noscript><button class="btn">Ver</button></noscript>
+      </form>
+
+    <div class="panel">
+      <h3>Etiquetas (2)</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>#</th><th>Clase</th><th class="n">Caja px</th><th class="n">Largo px</th><th class="n">Alto px</th><th>Revisión</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">#1</td>
+            <td>fish</td>
+            <td class="n">822×238</td>
+            <td class="n">771</td>
+            <td class="n">390</td>
+            <td><span class="pill warn">comparte 3 puntos con otro pez</span></td>
+            
+          </tr>
+          <tr>
+            <td class="mono">#2</td>
+            <td>fish</td>
+            <td class="n">667×133</td>
+            <td class="n">555</td>
+            <td class="n">183</td>
+            <td><span class="pill warn">comparte 3 puntos con otro pez</span></td>
+            
+          </tr>
+        </tbody>
+      </table></div>
+      <p class="small muted">Largo según el esquema <strong>bezier</strong>: curva de Bézier por los 4 puntos. Con la calibración estéreo se convierte a centímetros (<code>ml/salmosonar_cv/measure/stereo.py</code>).</p>
+    </div>
+
+
+    <p class="small muted">Embebible en la interfaz 3D: <code>http://127.0.0.1:3800/vision/embed/datasets/bezierfusion/images/0</code></p>
+  </div>
+</div>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/dataset_images/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->

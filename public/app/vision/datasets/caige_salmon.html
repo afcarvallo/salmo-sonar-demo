@@ -1,0 +1,747 @@
+<!-- BEGIN /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb --><!-- BEGIN app/views/layouts/application.html.erb --><!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="salmo-static" content="../../">
+    <title>cAIge salmón (segmentación y re-identificación)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Yft-GEWWl8uNlq1aGfGVlLhv6SAN6kwpB1xtOZLL1J3c82MYZzSuKmpnHtG3Xjwn1w0wSswgjHXOUPTbCZWsvw" />
+    
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../../assets/application-c36b1eba.css" />
+    <script type="importmap" data-turbo-track="reload">{"imports": {"application": "../../assets/application-d40c8729.js", "d3": "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm", "viz/colores": "../../assets/viz/colores-57a86e53.js", "viz/estanque": "../../assets/viz/estanque-ead4b3e2.js", "viz/formato": "../../assets/viz/formato-4622225b.js", "viz/graficos": "../../assets/viz/graficos-a40d67ad.js", "viz/indice": "../../assets/viz/indice-8fd5f136.js", "viz/registro": "../../assets/viz/registro-9c3e79cb.js", "viz/sonar3d": "../../assets/viz/sonar3d-bf3e3001.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-d40c8729.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm">
+<link rel="modulepreload" href="../../assets/viz/colores-57a86e53.js">
+<link rel="modulepreload" href="../../assets/viz/estanque-ead4b3e2.js">
+<link rel="modulepreload" href="../../assets/viz/formato-4622225b.js">
+<link rel="modulepreload" href="../../assets/viz/graficos-a40d67ad.js">
+<link rel="modulepreload" href="../../assets/viz/indice-8fd5f136.js">
+<link rel="modulepreload" href="../../assets/viz/registro-9c3e79cb.js">
+<link rel="modulepreload" href="../../assets/viz/sonar3d-bf3e3001.js">
+<script type="module">import "application"</script>
+  </head>
+  <body>
+    <header class="barra">
+      <a class="marca" href="../../index.html">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M2 12c3-4 7-6 11-6 4 0 7 3 9 6-2 3-5 6-9 6-4 0-8-2-11-6Zm0 0 3-3m-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.2" fill="currentColor"/></svg>
+        SalmoSonar
+      </a>
+      <nav>
+          <a href="../../estanques/E14.html" class="">E14 · Ø14 m</a>
+          <a href="../../estanques/E6.html" class="">E6 · Ø6 m</a>
+          <a href="../../vision.html" class="activo">Visión</a>
+      </nav>
+      <span class="nota-sim" title="Versión de demostración sin servidor: resultados precomputados">Demo estática · Datasets reales</span>
+    </header>
+    <main>  <link rel="stylesheet" href="../../assets/salmosonar_vision/application-49987426.css" />
+  <script src="../../assets/salmosonar_vision/viewer-3da4b4ea.js" defer="defer"></script>
+  <script src="../../assets/salmosonar_vision/video-6dac97d2.js" defer="defer"></script>
+  <div class="ssv ssv-in-host"><!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --><header class="top">
+  <div class="wrap top-inner">
+    <span class="brand">
+      <span class="brand-name">SalmoSonar Visión</span>
+      <span class="brand-sub">datasets · videos · predicciones · atención</span>
+</span>    <nav class="nav" aria-label="Secciones de visión">
+      <span class="nav-link">Resumen</span>
+      <a class="nav-link is-active" aria-current="page" href="../../vision/datasets.html">Datasets</a>
+      <a class="nav-link" href="../../vision/videos.html">Videos</a>
+      <a class="nav-link" href="../../vision/runs.html">Resultados</a>
+      <span class="nav-link">Simulación 3D</span>
+      <a class="nav-link" href="../../vision/integracion.html">Integración</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap main">
+  <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb --><p class="crumbs"><a href="../../vision/datasets.html">Datasets</a> /</p>
+<h1>cAIge salmón (segmentación y re-identificación)</h1>
+<div class="grid2">
+  <div class="col">
+    <p class="lede">Segmentación del cuerpo de salmón bajo el agua y re-identificación entre cámaras (contar cada pez una sola vez).</p>
+    <dl class="facts">
+      <div><dt>Dominio</dt><dd>Recortes de salmón bajo el agua en jaulas; polígonos de las regiones Q1 y Q2 del cuerpo y del opérculo (nombres del data.yaml del autor)</dd></div>
+      <div><dt>Formato</dt><dd>YOLO cajas</dd></div>
+      <div><dt>Clases</dt><dd>Q1, Q2, operculum</dd></div>
+      <div><dt>Aquí</dt><dd>completo · 406 imágenes · 1218 objetos</dd></div>
+      <div><dt>Licencia</dt><dd>CC BY 4.0</dd></div>
+      <div><dt>Fuente</dt><dd><a href="https://zenodo.org/records/20280854" target="_blank" rel="noopener">https://zenodo.org/records/20280854</a></dd></div>
+      <div><dt>Cita</dt><dd class="small">cAIge Salmon Re-Identification Dataset, Segmentation Annotations, and Evaluation Results. Zenodo, record 20280854</dd></div>
+    </dl>
+  </div>
+  <div class="col">
+      <div class="panel">
+        <h3>Archivos de la fuente</h3>
+        <ul class="plain small">
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10832.json</span> <span class="muted">203 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10837.json</span> <span class="muted">234 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10842.json</span> <span class="muted">279 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10847.json</span> <span class="muted">318 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10852.json</span> <span class="muted">419 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10857.json</span> <span class="muted">438 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10862.json</span> <span class="muted">437 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10867.json</span> <span class="muted">382 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10872.json</span> <span class="muted">381 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10877.json</span> <span class="muted">420 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10882.json</span> <span class="muted">477 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/100/100_10887.json</span> <span class="muted">433 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1016/1016_11204.json</span> <span class="muted">928 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1016/1016_11210.json</span> <span class="muted">1.16 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1016/1016_11220.json</span> <span class="muted">1.09 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1016/1016_11230.json</span> <span class="muted">832 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1026/1026_11183.json</span> <span class="muted">195 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1026/1026_11190.json</span> <span class="muted">165 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1066/1066_11193.json</span> <span class="muted">370 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1066/1066_11200.json</span> <span class="muted">360 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1066/1066_11202.json</span> <span class="muted">341 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1094/1094_11212.json</span> <span class="muted">427 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1094/1094_11220.json</span> <span class="muted">392 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1094/1094_11230.json</span> <span class="muted">549 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1094/1094_11237.json</span> <span class="muted">323 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11215.json</span> <span class="muted">382 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11220.json</span> <span class="muted">414 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11230.json</span> <span class="muted">463 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11240.json</span> <span class="muted">485 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11250.json</span> <span class="muted">381 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11260.json</span> <span class="muted">407 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11270.json</span> <span class="muted">341 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11280.json</span> <span class="muted">271 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1110/1110_11290.json</span> <span class="muted">221 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10840.json</span> <span class="muted">126 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10845.json</span> <span class="muted">105 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10850.json</span> <span class="muted">125 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10855.json</span> <span class="muted">108 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10860.json</span> <span class="muted">109 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10865.json</span> <span class="muted">117 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10870.json</span> <span class="muted">144 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10875.json</span> <span class="muted">164 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10880.json</span> <span class="muted">176 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10885.json</span> <span class="muted">199 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10890.json</span> <span class="muted">238 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10895.json</span> <span class="muted">244 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/112/112_10900.json</span> <span class="muted">230 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1154/1154_11230.json</span> <span class="muted">281 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1154/1154_11240.json</span> <span class="muted">222 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1154/1154_11245.json</span> <span class="muted">247 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1158/1158_11240.json</span> <span class="muted">194 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1158/1158_11250.json</span> <span class="muted">149 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1158/1158_11260.json</span> <span class="muted">164 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1158/1158_11270.json</span> <span class="muted">159 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1158/1158_11280.json</span> <span class="muted">117 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1207/1207_11265.json</span> <span class="muted">219 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1207/1207_11270.json</span> <span class="muted">246 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1207/1207_11280.json</span> <span class="muted">247 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1207/1207_11290.json</span> <span class="muted">279 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1207/1207_11300.json</span> <span class="muted">243 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1213/1213_11270.json</span> <span class="muted">258 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1213/1213_11280.json</span> <span class="muted">165 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1222/1222_11250.json</span> <span class="muted">354 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1222/1222_11260.json</span> <span class="muted">415 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1222/1222_11270.json</span> <span class="muted">325 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1222/1222_11280.json</span> <span class="muted">224 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1252/1252_11240.json</span> <span class="muted">226 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1252/1252_11250.json</span> <span class="muted">229 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1252/1252_11260.json</span> <span class="muted">235 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1255/1255_11260.json</span> <span class="muted">684 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1259/1259_11262.json</span> <span class="muted">554 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1259/1259_11270.json</span> <span class="muted">650 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1259/1259_11280.json</span> <span class="muted">661 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11264.json</span> <span class="muted">544 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11270.json</span> <span class="muted">675 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11280.json</span> <span class="muted">670 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11290.json</span> <span class="muted">489 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11300.json</span> <span class="muted">311 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11310.json</span> <span class="muted">227 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1267/1267_11320.json</span> <span class="muted">221 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1269/1269_11270.json</span> <span class="muted">370 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1269/1269_11280.json</span> <span class="muted">303 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1269/1269_11290.json</span> <span class="muted">237 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1269/1269_11300.json</span> <span class="muted">204 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1269/1269_11310.json</span> <span class="muted">174 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1269/1269_11320.json</span> <span class="muted">164 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1349/1349_11296.json</span> <span class="muted">324 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1349/1349_11308.json</span> <span class="muted">413 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1366/1366_11333.json</span> <span class="muted">160 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1366/1366_11343.json</span> <span class="muted">125 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1392/1392_11284.json</span> <span class="muted">151 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1392/1392_11294.json</span> <span class="muted">143 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1392/1392_11304.json</span> <span class="muted">129 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10800.json</span> <span class="muted">135 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10805.json</span> <span class="muted">157 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10810.json</span> <span class="muted">149 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10815.json</span> <span class="muted">126 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10820.json</span> <span class="muted">160 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10825.json</span> <span class="muted">202 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10830.json</span> <span class="muted">172 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/14/14_10835.json</span> <span class="muted">185 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1409/1409_11295.json</span> <span class="muted">171 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1409/1409_11305.json</span> <span class="muted">190 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1409/1409_11315.json</span> <span class="muted">157 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1409/1409_11325.json</span> <span class="muted">106 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1409/1409_11335.json</span> <span class="muted">86.8 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1426/1426_11292.json</span> <span class="muted">224 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1426/1426_11304.json</span> <span class="muted">191 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1441/1441_11360.json</span> <span class="muted">330 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1441/1441_11370.json</span> <span class="muted">276 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1441/1441_11380.json</span> <span class="muted">355 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1441/1441_11390.json</span> <span class="muted">371 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1441/1441_11398.json</span> <span class="muted">360 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1445/1445_11284.json</span> <span class="muted">513 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1445/1445_11294.json</span> <span class="muted">383 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1445/1445_11304.json</span> <span class="muted">311 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1461/1461_11295.json</span> <span class="muted">204 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1461/1461_11305.json</span> <span class="muted">271 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10855.json</span> <span class="muted">115 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10860.json</span> <span class="muted">134 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10865.json</span> <span class="muted">142 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10870.json</span> <span class="muted">141 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10875.json</span> <span class="muted">141 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10880.json</span> <span class="muted">176 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10885.json</span> <span class="muted">197 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10890.json</span> <span class="muted">201 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10895.json</span> <span class="muted">200 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10900.json</span> <span class="muted">197 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10905.json</span> <span class="muted">198 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10910.json</span> <span class="muted">278 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10915.json</span> <span class="muted">353 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10920.json</span> <span class="muted">360 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10925.json</span> <span class="muted">412 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/16/16_10930.json</span> <span class="muted">438 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10875.json</span> <span class="muted">260 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10880.json</span> <span class="muted">296 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10885.json</span> <span class="muted">268 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10890.json</span> <span class="muted">225 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10892.json</span> <span class="muted">214 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10895.json</span> <span class="muted">204 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10900.json</span> <span class="muted">203 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10901.json</span> <span class="muted">196 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10905.json</span> <span class="muted">180 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10910.json</span> <span class="muted">206 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10915.json</span> <span class="muted">201 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10920.json</span> <span class="muted">180 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10925.json</span> <span class="muted">188 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10930.json</span> <span class="muted">189 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10935.json</span> <span class="muted">165 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10940.json</span> <span class="muted">184 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10945.json</span> <span class="muted">178 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10950.json</span> <span class="muted">173 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10955.json</span> <span class="muted">218 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/162/162_10960.json</span> <span class="muted">221 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1665/1665_11381.json</span> <span class="muted">295 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/1665/1665_11391.json</span> <span class="muted">391 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10880.json</span> <span class="muted">226 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10885.json</span> <span class="muted">255 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10890.json</span> <span class="muted">245 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10895.json</span> <span class="muted">232 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10900.json</span> <span class="muted">230 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10905.json</span> <span class="muted">164 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10910.json</span> <span class="muted">202 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10915.json</span> <span class="muted">201 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10920.json</span> <span class="muted">166 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10925.json</span> <span class="muted">211 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10930.json</span> <span class="muted">248 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10935.json</span> <span class="muted">199 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10940.json</span> <span class="muted">258 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10945.json</span> <span class="muted">245 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10950.json</span> <span class="muted">183 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10960.json</span> <span class="muted">274 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10970.json</span> <span class="muted">256 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10980.json</span> <span class="muted">232 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_10990.json</span> <span class="muted">280 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_11000.json</span> <span class="muted">343 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/170/170_11010.json</span> <span class="muted">331 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10890.json</span> <span class="muted">279 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10900.json</span> <span class="muted">242 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10910.json</span> <span class="muted">206 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10920.json</span> <span class="muted">202 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10930.json</span> <span class="muted">173 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10940.json</span> <span class="muted">114 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10950.json</span> <span class="muted">128 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10960.json</span> <span class="muted">214 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10970.json</span> <span class="muted">271 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/256/256_10980.json</span> <span class="muted">279 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/263/263_10900.json</span> <span class="muted">149 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/263/263_10910.json</span> <span class="muted">173 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/263/263_10920.json</span> <span class="muted">150 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/263/263_10930.json</span> <span class="muted">135 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/263/263_10940.json</span> <span class="muted">209 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/263/263_10950.json</span> <span class="muted">198 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/278/278_10896.json</span> <span class="muted">539 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/278/278_10900.json</span> <span class="muted">501 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/278/278_10905.json</span> <span class="muted">285 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/278/278_10910.json</span> <span class="muted">312 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/278/278_10915.json</span> <span class="muted">329 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/278/278_10920.json</span> <span class="muted">256 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10818.json</span> <span class="muted">111 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10820.json</span> <span class="muted">136 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10825.json</span> <span class="muted">146 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10830.json</span> <span class="muted">118 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10835.json</span> <span class="muted">155 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10840.json</span> <span class="muted">161 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10845.json</span> <span class="muted">130 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10850.json</span> <span class="muted">157 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10855.json</span> <span class="muted">177 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10860.json</span> <span class="muted">206 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10865.json</span> <span class="muted">225 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10870.json</span> <span class="muted">214 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10875.json</span> <span class="muted">200 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10880.json</span> <span class="muted">272 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10885.json</span> <span class="muted">277 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10890.json</span> <span class="muted">218 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/30/30_10895.json</span> <span class="muted">182 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_10945.json</span> <span class="muted">264 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_10955.json</span> <span class="muted">261 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_10965.json</span> <span class="muted">265 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_10975.json</span> <span class="muted">325 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_10985.json</span> <span class="muted">632 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_10995.json</span> <span class="muted">748 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/300/300_11005.json</span> <span class="muted">1.15 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/317/317_11015.json</span> <span class="muted">303 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/317/317_11025.json</span> <span class="muted">293 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/317/317_11035.json</span> <span class="muted">314 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/317/317_11045.json</span> <span class="muted">313 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/317/317_11050.json</span> <span class="muted">281 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10806.json</span> <span class="muted">142 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10809.json</span> <span class="muted">191 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10815.json</span> <span class="muted">211 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10820.json</span> <span class="muted">295 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10825.json</span> <span class="muted">356 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10830.json</span> <span class="muted">291 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10835.json</span> <span class="muted">387 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10840.json</span> <span class="muted">447 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/35/35_10845.json</span> <span class="muted">394 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/362/362_10958.json</span> <span class="muted">962 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/362/362_10970.json</span> <span class="muted">1.11 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/362/362_10980.json</span> <span class="muted">973 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/362/362_10990.json</span> <span class="muted">1.01 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/362/362_10995.json</span> <span class="muted">891 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/374/374_11050.json</span> <span class="muted">102 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/374/374_11060.json</span> <span class="muted">100 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/374/374_11070.json</span> <span class="muted">65.1 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/374/374_11078.json</span> <span class="muted">76.4 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10800.json</span> <span class="muted">212 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10805.json</span> <span class="muted">245 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10810.json</span> <span class="muted">264 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10815.json</span> <span class="muted">219 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10820.json</span> <span class="muted">258 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10825.json</span> <span class="muted">296 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/38/38_10830.json</span> <span class="muted">238 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/39/39_10835.json</span> <span class="muted">171 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/39/39_10840.json</span> <span class="muted">168 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/39/39_10845.json</span> <span class="muted">108 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10840.json</span> <span class="muted">178 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10845.json</span> <span class="muted">141 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10850.json</span> <span class="muted">150 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10855.json</span> <span class="muted">144 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10860.json</span> <span class="muted">147 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10865.json</span> <span class="muted">164 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10870.json</span> <span class="muted">142 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10875.json</span> <span class="muted">125 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/41/41_10880.json</span> <span class="muted">136 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_10980.json</span> <span class="muted">337 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_10990.json</span> <span class="muted">405 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_11000.json</span> <span class="muted">383 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_11010.json</span> <span class="muted">333 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_11020.json</span> <span class="muted">342 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_11030.json</span> <span class="muted">309 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_11040.json</span> <span class="muted">309 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/423/423_11050.json</span> <span class="muted">355 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/438/438_11013.json</span> <span class="muted">168 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/438/438_11020.json</span> <span class="muted">163 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/438/438_11025.json</span> <span class="muted">194 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/476/476_11010.json</span> <span class="muted">328 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/476/476_11020.json</span> <span class="muted">421 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/476/476_11030.json</span> <span class="muted">438 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/476/476_11040.json</span> <span class="muted">430 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/476/476_11050.json</span> <span class="muted">525 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11070.json</span> <span class="muted">95.3 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11080.json</span> <span class="muted">138 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11090.json</span> <span class="muted">152 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11100.json</span> <span class="muted">115 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11110.json</span> <span class="muted">152 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11120.json</span> <span class="muted">142 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11130.json</span> <span class="muted">106 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/491/491_11133.json</span> <span class="muted">106 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/5/5_10800.json</span> <span class="muted">329 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/5/5_10805.json</span> <span class="muted">404 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/5/5_10810.json</span> <span class="muted">435 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/5/5_10815.json</span> <span class="muted">370 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/5/5_10820.json</span> <span class="muted">417 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/5/5_10825.json</span> <span class="muted">399 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/50/50_10804.json</span> <span class="muted">395 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/50/50_10810.json</span> <span class="muted">392 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/50/50_10815.json</span> <span class="muted">359 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/50/50_10820.json</span> <span class="muted">433 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/50/50_10825.json</span> <span class="muted">392 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11040.json</span> <span class="muted">168 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11045.json</span> <span class="muted">187 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11050.json</span> <span class="muted">169 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11055.json</span> <span class="muted">150 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11065.json</span> <span class="muted">147 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11070.json</span> <span class="muted">90.4 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/545_11080.json</span> <span class="muted">126 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11055.json</span> <span class="muted">69.5 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11065.json</span> <span class="muted">82.3 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11075.json</span> <span class="muted">85.9 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11085.json</span> <span class="muted">63 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11095.json</span> <span class="muted">51.6 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11105.json</span> <span class="muted">59.6 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/587_11115.json</span> <span class="muted">59.8 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/604_11035.json</span> <span class="muted">405 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/604_11040.json</span> <span class="muted">382 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/604_11045.json</span> <span class="muted">398 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11043.json</span> <span class="muted">201 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11050.json</span> <span class="muted">197 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11060.json</span> <span class="muted">148 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11070.json</span> <span class="muted">110 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11080.json</span> <span class="muted">139 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11090.json</span> <span class="muted">174 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/620_11095.json</span> <span class="muted">190 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/646_11070.json</span> <span class="muted">153 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/646_11080.json</span> <span class="muted">275 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/646_11090.json</span> <span class="muted">285 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/646_11100.json</span> <span class="muted">315 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/687_11065.json</span> <span class="muted">75.8 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/687_11075.json</span> <span class="muted">112 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/687_11085.json</span> <span class="muted">113 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/687_11095.json</span> <span class="muted">191 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/687_11105.json</span> <span class="muted">216 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/687_11115.json</span> <span class="muted">174 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11100.json</span> <span class="muted">627 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11110.json</span> <span class="muted">893 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11120.json</span> <span class="muted">867 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11130.json</span> <span class="muted">814 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11140.json</span> <span class="muted">956 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11150.json</span> <span class="muted">847 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/697_11160.json</span> <span class="muted">803 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11120.json</span> <span class="muted">313 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11130.json</span> <span class="muted">326 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11140.json</span> <span class="muted">381 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11150.json</span> <span class="muted">409 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11160.json</span> <span class="muted">368 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11170.json</span> <span class="muted">448 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11180.json</span> <span class="muted">414 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11190.json</span> <span class="muted">342 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11200.json</span> <span class="muted">392 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/736_11210.json</span> <span class="muted">446 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/793_11130.json</span> <span class="muted">97.1 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/793_11140.json</span> <span class="muted">153 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/804_11116.json</span> <span class="muted">482 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/804_11120.json</span> <span class="muted">710 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11115.json</span> <span class="muted">228 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11125.json</span> <span class="muted">265 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11135.json</span> <span class="muted">248 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11145.json</span> <span class="muted">213 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11155.json</span> <span class="muted">252 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11165.json</span> <span class="muted">289 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/808_11172.json</span> <span class="muted">235 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11160.json</span> <span class="muted">233 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11170.json</span> <span class="muted">297 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11180.json</span> <span class="muted">317 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11190.json</span> <span class="muted">258 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11200.json</span> <span class="muted">218 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11210.json</span> <span class="muted">246 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/848_11220.json</span> <span class="muted">284 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/860_11145.json</span> <span class="muted">244 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/860_11155.json</span> <span class="muted">404 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/860_11165.json</span> <span class="muted">759 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/871_11154.json</span> <span class="muted">1.18 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/871_11160.json</span> <span class="muted">1.12 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/871_11165.json</span> <span class="muted">1.19 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/886_11145.json</span> <span class="muted">397 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/886_11150.json</span> <span class="muted">470 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/886_11155.json</span> <span class="muted">505 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/910_11165.json</span> <span class="muted">289 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/910_11175.json</span> <span class="muted">315 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/910_11185.json</span> <span class="muted">419 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/910_11195.json</span> <span class="muted">451 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/910_11205.json</span> <span class="muted">212 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/545/910_11215.json</span> <span class="muted">335 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/587/587_11067.json</span> <span class="muted">86.5 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/587/587_11077.json</span> <span class="muted">101 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/587/587_11087.json</span> <span class="muted">75.3 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/587/587_11097.json</span> <span class="muted">53.8 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/587/587_11107.json</span> <span class="muted">68.4 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/587/587_11117.json</span> <span class="muted">65.6 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/6/6_10800.json</span> <span class="muted">285 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/6/6_10805.json</span> <span class="muted">305 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/6/6_10810.json</span> <span class="muted">299 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/6/6_10820.json</span> <span class="muted">285 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/604/604_11032.json</span> <span class="muted">324 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/604/604_11037.json</span> <span class="muted">434 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/604/604_11042.json</span> <span class="muted">405 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/620/620_11043.json</span> <span class="muted">207 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/620/620_11053.json</span> <span class="muted">188 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/620/620_11063.json</span> <span class="muted">151 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/620/620_11073.json</span> <span class="muted">127 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/620/620_11083.json</span> <span class="muted">162 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/620/620_11093.json</span> <span class="muted">198 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/646/646_11065.json</span> <span class="muted">194 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/646/646_11075.json</span> <span class="muted">256 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/646/646_11085.json</span> <span class="muted">225 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/646/646_11095.json</span> <span class="muted">325 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/646/646_11105.json</span> <span class="muted">374 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/687/687_11065.json</span> <span class="muted">74.6 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/687/687_11075.json</span> <span class="muted">117 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/687/687_11085.json</span> <span class="muted">119 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/687/687_11095.json</span> <span class="muted">197 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/687/687_11105.json</span> <span class="muted">222 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/687/687_11115.json</span> <span class="muted">178 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11100.json</span> <span class="muted">634 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11110.json</span> <span class="muted">899 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11120.json</span> <span class="muted">874 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11130.json</span> <span class="muted">820 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11131.json</span> <span class="muted">874 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11140.json</span> <span class="muted">962 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11150.json</span> <span class="muted">853 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/697/697_11160.json</span> <span class="muted">803 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10809.json</span> <span class="muted">244 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10814.json</span> <span class="muted">275 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10819.json</span> <span class="muted">232 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10824.json</span> <span class="muted">186 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10829.json</span> <span class="muted">178 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10834.json</span> <span class="muted">160 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10839.json</span> <span class="muted">153 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/7/7_10843.json</span> <span class="muted">125 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10850.json</span> <span class="muted">463 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10855.json</span> <span class="muted">497 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10860.json</span> <span class="muted">526 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10865.json</span> <span class="muted">564 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10870.json</span> <span class="muted">563 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10875.json</span> <span class="muted">486 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10880.json</span> <span class="muted">521 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10885.json</span> <span class="muted">543 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10890.json</span> <span class="muted">458 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10895.json</span> <span class="muted">411 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10900.json</span> <span class="muted">377 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10905.json</span> <span class="muted">277 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10910.json</span> <span class="muted">321 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10915.json</span> <span class="muted">365 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10920.json</span> <span class="muted">308 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10925.json</span> <span class="muted">348 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10930.json</span> <span class="muted">375 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10935.json</span> <span class="muted">376 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10940.json</span> <span class="muted">497 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10945.json</span> <span class="muted">587 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10950.json</span> <span class="muted">485 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10955.json</span> <span class="muted">643 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10960.json</span> <span class="muted">729 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10965.json</span> <span class="muted">644 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10970.json</span> <span class="muted">824 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10975.json</span> <span class="muted">786 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10980.json</span> <span class="muted">612 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10985.json</span> <span class="muted">711 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/70/70_10990.json</span> <span class="muted">734 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11117.json</span> <span class="muted">277 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11127.json</span> <span class="muted">378 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11137.json</span> <span class="muted">368 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11147.json</span> <span class="muted">389 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11148.json</span> <span class="muted">403 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11157.json</span> <span class="muted">408 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11167.json</span> <span class="muted">480 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11177.json</span> <span class="muted">391 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11187.json</span> <span class="muted">377 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11197.json</span> <span class="muted">384 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/736/736_11207.json</span> <span class="muted">444 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10825.json</span> <span class="muted">409 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10830.json</span> <span class="muted">372 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10835.json</span> <span class="muted">512 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10840.json</span> <span class="muted">563 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10845.json</span> <span class="muted">462 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10850.json</span> <span class="muted">536 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10855.json</span> <span class="muted">483 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10860.json</span> <span class="muted">529 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/77/77_10865.json</span> <span class="muted">719 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/793/793_11130.json</span> <span class="muted">99.7 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/793/793_11140.json</span> <span class="muted">156 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/8/8_10809.json</span> <span class="muted">363 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/8/8_10814.json</span> <span class="muted">423 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/8/8_10819.json</span> <span class="muted">450 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/8/8_10824.json</span> <span class="muted">538 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/8/8_10829.json</span> <span class="muted">554 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/8/8_10834.json</span> <span class="muted">509 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/804/804_11116.json</span> <span class="muted">485 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/860/860_11145.json</span> <span class="muted">247 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/860/860_11150.json</span> <span class="muted">340 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/860/860_11160.json</span> <span class="muted">487 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/860/860_11165.json</span> <span class="muted">762 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/871/871_11155.json</span> <span class="muted">1.3 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/871/871_11162.json</span> <span class="muted">1.22 MB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/886/886_11145.json</span> <span class="muted">399 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/886/886_11155.json</span> <span class="muted">507 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/910/910_11165.json</span> <span class="muted">292 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/910/910_11170.json</span> <span class="muted">330 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/910/910_11180.json</span> <span class="muted">377 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/910/910_11190.json</span> <span class="muted">370 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/910/910_11200.json</span> <span class="muted">382 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/912/912_11170.json</span> <span class="muted">437 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/912/912_11180.json</span> <span class="muted">465 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/912/912_11190.json</span> <span class="muted">355 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/928/928_11160.json</span> <span class="muted">227 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/928/928_11166.json</span> <span class="muted">238 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/93/93_10840.json</span> <span class="muted">506 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/93/93_10845.json</span> <span class="muted">371 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/932/932_11171.json</span> <span class="muted">356 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/947/947_11173.json</span> <span class="muted">279 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/947/947_11180.json</span> <span class="muted">295 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/947/947_11190.json</span> <span class="muted">206 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/947/947_11200.json</span> <span class="muted">220 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/947/947_11210.json</span> <span class="muted">188 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/97/97_10890.json</span> <span class="muted">214 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/97/97_10895.json</span> <span class="muted">183 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/97/97_10900.json</span> <span class="muted">190 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/97/97_10905.json</span> <span class="muted">151 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/97/97_10910.json</span> <span class="muted">154 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11200.json</span> <span class="muted">305 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11210.json</span> <span class="muted">439 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11220.json</span> <span class="muted">339 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11230.json</span> <span class="muted">371 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11240.json</span> <span class="muted">349 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11250.json</span> <span class="muted">300 KB</span></li>
+            <li><span target="_blank">segmentation/annotated_salmon_patches/973/973_11260.json</span> <span class="muted">350 KB</span></li>
+            <li><span target="_blank">segmentation/yolo_annotated_salmon_patches/data.yaml</span> <span class="muted">416 Bytes</span></li>
+            <li><span target="_blank">segmentation/yolo_annotated_salmon_patches/yolo_segmentation_runs/train/args.yaml</span> <span class="muted">1.97 KB</span></li>
+            <li><span target="_blank">segmentation/yolo_annotated_salmon_patches/yolo_segmentation_runs/train/results.csv</span> <span class="muted">8.08 KB</span></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+<div class="filters">
+  <a class="chip on" href="../../vision/datasets/caige_salmon.html">Todas</a>
+  <span class="muted small">406 imágenes</span>
+</div>
+
+<div class="gallery">
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/caige_salmon/images/0.html">
+  <span class="thumb-img" style="aspect-ratio: 707 / 210">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10832.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 707 210" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="566.9,94.2 527.5,91.7 493.5,89.7 414.7,83.2 351.4,79.5 352.7,37.4 412.7,40.7 465.7,40.3 569.8,63.6 601.2,75.0 574.7,86.8" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="563.1,153.2 546.9,138.9 543.6,125.5 547.5,113.4 553.8,105.5 566.6,95.0 491.1,90.1 410.5,82.2 350.5,79.6 348.0,139.5" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="645.2,114.5 591.6,88.3 584.3,87.3 572.7,94.1 561.2,103.2 551.7,113.4 547.1,123.8 548.7,137.6 556.0,146.7 563.8,153.2" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10832.png</span>
+    <span>3 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/caige_salmon/images/1.html">
+  <span class="thumb-img" style="aspect-ratio: 718 / 233">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10837.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 718 233" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="593.6,124.1 543.1,108.9 448.1,100.8 357.7,93.8 364.3,52.4 407.7,55.9 459.3,55.4 547.6,73.6 619.9,103.9 601.2,113.5" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="591.6,176.9 580.3,161.7 578.3,151.0 579.7,141.0 583.3,133.0 593.7,123.0 541.0,109.3 444.7,100.7 358.7,93.7 351.8,151.8" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="679.9,156.8 616.9,118.6 607.2,120.1 594.6,127.5 585.0,139.0 582.0,150.2 583.9,159.3 589.0,170.3 591.9,177.2" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10837.png</span>
+    <span>3 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><a class="thumb" href="../../vision/datasets/caige_salmon/images/2.html">
+  <span class="thumb-img" style="aspect-ratio: 743 / 266">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10842.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 743 266" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="628.5,157.0 558.2,138.7 473.3,115.8 391.0,99.7 390.5,57.5 434.3,62.7 489.5,71.5 595.7,110.6 653.0,146.0 639.5,150.7" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="623.1,215.8 614.4,200.4 612.4,183.5 618.6,169.0 629.3,157.3 554.4,137.7 470.3,115.6 389.3,99.7 389.9,161.2" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="651.1,159.5 642.4,160.6 631.9,166.1 619.0,177.3 614.7,191.9 618.3,206.7 623.4,216.1 701.3,198.9" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10842.png</span>
+    <span>3 objetos</span>
+  </span>
+</a><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 756 / 314">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10847.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 756 314" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="649.0,202.7 591.0,188.9 477.7,159.7 411.8,141.6 409.1,100.6 465.5,115.5 522.4,125.1 619.2,160.7 675.6,190.0 656.5,199.0" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="647.6,260.9 636.3,244.9 633.4,233.8 633.4,224.8 640.1,213.7 649.7,202.9 580.9,185.7 476.4,159.5 409.8,140.1 412.7,204.1" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="731.8,241.0 672.8,203.5 662.7,206.4 652.9,210.3 649.2,212.5 644.3,216.6 640.4,222.8 637.9,230.8 638.6,240.8 640.6,248.4 645.1,257.0 648.4,261.1" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10847.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 834 / 360">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10852.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 834 360" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="662.9,234.4 585.1,226.2 506.8,209.8 422.6,194.0 419.0,151.3 460.0,159.5 526.6,168.9 610.3,188.8 690.4,213.9 675.2,226.2" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="656.8,289.7 648.5,278.8 645.0,266.7 645.6,259.8 652.5,248.5 660.1,238.1 664.1,233.8 583.5,226.5 504.3,209.5 421.9,195.0 425.4,254.6" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="754.2,257.4 690.9,230.2 680.9,232.3 666.4,239.6 653.7,251.9 648.2,259.6 647.9,268.7 652.2,280.0 657.4,289.4" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10852.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 851 / 367">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10857.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 851 367" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="650.4,214.0 578.5,215.8 507.2,216.4 425.2,208.6 425.2,169.1 500.1,173.3 567.1,176.3 659.3,184.1 691.1,189.5 674.9,202.1 661.1,208.1" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="656.8,270.7 640.5,259.2 634.3,246.4 635.6,237.3 641.2,227.1 648.0,218.3 650.3,214.7 577.1,216.7 502.9,216.7 423.2,208.8 420.6,261.3" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="747.5,219.1 682.9,201.7 668.3,209.2 654.4,217.8 642.8,229.5 636.6,244.1 640.1,254.6 649.7,264.7 653.7,268.4 657.2,271.1" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10857.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 915 / 308">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10862.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 915 308" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="688.1,140.5 643.6,145.0 600.4,152.7 534.6,158.5 457.8,161.1 458.5,122.4 514.6,117.9 592.0,112.1 692.0,112.1 734.0,115.3 706.9,130.8" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="696.6,204.2 676.1,189.0 669.7,176.6 670.6,165.1 675.8,155.6 684.4,146.9 689.6,141.2 642.9,144.9 601.4,153.0 531.4,158.5 456.8,161.1 452.8,216.6" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="793.3,146.7 722.2,129.8 710.1,133.6 687.6,147.2 675.1,162.5 672.3,173.7 678.9,187.4 690.9,198.8 697.2,203.9" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10862.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 899 / 260">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10867.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 899 260" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="430.2,114.8 516.3,107.2 605.5,100.9 687.8,96.5 707.4,83.8 728.9,71.1 680.8,64.2 587.2,57.8 521.3,65.4 457.4,74.3 435.3,73.7" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="698.3,161.9 675.7,147.4 668.5,133.1 670.6,119.7 676.1,109.7 687.8,97.6 606.6,100.7 516.9,107.9 429.4,115.1 423.8,174.1" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="808.8,104.0 726.0,84.2 718.7,84.6 700.4,94.7 684.8,105.1 672.8,119.0 671.4,131.8 675.3,141.5 680.9,149.1 692.0,157.7 698.2,161.8" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10867.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 897 / 264">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10872.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 897 264" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="697.9,97.4 640.6,98.7 558.9,103.1 474.6,105.6 409.8,110.0 416.1,63.4 485.9,59.0 552.6,51.5 658.9,57.2 745.7,69.7 719.9,82.3" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="690.4,168.8 676.8,157.2 667.8,141.4 666.9,127.8 668.7,119.8 676.5,110.2 692.3,100.3 697.5,98.1 638.7,98.1 553.9,103.4 470.0,106.5 409.6,109.2 401.9,173.1" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="823.8,113.1 736.6,88.7 730.0,89.1 706.6,98.4 688.3,109.5 673.7,125.0 672.8,141.3 683.5,158.0 690.1,168.4" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10872.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 965 / 281">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/100_10877.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 965 281" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="736.6,116.0 677.4,114.0 597.8,116.7 513.5,116.7 440.0,119.4 448.1,72.5 516.9,68.4 598.5,59.5 706.6,65.7 798.5,80.6 760.4,100.4" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="731.4,190.8 709.9,173.4 706.6,155.0 710.6,139.6 716.5,130.0 725.0,122.7 736.7,115.3 679.0,113.8 591.9,116.8 512.8,116.4 440.4,119.4 427.3,190.3" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="882.0,129.4 782.3,102.2 757.7,110.2 732.3,121.1 716.6,135.9 710.5,152.2 712.5,168.2 717.9,177.5 731.4,190.3" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">100_10877.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1306 / 544">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/1016_11204.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1306 544" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="294.9,90.7 372.1,117.5 517.6,163.1 665.6,200.5 751.8,227.3 794.9,154.9 687.6,121.6 560.7,79.3 427.4,54.1 337.1,42.7 252.6,41.1 277.8,66.3" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="294.5,90.8 305.4,110.8 312.1,137.5 303.0,160.5 284.3,176.5 269.2,183.5 697.3,316.3 751.5,225.9 664.8,199.3 516.9,163.5 372.1,116.8" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="141.3,80.3 255.4,74.9 271.3,79.7 293.4,100.8 302.3,118.3 303.5,140.2 299.2,154.8 287.9,169.4 269.2,184.2" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">1016_11204.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+    <!-- BEGIN /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb --><span class="thumb">
+  <span class="thumb-img" style="aspect-ratio: 1506 / 590">
+    <img src="../../img/caige_salmon/segmentation/yolo_annotated_salmon_patches/train/images/1016_11210.jpg" alt="" loading="lazy" decoding="async">
+    <svg class="overlay" viewBox="0 0 1506 590" preserveAspectRatio="none" aria-hidden="true"><polygon class="gt" points="290.0,84.3 338.9,106.7 431.6,140.1 521.2,165.6 617.6,188.0 702.0,215.6 740.0,227.6 778.0,157.2 694.1,126.0 582.2,81.7 502.0,61.4 399.9,48.9 332.7,41.6 257.2,42.7 277.0,65.1" data-kind="gt" data-i="0" style="stroke:#e2553f"/><polygon class="gt" points="290.0,84.8 299.9,104.6 300.4,138.5 287.9,168.7 267.0,181.8 693.7,315.2 740.5,227.0 703.0,215.6 618.1,187.4 520.7,164.5 431.6,140.6 338.9,107.2" data-kind="gt" data-i="1" style="stroke:#2f9e8f"/><polygon class="gt" points="142.0,73.2 255.1,69.0 266.1,69.6 277.7,79.5 288.7,99.1 294.6,116.7 292.3,143.8 283.9,165.5 267.3,181.3" data-kind="gt" data-i="2" style="stroke:#e8a33a"/></svg>
+  </span>
+  <span class="thumb-meta">
+    <span class="mono">1016_11210.png</span>
+    <span>3 objetos</span>
+  </span>
+</span><!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_thumb.html.erb -->
+</div>
+  <nav class="pager">
+    <span class="chip on">1</span><span class="chip">2</span><span class="chip">3</span><span class="chip">4</span><span class="chip">5</span><span class="chip">6</span><span class="chip">7</span><span class="chip">8</span><span class="chip">9</span><span class="chip">10</span><span class="chip">11</span><span class="chip">12</span><span class="chip">13</span><span class="chip">14</span><span class="chip">15</span><span class="chip">16</span><span class="chip">17</span><span class="chip">18</span><span class="chip">19</span><span class="chip">20</span><span class="chip">21</span><span class="chip">22</span><span class="chip">23</span><span class="chip">24</span><span class="chip">25</span><span class="chip">26</span><span class="chip">27</span><span class="chip">28</span><span class="chip">29</span><span class="chip">30</span><span class="chip">31</span><span class="chip">32</span><span class="chip">33</span><span class="chip">34</span>
+  </nav>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/datasets/show.html.erb -->
+</main>
+<!-- END /salmosonar-cv/vision/app/views/salmosonar_vision/shared/_chrome.html.erb --></div>
+</main>
+  </body>
+</html>
+<!-- END app/views/layouts/application.html.erb -->
+<!-- END /salmosonar-cv/vision/app/views/layouts/salmosonar_vision/in_host.html.erb -->
